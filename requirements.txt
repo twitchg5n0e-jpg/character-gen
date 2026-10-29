@@ -1,2 +1,2 @@
-# Abhaengigkeiten deiner Scripts hier eintragen
+requests
 pillow

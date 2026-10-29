@@ -5,3 +5,5 @@ venv/
 .venv/
 .ipynb_checkpoints/
 *.log
+comfyui.log
+*.part
