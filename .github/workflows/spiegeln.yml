@@ -1,0 +1,30 @@
+name: Rechte Ansicht spiegeln
+on:
+  push:
+    paths: ["output/**/links.png"]
+permissions:
+  contents: write
+jobs:
+  spiegeln:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - run: pip install pillow
+      - run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          for links in Path("output").glob("*/links.png"):
+              rechts = links.with_name("rechts.png")
+              if not rechts.exists():
+                  ImageOps.mirror(Image.open(links)).save(rechts)
+                  print("gespiegelt:", rechts)
+          PY
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add output
+          git diff --cached --quiet || git commit -m "Rechte Ansichten gespiegelt"
+          git push
