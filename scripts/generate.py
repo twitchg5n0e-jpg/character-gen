@@ -7,7 +7,7 @@ Run from the repository root while ComfyUI is running (run_pod.sh starts it):
     python scripts/generate.py --set Human/Female/Body1/Stage1  only this set
 
 Every set <Race>/<Gender>/<Body>/<Stage> becomes output/<Race>_<Gender>_<Body>_<Stage>/ with
-front.png, hinten.png and links.png (1024x1536). rechts.png is mirrored from links.png by GitHub Actions.
+front.png, hinten.png and links.png (1056x1584). rechts.png is mirrored from links.png by GitHub Actions.
 A set is open while one of its three images is missing; the order comes from scripts/sets.txt.
 The prompts come from scripts/prompts/<Race>/<Gender>_<Body>_<Stage>.md.
 
@@ -46,7 +46,7 @@ WORKFLOWS = SCRIPTS / "comfyui"
 SETS = SCRIPTS / "sets.txt"
 # file name in output -> view name in the prompt files
 VIEWS = {"front": "01_Front", "hinten": "02_Ruecken", "links": "03_Links"}
-SIZE = (1024, 1536)
+SIZE = (1056, 1584)   # Qwen-Image native 2:3 resolution
 ACTIVE = None   # the ComfyUI connection, so Ctrl+C can cancel its running image
 
 
@@ -174,7 +174,7 @@ def is_open(parts: tuple[str, ...]) -> bool:
 
 
 def fit(image: Image.Image) -> Image.Image:
-    """Scale and crop to exactly 1024x1536 without distorting the figure."""
+    """Scale and crop to exactly SIZE without distorting the figure."""
     if image.size == SIZE:
         return image
     scale = max(SIZE[0] / image.width, SIZE[1] / image.height)
