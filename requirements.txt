@@ -1,0 +1,2 @@
+# Abhaengigkeiten deiner Scripts hier eintragen
+pillow
