@@ -9,16 +9,16 @@ SET="${SET:-}"        # z. B. SET=Human/Female/Body1/Stage1 fuer genau ein Set
 AUTO_STOP=1           # 1 = GPU am Ende automatisch stoppen (RunPod)
 # ====================
 
-: "${GITHUB_TOKEN:?GITHUB_TOKEN ist nicht gesetzt}"
-cd "$(dirname "$0")"
-
 # GPU auch bei einem Fehler stoppen, damit sie nicht weiter Geld kostet.
 stop_pod() {
   if [ "$AUTO_STOP" = "1" ] && [ -n "${RUNPOD_POD_ID:-}" ]; then
-    runpodctl stop pod "$RUNPOD_POD_ID"
+    runpodctl stop pod "$RUNPOD_POD_ID" || runpodctl pod stop "$RUNPOD_POD_ID"   # alte und neue runpodctl-Syntax
   fi
 }
 trap stop_pod EXIT
+
+: "${GITHUB_TOKEN:?GITHUB_TOKEN ist nicht gesetzt}"
+cd "$(dirname "$0")"
 
 command -v git-lfs >/dev/null || (apt-get update -qq && apt-get install -y -qq git-lfs)
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
