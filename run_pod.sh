@@ -6,7 +6,7 @@ set -euo pipefail
 REPO="twitchg5n0e-jpg/character-gen"
 LIMIT="${LIMIT:-0}"   # 0 = alle offenen Sets, sonst nur so viele
 SET="${SET:-}"        # z. B. SET=Human/Female/Body1/Stage1 fuer genau ein Set
-AUTO_STOP=1           # 1 = GPU am Ende automatisch stoppen (RunPod)
+AUTO_STOP="${AUTO_STOP:-1}"   # 1 = GPU am Ende automatisch stoppen (RunPod), 0 = laufen lassen
 # ====================
 
 # GPU auch bei einem Fehler stoppen, damit sie nicht weiter Geld kostet.
