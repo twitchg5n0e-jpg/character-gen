@@ -7,3 +7,4 @@ venv/
 *.log
 comfyui.log
 *.part
+*.pt

@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult woman: a female High Elf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female High Elf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 High Elf, tall, slender and elongated proportions: long neck, long arms and legs, very little muscle mass, elegant and ethereal, clearly not human. Flawless pale porcelain skin with a faint pearlescent golden sheen, luminous golden eyes, thin fine pale eyebrows, refined angular face with high sharp cheekbones and a narrow chin, large almond-shaped eyes. Signature: long slender swept-back pointed ears that rise above the top of the head.
 Female, about 185 cm tall, narrow shoulders, narrow waist, slim willowy figure, small bust.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult woman: a female High Elf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female High Elf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 High Elf, tall, slender and elongated proportions: long neck, long arms and legs, very little muscle mass, elegant and ethereal, clearly not human. Flawless pale porcelain skin with a faint pearlescent golden sheen, luminous golden eyes, thin fine pale eyebrows, refined angular face with high sharp cheekbones and a narrow chin, large almond-shaped eyes. Signature: long slender swept-back pointed ears that rise above the top of the head.
 Female, about 185 cm tall, narrow shoulders, narrow waist, slim willowy figure, small bust.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult woman: a female High Elf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female High Elf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 High Elf, tall, slender and elongated proportions: long neck, long arms and legs, very little muscle mass, elegant and ethereal, clearly not human. Flawless pale porcelain skin with a faint pearlescent golden sheen, luminous golden eyes, thin fine pale eyebrows, refined angular face with high sharp cheekbones and a narrow chin, large almond-shaped eyes. Signature: long slender swept-back pointed ears that rise above the top of the head.
 Female, about 185 cm tall, narrow shoulders, narrow waist, slim willowy figure, small bust.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.

@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult woman: a female Ogre character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Ogre character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Ogre, huge and massive, heavy body with thick limbs, very broad shoulders, mottled grayish-tan skin, small eyes, broad flat nose, heavy jaw. Signature: enormous bulk with a big belly and two lower tusks.
 Female, about 270 cm tall, thick waist and belly, two small lower tusks.
 Appearance variant: sturdy. Compact, solid and slightly heavier build with a soft layer over the muscles, wide hips and waist; round face with full cheeks, short wide nose and large round eyes; skin, fur or scales a warmer shade. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult woman: a female Ogre character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Ogre character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Ogre, huge and massive, heavy body with thick limbs, very broad shoulders, mottled grayish-tan skin, small eyes, broad flat nose, heavy jaw. Signature: enormous bulk with a big belly and two lower tusks.
 Female, about 270 cm tall, thick waist and belly, two small lower tusks.
 Appearance variant: sturdy. Compact, solid and slightly heavier build with a soft layer over the muscles, wide hips and waist; round face with full cheeks, short wide nose and large round eyes; skin, fur or scales a warmer shade. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult woman: a female Ogre character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Ogre character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Ogre, huge and massive, heavy body with thick limbs, very broad shoulders, mottled grayish-tan skin, small eyes, broad flat nose, heavy jaw. Signature: enormous bulk with a big belly and two lower tusks.
 Female, about 270 cm tall, thick waist and belly, two small lower tusks.
 Appearance variant: sturdy. Compact, solid and slightly heavier build with a soft layer over the muscles, wide hips and waist; round face with full cheeks, short wide nose and large round eyes; skin, fur or scales a warmer shade. These differences override the build described above; the height and features of the race stay.

@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult man: a male Ogre character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Ogre character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Ogre, huge and massive, heavy body with thick limbs, very broad shoulders, mottled grayish-tan skin, small eyes, broad flat nose, heavy jaw. Signature: enormous bulk with a big belly and two lower tusks.
 Male, about 300 cm tall, big round belly, enormous arms, heavy underbite with two lower tusks.
 Appearance variant: sturdy. Compact, solid and slightly heavier build with a soft layer over the muscles, wide hips and waist; round face with full cheeks, short wide nose and large round eyes; skin, fur or scales a warmer shade. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult man: a male Ogre character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Ogre character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Ogre, huge and massive, heavy body with thick limbs, very broad shoulders, mottled grayish-tan skin, small eyes, broad flat nose, heavy jaw. Signature: enormous bulk with a big belly and two lower tusks.
 Male, about 300 cm tall, big round belly, enormous arms, heavy underbite with two lower tusks.
 Appearance variant: sturdy. Compact, solid and slightly heavier build with a soft layer over the muscles, wide hips and waist; round face with full cheeks, short wide nose and large round eyes; skin, fur or scales a warmer shade. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult man: a male Ogre character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Ogre character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Ogre, huge and massive, heavy body with thick limbs, very broad shoulders, mottled grayish-tan skin, small eyes, broad flat nose, heavy jaw. Signature: enormous bulk with a big belly and two lower tusks.
 Male, about 300 cm tall, big round belly, enormous arms, heavy underbite with two lower tusks.
 Appearance variant: sturdy. Compact, solid and slightly heavier build with a soft layer over the muscles, wide hips and waist; round face with full cheeks, short wide nose and large round eyes; skin, fur or scales a warmer shade. These differences override the build described above; the height and features of the race stay.

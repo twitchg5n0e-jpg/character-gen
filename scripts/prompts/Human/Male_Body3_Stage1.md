@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult man: a male Human character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Human character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Human, natural realistic proportions, athletic toned build, warm light skin, natural eye color, normal rounded ears. Signature: grounded heroic look, the baseline all other races are compared to.
 Male, about 182 cm tall, strong muscular athletic build, broad shoulders, defined chest and arms.
 Appearance variant: powerful. Noticeably broader and more muscular than average for the race, thick neck, shoulders and arms; square face with a strong wide jaw, broad nose and heavy brows; skin, fur or scales a shade darker. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult man: a male Human character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Human character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Human, natural realistic proportions, athletic toned build, warm light skin, natural eye color, normal rounded ears. Signature: grounded heroic look, the baseline all other races are compared to.
 Male, about 182 cm tall, strong muscular athletic build, broad shoulders, defined chest and arms.
 Appearance variant: powerful. Noticeably broader and more muscular than average for the race, thick neck, shoulders and arms; square face with a strong wide jaw, broad nose and heavy brows; skin, fur or scales a shade darker. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult man: a male Human character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Human character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Human, natural realistic proportions, athletic toned build, warm light skin, natural eye color, normal rounded ears. Signature: grounded heroic look, the baseline all other races are compared to.
 Male, about 182 cm tall, strong muscular athletic build, broad shoulders, defined chest and arms.
 Appearance variant: powerful. Noticeably broader and more muscular than average for the race, thick neck, shoulders and arms; square face with a strong wide jaw, broad nose and heavy brows; skin, fur or scales a shade darker. These differences override the build described above; the height and features of the race stay.

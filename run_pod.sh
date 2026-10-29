@@ -20,7 +20,8 @@ trap stop_pod EXIT
 : "${GITHUB_TOKEN:?GITHUB_TOKEN ist nicht gesetzt}"
 cd "$(dirname "$0")"
 
-command -v git-lfs >/dev/null || (apt-get update -qq && apt-get install -y -qq git-lfs)
+# git-lfs fuer die Bilder, libgl1 + libglib2.0-0 fuer OpenCV (Pose-Pruefung der Seitenansicht)
+apt-get update -qq && apt-get install -y -qq git-lfs libgl1 libglib2.0-0
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
 git config user.name "runpod"
 git config user.email "runpod@users.noreply.github.com"

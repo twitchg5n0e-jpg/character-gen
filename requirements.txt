@@ -1,2 +1,3 @@
 requests
 pillow
+ultralytics   # Pose-Pruefung der Seitenansicht (Blickrichtung, exaktes Profil)

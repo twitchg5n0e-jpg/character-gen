@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult man: a male Goblin character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Goblin character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Goblin, small, wiry skinny build, long thin arms with long fingers, slightly hunched, yellow-green skin, large yellow eyes, sharp small teeth, pointed nose, sly mischievous grin. Signature: huge long pointed ears sticking far out to the sides.
 Male, about 110 cm tall, long pointed nose.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult man: a male Goblin character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Goblin character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Goblin, small, wiry skinny build, long thin arms with long fingers, slightly hunched, yellow-green skin, large yellow eyes, sharp small teeth, pointed nose, sly mischievous grin. Signature: huge long pointed ears sticking far out to the sides.
 Male, about 110 cm tall, long pointed nose.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult man: a male Goblin character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male Goblin character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 Goblin, small, wiry skinny build, long thin arms with long fingers, slightly hunched, yellow-green skin, large yellow eyes, sharp small teeth, pointed nose, sly mischievous grin. Signature: huge long pointed ears sticking far out to the sides.
 Male, about 110 cm tall, long pointed nose.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.

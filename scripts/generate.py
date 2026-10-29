@@ -13,9 +13,13 @@ The prompts come from scripts/prompts/<Race>/<Gender>_<Body>_<Stage>.md.
 
 front of stage 1 is made from text (comfyui/text_to_image.json). Every other view is made with the edit model
 from a reference (comfyui/edit_image.json): hinten and links from the set's own front, the fronts of stages 2 to 4
-from the stage 1 front of the same appearance (Body1..Body4), so face and body stay the same. The links prompt
-asks for the nose to point right (Qwen-Image-Edit reads "facing left" from the character's side), so that image is
-mirrored before it is saved.
+from the stage 1 front of the same appearance (Body1..Body4), so face and body stay the same.
+
+links.png shows the character's left side, so the nose points to the left edge of the image (rechts.png is its mirror
+image). The edit model does not reliably follow the direction in the prompt, so a pose detector (YOLO pose from
+ultralytics) finds nose and ears in every side view: a nose pointing right is mirrored. It also measures how far apart
+the shoulders are; a side view that is turned towards the camera instead of an exact profile is made again with a new
+seed (SIDE_TRIES attempts, the most exact one is kept). Without ultralytics the side view is saved as generated.
 
 It can be stopped at any time with Ctrl+C and started again; every image is written to a temporary file first and
 then renamed, broken images are deleted and made again. If ComfyUI is not running yet, it waits for it.
@@ -48,6 +52,9 @@ SETS = SCRIPTS / "sets.txt"
 VIEWS = {"front": "01_Front", "hinten": "02_Ruecken", "links": "03_Links"}
 SIZE = (1056, 1584)   # Qwen-Image native 2:3 resolution
 ACTIVE = None   # the ComfyUI connection, so Ctrl+C can cancel its running image
+SIDE_TRIES = int(os.environ.get("SIDE_TRIES", "3"))   # attempts for an exact side profile
+MAX_TWIST = float(os.environ.get("MAX_TWIST", "0.06"))   # shoulder distance / figure height still counted as profile
+POSE = None   # the YOLO pose model, loaded on first use; False when ultralytics is missing
 
 
 class ComfyUI:
@@ -183,6 +190,39 @@ def fit(image: Image.Image) -> Image.Image:
     return image.crop((left, top, left + SIZE[0], top + SIZE[1]))
 
 
+def side_view(image: Image.Image) -> tuple[str | None, float]:
+    """Where the nose points ("left", "right" or None if unclear) and how far the figure is turned towards the camera.
+
+    The turn is the horizontal shoulder distance divided by the figure height: close to 0 for an exact profile,
+    about 0.2 for a front view.
+    """
+    global POSE
+    if POSE is None:
+        try:
+            from ultralytics import YOLO
+            POSE = YOLO(os.environ.get("POSE_MODEL", "yolo11n-pose.pt"))   # downloaded on first use
+        except Exception as error:   # missing package or weights: keep generating without the check
+            print("pose check unavailable (%s); side views are saved as generated" % error)
+            POSE = False
+    if not POSE:
+        return None, 0.0
+    result = POSE(image, verbose=False)[0]
+    if result.keypoints is None or result.boxes is None or len(result.boxes) == 0:
+        return None, 0.0
+    best = int(result.boxes.conf.argmax())
+    xy = result.keypoints.xy[best].tolist()
+    conf = result.keypoints.conf[best].tolist()
+    seen = [c > 0.3 for c in conf]
+    # COCO keypoints: 0 nose, 1/2 eyes, 3/4 ears, 5/6 shoulders
+    head = [xy[i][0] for i in (3, 4) if seen[i]] or [xy[i][0] for i in (1, 2) if seen[i]]
+    direction = None
+    if seen[0] and head:
+        direction = "right" if xy[0][0] > sum(head) / len(head) else "left"
+    height = float(result.boxes.xywh[best][3])
+    twist = abs(xy[5][0] - xy[6][0]) / height if seen[5] and seen[6] and height else 0.0
+    return direction, twist
+
+
 def save(image: Image.Image, target: Path) -> None:
     """Write next to the target and rename, so a stop never leaves half an image."""
     part = target.with_name(target.name + ".part")
@@ -230,26 +270,42 @@ def main() -> None:
             target = folder / (view + ".png")
             if target.is_file():
                 continue
-            values = {"%PROMPT%": prompts[view], "%NEGATIVE%": negative, "%SEED%": random.randrange(1 << 31)}
             if view == "front":
                 reference = stage1_front if parts[3] != "Stage1" and stage1_front.is_file() else None
             else:
                 reference = folder / "front.png"
             started = time.time()
-            while True:
-                try:
-                    if reference:
-                        values["%IMAGE%"] = comfy.upload(reference)
-                        image = comfy.run(fill(edit_image, values))
-                    else:
-                        image = comfy.run(fill(text_to_image, values))
-                    break
-                except requests.RequestException:
-                    comfy.wait()   # ComfyUI was restarted: wait for it and make this image again
+
+            def make() -> Image.Image:
+                values = {"%PROMPT%": prompts[view], "%NEGATIVE%": negative, "%SEED%": random.randrange(1 << 31)}
+                while True:
+                    try:
+                        if reference:
+                            values["%IMAGE%"] = comfy.upload(reference)
+                            return comfy.run(fill(edit_image, values))
+                        return comfy.run(fill(text_to_image, values))
+                    except requests.RequestException:
+                        comfy.wait()   # ComfyUI was restarted: wait for it and make this image again
+
+            note = ""
             if view == "links":
-                image = ImageOps.mirror(image)   # the prompt asks for the nose to the right, the model's reliable side
+                best = None
+                for attempt in range(1, SIDE_TRIES + 1):
+                    candidate = make()
+                    direction, twist = side_view(candidate)
+                    print("    links attempt %d: nose %s, turn %.3f" % (attempt, direction or "unclear", twist))
+                    if best is None or twist < best[2]:
+                        best = (candidate, direction, twist)
+                    if POSE is False or (twist <= MAX_TWIST and direction):
+                        break
+                image, direction, twist = best
+                if direction == "right":
+                    image = ImageOps.mirror(image)   # links shows the left side: the nose points to the left edge
+                note = " (nose was %s, turn %.3f)" % (direction or "unclear", twist)
+            else:
+                image = make()
             save(image, target)
-            print("[%d/%d] %s/%s.png in %.0f s" % (number, len(todo), name, view, time.time() - started))
+            print("[%d/%d] %s/%s.png in %.0f s%s" % (number, len(todo), name, view, time.time() - started, note))
     print("done")
 
 

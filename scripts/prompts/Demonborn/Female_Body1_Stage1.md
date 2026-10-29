@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult woman: a female Demonborn character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Demonborn character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Demonborn, human-like body, deep crimson-red skin, solid glowing golden eyes without pupils, slightly pointed ears, sharp angular features, black fingernails. Signature: two curved black horns rising from the forehead and a long thin tail ending in a spade tip, held away from the legs.
 Female, about 175 cm tall, athletic build, slimmer horns.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult woman: a female Demonborn character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Demonborn character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Demonborn, human-like body, deep crimson-red skin, solid glowing golden eyes without pupils, slightly pointed ears, sharp angular features, black fingernails. Signature: two curved black horns rising from the forehead and a long thin tail ending in a spade tip, held away from the legs.
 Female, about 175 cm tall, athletic build, slimmer horns.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult woman: a female Demonborn character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Demonborn character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Demonborn, human-like body, deep crimson-red skin, solid glowing golden eyes without pupils, slightly pointed ears, sharp angular features, black fingernails. Signature: two curved black horns rising from the forehead and a long thin tail ending in a spade tip, held away from the legs.
 Female, about 175 cm tall, athletic build, slimmer horns.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.

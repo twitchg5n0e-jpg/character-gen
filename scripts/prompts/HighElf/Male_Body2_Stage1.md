@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult man: a male High Elf character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male High Elf character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 High Elf, tall, slender and elongated proportions: long neck, long arms and legs, very little muscle mass, elegant and ethereal, clearly not human. Flawless pale porcelain skin with a faint pearlescent golden sheen, luminous golden eyes, thin fine pale eyebrows, refined angular face with high sharp cheekbones and a narrow chin, large almond-shaped eyes. Signature: long slender swept-back pointed ears that rise above the top of the head.
 Male, about 195 cm tall, slim shoulders, lean swimmer-like build with only light muscle definition.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult man: a male High Elf character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male High Elf character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 High Elf, tall, slender and elongated proportions: long neck, long arms and legs, very little muscle mass, elegant and ethereal, clearly not human. Flawless pale porcelain skin with a faint pearlescent golden sheen, luminous golden eyes, thin fine pale eyebrows, refined angular face with high sharp cheekbones and a narrow chin, large almond-shaped eyes. Signature: long slender swept-back pointed ears that rise above the top of the head.
 Male, about 195 cm tall, slim shoulders, lean swimmer-like build with only light muscle definition.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult man: a male High Elf character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only small low-cut dark brown leather briefs, as little leather as possible while the groin stays fully covered, and nothing on his upper body.
+One young adult man: a male High Elf character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears only short dark brown leather boxer shorts and nothing on his upper body.
 High Elf, tall, slender and elongated proportions: long neck, long arms and legs, very little muscle mass, elegant and ethereal, clearly not human. Flawless pale porcelain skin with a faint pearlescent golden sheen, luminous golden eyes, thin fine pale eyebrows, refined angular face with high sharp cheekbones and a narrow chin, large almond-shaped eyes. Signature: long slender swept-back pointed ears that rise above the top of the head.
 Male, about 195 cm tall, slim shoulders, lean swimmer-like build with only light muscle definition.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.

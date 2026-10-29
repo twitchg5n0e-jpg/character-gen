@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult woman: a female Human character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Human character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Human, natural realistic proportions, athletic toned build, warm light skin, natural eye color, normal rounded ears. Signature: grounded heroic look, the baseline all other races are compared to.
 Female, about 170 cm tall, athletic and toned, defined but not bulky muscles.
 Appearance variant: powerful. Noticeably broader and more muscular than average for the race, thick neck, shoulders and arms; square face with a strong wide jaw, broad nose and heavy brows; skin, fur or scales a shade darker. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult woman: a female Human character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Human character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Human, natural realistic proportions, athletic toned build, warm light skin, natural eye color, normal rounded ears. Signature: grounded heroic look, the baseline all other races are compared to.
 Female, about 170 cm tall, athletic and toned, defined but not bulky muscles.
 Appearance variant: powerful. Noticeably broader and more muscular than average for the race, thick neck, shoulders and arms; square face with a strong wide jaw, broad nose and heavy brows; skin, fur or scales a shade darker. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult woman: a female Human character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears a minimal dark brown leather outfit: a narrow leather bandeau top and small low-cut leather briefs, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Human character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Human, natural realistic proportions, athletic toned build, warm light skin, natural eye color, normal rounded ears. Signature: grounded heroic look, the baseline all other races are compared to.
 Female, about 170 cm tall, athletic and toned, defined but not bulky muscles.
 Appearance variant: powerful. Noticeably broader and more muscular than average for the race, thick neck, shoulders and arms; square face with a strong wide jaw, broad nose and heavy brows; skin, fur or scales a shade darker. These differences override the build described above; the height and features of the race stay.
