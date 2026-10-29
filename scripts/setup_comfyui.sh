@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installiert ComfyUI + Qwen-Image-Modelle (einmalig, ~100 GB, volle bf16-Qualitaet) und startet ComfyUI im Hintergrund.
+# Installiert ComfyUI + Qwen-Image-Modelle (einmalig, ~50 GB) und startet ComfyUI im Hintergrund.
 # Liegt alles unter $COMFY_DIR (Standard /workspace/ComfyUI = RunPod-Volume), wird beim naechsten Pod nichts neu geladen.
 set -euo pipefail
 
@@ -28,9 +28,9 @@ download() {   # <Unterordner in models> <URL>
     mv "$target.part" "$target"
   fi
 }
-download diffusion_models "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_2512_bf16.safetensors"
-download diffusion_models "$HF/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_bf16.safetensors"
-download text_encoders    "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b.safetensors"
+download diffusion_models "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors"
+download diffusion_models "$HF/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors"
+download text_encoders    "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors"
 download vae              "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors"
 
 nohup python "$COMFY_DIR/main.py" --listen 127.0.0.1 --port "$COMFY_PORT" > comfyui.log 2>&1 &
