@@ -16,7 +16,8 @@ from a reference (comfyui/edit_image.json): hinten and links from the set's own 
 from the stage 1 front of the same appearance (Body1..Body4), so face and body stay the same.
 
 links.png shows the character's left side, so the nose points to the left edge of the image (rechts.png is its mirror
-image). The edit model does not reliably follow the direction in the prompt, so a pose detector (YOLO pose from
+image). It is made with comfyui/side_image.json: the edit model plus the Multiple-angles LoRA, which turns the camera
+by 90 degrees instead of only turning the head. The direction is not reliable either, so a pose detector (YOLO pose from
 ultralytics) finds nose and ears in every side view: a nose pointing right is mirrored. It also measures how far apart
 the shoulders are; a side view that is turned towards the camera instead of an exact profile is made again with a new
 seed (SIDE_TRIES attempts, the most exact one is kept). Without ultralytics the side view is saved as generated.
@@ -241,6 +242,7 @@ def main() -> None:
 
     text_to_image = json.loads((WORKFLOWS / "text_to_image.json").read_text(encoding="utf-8"))
     edit_image = json.loads((WORKFLOWS / "edit_image.json").read_text(encoding="utf-8"))
+    side_image = json.loads((WORKFLOWS / "side_image.json").read_text(encoding="utf-8"))
     global ACTIVE
     comfy = ACTIVE = ComfyUI(args.comfy)
 
@@ -276,13 +278,13 @@ def main() -> None:
                 reference = folder / "front.png"
             started = time.time()
 
-            def make() -> Image.Image:
+            def make(edit: dict = edit_image) -> Image.Image:
                 values = {"%PROMPT%": prompts[view], "%NEGATIVE%": negative, "%SEED%": random.randrange(1 << 31)}
                 while True:
                     try:
                         if reference:
                             values["%IMAGE%"] = comfy.upload(reference)
-                            return comfy.run(fill(edit_image, values))
+                            return comfy.run(fill(edit, values))
                         return comfy.run(fill(text_to_image, values))
                     except requests.RequestException:
                         comfy.wait()   # ComfyUI was restarted: wait for it and make this image again
@@ -291,7 +293,7 @@ def main() -> None:
             if view == "links":
                 best = None
                 for attempt in range(1, SIDE_TRIES + 1):
-                    candidate = make()
+                    candidate = make(side_image)
                     direction, twist = side_view(candidate)
                     print("    links attempt %d: nose %s, turn %.3f" % (attempt, direction or "unclear", twist))
                     if best is None or twist < best[2]:

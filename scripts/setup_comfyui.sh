@@ -19,8 +19,8 @@ fi
 pip install -q -r "$COMFY_DIR/requirements.txt"
 
 # Dateinamen muessen zu scripts/comfyui/*.json passen.
-download() {   # <Unterordner in models> <URL>
-  local target="$COMFY_DIR/models/$1/$(basename "$2")"
+download() {   # <Unterordner in models> <URL> [Dateiname, Standard: aus der URL]
+  local target="$COMFY_DIR/models/$1/${3:-$(basename "$2")}"
   mkdir -p "$(dirname "$target")"
   if [ ! -s "$target" ]; then
     echo "lade $(basename "$2") ..."
@@ -31,6 +31,8 @@ download() {   # <Unterordner in models> <URL>
 download diffusion_models "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors"
 download diffusion_models "$HF/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors"
 download text_encoders    "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors"
+# LoRA fuer Kameradrehungen: macht aus der Vorderansicht ein echtes Seitenprofil (scripts/comfyui/side_image.json)
+download loras "https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/resolve/main/%E9%95%9C%E5%A4%B4%E8%BD%AC%E6%8D%A2.safetensors" qwen_edit_2509_multiple_angles.safetensors
 download vae              "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors"
 
 nohup python "$COMFY_DIR/main.py" --listen 127.0.0.1 --port "$COMFY_PORT" > comfyui.log 2>&1 &
