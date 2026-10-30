@@ -214,7 +214,7 @@ def keypoints(image: Image.Image) -> tuple[list, list, float] | None:
 def face_visible(image: Image.Image) -> bool:
     """True when nose and both eyes are clearly seen, i.e. a "back view" that actually shows the front."""
     found = keypoints(image)
-    return found is not None and all(found[1][i] > 0.5 for i in (0, 1, 2))
+    return found is not None and all(found[1][i] > 0.3 for i in (0, 1, 2))   # 0.3: animal faces score lower
 
 
 def side_view(image: Image.Image) -> tuple[str | None, float]:
