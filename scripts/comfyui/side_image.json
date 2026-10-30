@@ -5,7 +5,7 @@
   "3": {"class_type": "VAELoader", "inputs": {"vae_name": "qwen_image_vae.safetensors"}},
   "4": {"class_type": "LoadImage", "inputs": {"image": "%IMAGE%"}},
   "5": {"class_type": "ModelSamplingAuraFlow", "inputs": {"model": ["12", 0], "shift": 3.0}},
-  "6": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["2", 0], "vae": ["3", 0], "image1": ["4", 0], "prompt": "将镜头向左旋转90度 (rotate the camera 90 degrees to the left). The same character as in the image, now seen exactly from the side: head, shoulders, chest, hips and feet all in a strict side profile, the shoulders edge-on, not turned towards the camera. Same face, same body, same skin tone, same plain light gray studio background. %PROMPT%"}},
+  "6": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["2", 0], "vae": ["3", 0], "image1": ["4", 0], "prompt": "将镜头向左旋转90度 (rotate the camera 90 degrees to the left). The same character as in the image, now seen exactly from the side: head, shoulders, chest, hips and feet all in a strict side profile, the shoulders edge-on, not turned towards the camera. Same face, same body, exactly the same skin, fur, scale and feather colors with the same natural saturation and no color shift, same plain light gray studio background. %PROMPT%"}},
   "7": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["2", 0], "vae": ["3", 0], "image1": ["4", 0], "prompt": "%NEGATIVE%"}},
   "8": {"class_type": "EmptySD3LatentImage", "inputs": {"width": 1056, "height": 1584, "batch_size": 1}},
   "9": {"class_type": "KSampler", "inputs": {"model": ["5", 0], "positive": ["6", 0], "negative": ["7", 0], "latent_image": ["8", 0], "seed": "%SEED%", "steps": 50, "cfg": 4.0, "sampler_name": "euler", "scheduler": "simple", "denoise": 1.0}},

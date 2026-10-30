@@ -53,7 +53,7 @@ SETS = SCRIPTS / "sets.txt"
 VIEWS = {"front": "01_Front", "hinten": "02_Ruecken", "links": "03_Links"}
 SIZE = (1056, 1584)   # Qwen-Image native 2:3 resolution
 ACTIVE = None   # the ComfyUI connection, so Ctrl+C can cancel its running image
-SIDE_TRIES = int(os.environ.get("SIDE_TRIES", "3"))   # attempts for an exact side profile
+SIDE_TRIES = int(os.environ.get("SIDE_TRIES", "4"))   # attempts for an exact side profile
 MAX_TWIST = float(os.environ.get("MAX_TWIST", "0.06"))   # shoulder distance / figure height still counted as profile
 POSE = None   # the YOLO pose model, loaded on first use; False when ultralytics is missing
 
@@ -296,13 +296,20 @@ def main() -> None:
                     candidate = make(side_image)
                     direction, twist = side_view(candidate)
                     print("    links attempt %d: nose %s, turn %.3f" % (attempt, direction or "unclear", twist))
-                    if best is None or twist < best[2]:
+                    # a known direction beats a slightly more exact profile: a wrong direction is the worse error
+                    if best is None or (direction is None, twist) < (best[1] is None, best[2]):
                         best = (candidate, direction, twist)
                     if POSE is False or (twist <= MAX_TWIST and direction):
                         break
                 image, direction, twist = best
-                if direction == "right":
+                if direction != "left":
+                    # unclear (e.g. animal heads the detector does not know): the Multiple-angles LoRA mostly
+                    # puts the nose to the right, so mirror, and leave a note so the set gets checked by eye
                     image = ImageOps.mirror(image)   # links shows the left side: the nose points to the left edge
+                if direction is None:
+                    (folder / "links_richtung_pruefen.txt").write_text(
+                        "Blickrichtung von links.png wurde nicht erkannt; bitte ansehen (Nase muss nach links zeigen).\n",
+                        encoding="utf-8")
                 note = " (nose was %s, turn %.3f)" % (direction or "unclear", twist)
             else:
                 image = make()
