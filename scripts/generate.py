@@ -20,7 +20,8 @@ image). It is made with comfyui/side_image.json: the edit model plus the Multipl
 by 90 degrees instead of only turning the head. The direction is not reliable either, so a pose detector (YOLO pose from
 ultralytics) finds nose and ears in every side view: a nose pointing right is mirrored. It also measures how far apart
 the shoulders are; a side view that is turned towards the camera instead of an exact profile is made again with a new
-seed (SIDE_TRIES attempts, the most exact one is kept). Without ultralytics the side view is saved as generated.
+seed (SIDE_TRIES attempts, the most exact one is kept). A back view in which the detector sees nose and both eyes
+is really a front view and is made again. Without ultralytics all views are saved as generated.
 
 It can be stopped at any time with Ctrl+C and started again; every image is written to a temporary file first and
 then renamed, broken images are deleted and made again. If ComfyUI is not running yet, it waits for it.
@@ -191,35 +192,47 @@ def fit(image: Image.Image) -> Image.Image:
     return image.crop((left, top, left + SIZE[0], top + SIZE[1]))
 
 
-def side_view(image: Image.Image) -> tuple[str | None, float]:
-    """Where the nose points ("left", "right" or None if unclear) and how far the figure is turned towards the camera.
-
-    The turn is the horizontal shoulder distance divided by the figure height: close to 0 for an exact profile,
-    about 0.2 for a front view.
-    """
+def keypoints(image: Image.Image) -> tuple[list, list, float] | None:
+    """COCO keypoints (xy, confidence) and box height of the main figure, or None without detector or figure."""
     global POSE
     if POSE is None:
         try:
             from ultralytics import YOLO
             POSE = YOLO(os.environ.get("POSE_MODEL", "yolo11n-pose.pt"))   # downloaded on first use
         except Exception as error:   # missing package or weights: keep generating without the check
-            print("pose check unavailable (%s); side views are saved as generated" % error)
+            print("pose check unavailable (%s); views are saved as generated" % error)
             POSE = False
     if not POSE:
-        return None, 0.0
+        return None
     result = POSE(image, verbose=False)[0]
     if result.keypoints is None or result.boxes is None or len(result.boxes) == 0:
-        return None, 0.0
+        return None
     best = int(result.boxes.conf.argmax())
-    xy = result.keypoints.xy[best].tolist()
-    conf = result.keypoints.conf[best].tolist()
+    return result.keypoints.xy[best].tolist(), result.keypoints.conf[best].tolist(), float(result.boxes.xywh[best][3])
+
+
+def face_visible(image: Image.Image) -> bool:
+    """True when nose and both eyes are clearly seen, i.e. a "back view" that actually shows the front."""
+    found = keypoints(image)
+    return found is not None and all(found[1][i] > 0.5 for i in (0, 1, 2))
+
+
+def side_view(image: Image.Image) -> tuple[str | None, float]:
+    """Where the nose points ("left", "right" or None if unclear) and how far the figure is turned towards the camera.
+
+    The turn is the horizontal shoulder distance divided by the figure height: close to 0 for an exact profile,
+    about 0.2 for a front view.
+    """
+    found = keypoints(image)
+    if found is None:
+        return None, 0.0
+    xy, conf, height = found
     seen = [c > 0.3 for c in conf]
     # COCO keypoints: 0 nose, 1/2 eyes, 3/4 ears, 5/6 shoulders
     head = [xy[i][0] for i in (3, 4) if seen[i]] or [xy[i][0] for i in (1, 2) if seen[i]]
     direction = None
     if seen[0] and head:
         direction = "right" if xy[0][0] > sum(head) / len(head) else "left"
-    height = float(result.boxes.xywh[best][3])
     twist = abs(xy[5][0] - xy[6][0]) / height if seen[5] and seen[6] and height else 0.0
     return direction, twist
 
@@ -311,6 +324,12 @@ def main() -> None:
                         "Blickrichtung von links.png wurde nicht erkannt; bitte ansehen (Nase muss nach links zeigen).\n",
                         encoding="utf-8")
                 note = " (nose was %s, turn %.3f)" % (direction or "unclear", twist)
+            elif view == "hinten":
+                for attempt in range(1, SIDE_TRIES + 1):
+                    image = make()
+                    if not face_visible(image):
+                        break
+                    print("    hinten attempt %d: face visible, not a back view" % attempt)
             else:
                 image = make()
             save(image, target)
