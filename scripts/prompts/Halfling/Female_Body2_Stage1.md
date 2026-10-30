@@ -8,7 +8,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 
 ```text
 One young adult woman: a female Halfling character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
-Halfling, small, human-like adult proportions at a small scale, clearly adult, rosy warm skin with freckles, round friendly face, bright hazel eyes, slightly pointed small ears. Signature: large bare feet with hairy tops and a cheerful round face.
+Halfling, small, human-like adult proportions at a small scale, clearly adult, warm light skin with a soft natural rosy tint and freckles, not red, not sunburned, round friendly face, bright hazel eyes, slightly pointed small ears. Signature: large bare feet with hairy tops and a cheerful round face.
 Female, about 110 cm tall, soft rounded figure.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
 About 22 years old for their kind, youthful face with smooth skin, a fresh adventurer, natural relaxed upright posture.
@@ -21,7 +21,7 @@ Front view, facing the camera directly, looking straight ahead.
 
 ```text
 One young adult woman: a female Halfling character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
-Halfling, small, human-like adult proportions at a small scale, clearly adult, rosy warm skin with freckles, round friendly face, bright hazel eyes, slightly pointed small ears. Signature: large bare feet with hairy tops and a cheerful round face.
+Halfling, small, human-like adult proportions at a small scale, clearly adult, warm light skin with a soft natural rosy tint and freckles, not red, not sunburned, round friendly face, bright hazel eyes, slightly pointed small ears. Signature: large bare feet with hairy tops and a cheerful round face.
 Female, about 110 cm tall, soft rounded figure.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
 About 22 years old for their kind, youthful face with smooth skin, a fresh adventurer, natural relaxed upright posture.
@@ -34,7 +34,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 
 ```text
 One young adult woman: a female Halfling character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
-Halfling, small, human-like adult proportions at a small scale, clearly adult, rosy warm skin with freckles, round friendly face, bright hazel eyes, slightly pointed small ears. Signature: large bare feet with hairy tops and a cheerful round face.
+Halfling, small, human-like adult proportions at a small scale, clearly adult, warm light skin with a soft natural rosy tint and freckles, not red, not sunburned, round friendly face, bright hazel eyes, slightly pointed small ears. Signature: large bare feet with hairy tops and a cheerful round face.
 Female, about 110 cm tall, soft rounded figure.
 Appearance variant: slender. Noticeably slimmer and leaner than average for the race, long limbs, little muscle bulk; narrow angular face with high cheekbones, fine straight nose and narrow chin; skin, fur or scales a shade lighter. These differences override the build described above; the height and features of the race stay.
 About 22 years old for their kind, youthful face with smooth skin, a fresh adventurer, natural relaxed upright posture.
