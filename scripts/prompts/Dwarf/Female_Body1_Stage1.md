@@ -7,7 +7,7 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 ## 01_Front.jpg
 
 ```text
-One young adult woman: a female Dwarf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Dwarf character with a clearly feminine, pretty face with soft delicate features, a softer jawline, fuller lips and gentle eyes, and a feminine figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Dwarf, short, stocky and very broad, heavy bones, thick strong arms and legs, large hands and feet, warm ruddy skin, round strong face with a broad nose and heavy brow, small deep-set eyes, normal rounded ears. Signature: short, broad and sturdy, almost as wide as tall, with a solid strong frame under soft feminine curves.
 Female, about 130 cm tall, wide hips and shoulders, strong and sturdy but clearly feminine: a soft round feminine face with full cheeks, smooth rounded arms and legs with little visible muscle definition, no six-pack, not a bodybuilder.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
@@ -20,7 +20,7 @@ Front view, facing the camera directly, looking straight ahead.
 ## 02_Ruecken.jpg
 
 ```text
-One young adult woman: a female Dwarf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Dwarf character with a clearly feminine, pretty face with soft delicate features, a softer jawline, fuller lips and gentle eyes, and a feminine figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Dwarf, short, stocky and very broad, heavy bones, thick strong arms and legs, large hands and feet, warm ruddy skin, round strong face with a broad nose and heavy brow, small deep-set eyes, normal rounded ears. Signature: short, broad and sturdy, almost as wide as tall, with a solid strong frame under soft feminine curves.
 Female, about 130 cm tall, wide hips and shoulders, strong and sturdy but clearly feminine: a soft round feminine face with full cheeks, smooth rounded arms and legs with little visible muscle definition, no six-pack, not a bodybuilder.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
@@ -33,7 +33,7 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 ## 03_Links.jpg
 
 ```text
-One young adult woman: a female Dwarf character with a clearly feminine face and figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
+One young adult woman: a female Dwarf character with a clearly feminine, pretty face with soft delicate features, a softer jawline, fuller lips and gentle eyes, and a feminine figure: a modest bust, a slightly narrower waist and slightly wider hips than a man of her race. She wears only a narrow dark brown leather chest band and short dark brown leather boxer shorts, as little leather as possible while chest and groin stay fully covered.
 Dwarf, short, stocky and very broad, heavy bones, thick strong arms and legs, large hands and feet, warm ruddy skin, round strong face with a broad nose and heavy brow, small deep-set eyes, normal rounded ears. Signature: short, broad and sturdy, almost as wide as tall, with a solid strong frame under soft feminine curves.
 Female, about 130 cm tall, wide hips and shoulders, strong and sturdy but clearly feminine: a soft round feminine face with full cheeks, smooth rounded arms and legs with little visible muscle definition, no six-pack, not a bodybuilder.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
