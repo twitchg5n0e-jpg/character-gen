@@ -20,7 +20,8 @@ image). It is made with comfyui/side_image.json: the edit model plus the Multipl
 by 90 degrees instead of only turning the head. The direction is not reliable either, so a pose detector (YOLO pose from
 ultralytics) finds nose and ears in every side view: a nose pointing right is mirrored. It also measures how far apart
 the shoulders are; a side view that is turned towards the camera instead of an exact profile is made again with a new
-seed (SIDE_TRIES attempts, the most exact one is kept). A back view in which the detector sees nose and both eyes
+seed (SIDE_TRIES attempts, the most exact one is kept). hinten.png is made the same way with comfyui/back_image.json (camera turned by 180 degrees), meant to keep the colors of
+the front better than the plain edit model. A back view in which the detector sees nose and both eyes
 is really a front view and is made again. Without ultralytics all views are saved as generated.
 
 It can be stopped at any time with Ctrl+C and started again; every image is written to a temporary file first and
@@ -256,6 +257,7 @@ def main() -> None:
     text_to_image = json.loads((WORKFLOWS / "text_to_image.json").read_text(encoding="utf-8"))
     edit_image = json.loads((WORKFLOWS / "edit_image.json").read_text(encoding="utf-8"))
     side_image = json.loads((WORKFLOWS / "side_image.json").read_text(encoding="utf-8"))
+    back_image = json.loads((WORKFLOWS / "back_image.json").read_text(encoding="utf-8"))
     global ACTIVE
     comfy = ACTIVE = ComfyUI(args.comfy)
 
@@ -326,7 +328,7 @@ def main() -> None:
                 note = " (nose was %s, turn %.3f)" % (direction or "unclear", twist)
             elif view == "hinten":
                 for attempt in range(1, SIDE_TRIES + 1):
-                    image = make()
+                    image = make(back_image)   # the Multiple-angles LoRA turns the camera by 180 degrees
                     if not face_visible(image):
                         break
                     print("    hinten attempt %d: face visible, not a back view" % attempt)
