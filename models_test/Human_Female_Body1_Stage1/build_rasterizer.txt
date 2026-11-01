@@ -1,0 +1,40 @@
+/root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel/grid_neighbor.cpp:558:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  558 |         for (int j = 0; j < grids[i].seq2evencorner.size(); ++j) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel/grid_neighbor.cpp:562:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  562 |         for (int j = 0; j < grids[i].seq2oddcorner.size(); ++j) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel/grid_neighbor.cpp:565:19: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Grid>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  565 |         if (i + 1 < grids.size()) {
+      |             ~~~~~~^~~~~~~~~~~~~~
+/root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel/grid_neighbor.cpp:568:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  568 |             for (int j = 0; j < grids[i].downsample_seq.size(); ++j) {
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3/3] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/build/temp.linux-x86_64-cpython-312/lib/custom_rasterizer_kernel/rasterizer_gpu.o.d -I/usr/local/lib/python3.12/dist-packages/torch/include -I/usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/usr/include/python3.12 -c -c /root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel/rasterizer_gpu.cu -o /root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/build/temp.linux-x86_64-cpython-312/lib/custom_rasterizer_kernel/rasterizer_gpu.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1018"' -DTORCH_EXTENSION_NAME=custom_rasterizer_kernel -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+/root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel/rasterizer_gpu.cu(57): warning #186-D: pointless comparison of unsigned integer with zero
+      if (f >= 0) {
+            ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel/rasterizer_gpu.cu(57): warning #186-D: pointless comparison of unsigned integer with zero
+      if (f >= 0) {
+            ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+x86_64-linux-gnu-g++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -shared -Wl,-O1 -Wl,-Bsymbolic-functions /root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/build/temp.linux-x86_64-cpython-312/lib/custom_rasterizer_kernel/grid_neighbor.o /root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/build/temp.linux-x86_64-cpython-312/lib/custom_rasterizer_kernel/rasterizer.o /root/Hunyuan3D-2/hy3dgen/texgen/custom_rasterizer/build/temp.linux-x86_64-cpython-312/lib/custom_rasterizer_kernel/rasterizer_gpu.o -L/usr/local/lib/python3.12/dist-packages/torch/lib -L/usr/local/cuda/lib64 -L/usr/lib/x86_64-linux-gnu -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda -o build/lib.linux-x86_64-cpython-312/custom_rasterizer_kernel.cpython-312-x86_64-linux-gnu.so
+running install_lib
+creating /usr/local/lib/python3.12/dist-packages/custom_rasterizer
+copying build/lib.linux-x86_64-cpython-312/custom_rasterizer/__init__.py -> /usr/local/lib/python3.12/dist-packages/custom_rasterizer
+copying build/lib.linux-x86_64-cpython-312/custom_rasterizer/io_glb.py -> /usr/local/lib/python3.12/dist-packages/custom_rasterizer
+copying build/lib.linux-x86_64-cpython-312/custom_rasterizer/io_obj.py -> /usr/local/lib/python3.12/dist-packages/custom_rasterizer
+copying build/lib.linux-x86_64-cpython-312/custom_rasterizer/render.py -> /usr/local/lib/python3.12/dist-packages/custom_rasterizer
+copying build/lib.linux-x86_64-cpython-312/custom_rasterizer_kernel.cpython-312-x86_64-linux-gnu.so -> /usr/local/lib/python3.12/dist-packages
+byte-compiling /usr/local/lib/python3.12/dist-packages/custom_rasterizer/__init__.py to __init__.cpython-312.pyc
+byte-compiling /usr/local/lib/python3.12/dist-packages/custom_rasterizer/io_glb.py to io_glb.cpython-312.pyc
+byte-compiling /usr/local/lib/python3.12/dist-packages/custom_rasterizer/io_obj.py to io_obj.cpython-312.pyc
+byte-compiling /usr/local/lib/python3.12/dist-packages/custom_rasterizer/render.py to render.cpython-312.pyc
+running install_egg_info
+Copying custom_rasterizer.egg-info to /usr/local/lib/python3.12/dist-packages/custom_rasterizer-0.1-py3.12.egg-info
+running install_scripts
