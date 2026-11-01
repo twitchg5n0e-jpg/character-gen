@@ -44,12 +44,12 @@ pip install -q -e . 2>&1 | tail -3
 
 cp /root/character-gen/scripts/make_model_mv.py .
 python make_model_mv.py "/root/character-gen/output/$SET" "/root/character-gen/$OUT" 2>&1 | tee /root/run.log
-tail -40 /root/build_rasterizer.log > "/root/character-gen/$OUT/build_rasterizer.log"
-tail -40 /root/build_renderer.log > "/root/character-gen/$OUT/build_renderer.log"
-grep -v "it/s\]" /root/run.log | tail -200 > "/root/character-gen/$OUT/run.log"
+tail -40 /root/build_rasterizer.log > "/root/character-gen/$OUT/build_rasterizer.txt"
+tail -40 /root/build_renderer.log > "/root/character-gen/$OUT/build_renderer.txt"
+grep -v "it/s\]" /root/run.log | tail -200 > "/root/character-gen/$OUT/run.txt"
 
 cd /root/character-gen
-git add "$OUT"
+git add -f "$OUT"
 git commit -q -m "3D-Test Hunyuan3D-2mv: $SET"
 for i in 1 2 3 4; do
   git pull -q --rebase && git push -q origin "HEAD:$BRANCH" && echo "TEST_FERTIG" && exit 0
