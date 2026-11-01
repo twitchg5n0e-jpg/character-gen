@@ -33,7 +33,7 @@ mkdir -p "$OUT"
 cd /root
 git clone -q --depth 1 https://github.com/Tencent-Hunyuan/Hunyuan3D-2
 cd Hunyuan3D-2
-pip install -q diffusers transformers einops opencv-python-headless trimesh pymeshlab pygltflib xatlas omegaconf \
+pip install -q "diffusers==0.32.2" "transformers==4.48.3" "huggingface_hub<1.0" einops opencv-python-headless trimesh pymeshlab pygltflib xatlas omegaconf \
   accelerate rembg onnxruntime pybind11 ninja 2>&1 | tail -3
 pip install -q -e . 2>&1 | tail -3
 # Textur: zwei CUDA-Erweiterungen bauen; scheitert das, gibt es nur die Form
