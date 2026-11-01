@@ -18,7 +18,7 @@ trap stop_pod EXIT
 : "${GITHUB_TOKEN:?GITHUB_TOKEN ist nicht gesetzt}"
 
 cd /root
-apt-get update -qq && apt-get install -y -qq libgl1 libglib2.0-0 > /dev/null
+apt-get update -qq && apt-get install -y -qq libgl1 libopengl0 libglib2.0-0 > /dev/null
 
 # Nur dieses Set und die Skripte holen, nicht alle Bilder
 git clone -q --filter=blob:none --sparse --branch "$BRANCH" \

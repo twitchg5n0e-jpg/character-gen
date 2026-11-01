@@ -4,6 +4,7 @@ Aufruf (im geklonten Hunyuan3D-2-Ordner, siehe scripts/test_3d_mv.sh):
     python make_model_mv.py output/Human_Female_Body1_Stage1 models_test/Human_Female_Body1_Stage1
 
 Schreibt in den Zielordner:
+    shape_raw.glb  Form ohne Textur, wie Hunyuan3D-2mv sie liefert
     shape.glb      Form ohne Textur, direkt aus Hunyuan3D-2mv (nur Schwebeteile entfernt)
     textured.glb   Form auf 40 000 Dreiecke reduziert und von Hunyuan3D-Paint aus den vier Ansichten bemalt
     inputs/        die freigestellten Ansichten, so wie Hunyuan3D sie bekommt
@@ -36,6 +37,7 @@ shape = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained("tencent/Hunyuan3D-2mv"
                                                          variant="fp16")
 mesh = shape(image=images, num_inference_steps=50, octree_resolution=512, num_chunks=20000,
              generator=torch.manual_seed(12345), output_type="trimesh")[0]
+mesh.export(target / "shape_raw.glb")
 mesh = DegenerateFaceRemover()(FloaterRemover()(mesh))
 mesh.export(target / "shape.glb")
 print("shape: %d faces in %.0f s" % (len(mesh.faces), time.time() - started), flush=True)
