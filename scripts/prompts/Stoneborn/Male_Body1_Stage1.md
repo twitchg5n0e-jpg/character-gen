@@ -8,8 +8,8 @@ Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03
 
 ```text
 One young adult man: a male Stoneborn character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears no clothing; his natural stone covers the whole body like a coat, smooth and closed over chest and groin.
-Stoneborn, living stone humanoid, heavy build, body made of gray granite with visible rock texture and plates, smooth stone head, no ears, glowing amber eyes. Signature: amber crystal growths on the shoulders and forearms.
-Male, about 230 cm tall, very tall and massive, broad shoulders, larger crystals.
+Stoneborn, living stone humanoid, heavy build, body made of gray granite with visible rock texture and plates, smooth stone head, no ears, glowing amber eyes. Signature: amber crystal growths on the shoulders and forearms. Clean silhouette: every species feature stays small, smooth and close to the body: short compact horns, small flat fins, short sleek feathers lying flat, no large crests, frills, manes, spikes or flaring decorations.
+Male, about 230 cm tall, very tall and massive, broad shoulders, small crystals.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
 About 22 years old for their kind, youthful face with smooth skin, a fresh adventurer, natural relaxed upright posture.
 Small amber crystal growths on the shoulders and forearms.
@@ -21,8 +21,8 @@ Front view, facing the camera directly, looking straight ahead.
 
 ```text
 One young adult man: a male Stoneborn character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears no clothing; his natural stone covers the whole body like a coat, smooth and closed over chest and groin.
-Stoneborn, living stone humanoid, heavy build, body made of gray granite with visible rock texture and plates, smooth stone head, no ears, glowing amber eyes. Signature: amber crystal growths on the shoulders and forearms.
-Male, about 230 cm tall, very tall and massive, broad shoulders, larger crystals.
+Stoneborn, living stone humanoid, heavy build, body made of gray granite with visible rock texture and plates, smooth stone head, no ears, glowing amber eyes. Signature: amber crystal growths on the shoulders and forearms. Clean silhouette: every species feature stays small, smooth and close to the body: short compact horns, small flat fins, short sleek feathers lying flat, no large crests, frills, manes, spikes or flaring decorations.
+Male, about 230 cm tall, very tall and massive, broad shoulders, small crystals.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
 About 22 years old for their kind, youthful face with smooth skin, a fresh adventurer, natural relaxed upright posture.
 Small amber crystal growths on the shoulders and forearms.
@@ -34,8 +34,8 @@ Back view for a 3D modeling reference, seen directly from behind at chest height
 
 ```text
 One young adult man: a male Stoneborn character with a clearly masculine face and figure: a flat chest, a straight waist and narrower hips than a woman of his race. He wears no clothing; his natural stone covers the whole body like a coat, smooth and closed over chest and groin.
-Stoneborn, living stone humanoid, heavy build, body made of gray granite with visible rock texture and plates, smooth stone head, no ears, glowing amber eyes. Signature: amber crystal growths on the shoulders and forearms.
-Male, about 230 cm tall, very tall and massive, broad shoulders, larger crystals.
+Stoneborn, living stone humanoid, heavy build, body made of gray granite with visible rock texture and plates, smooth stone head, no ears, glowing amber eyes. Signature: amber crystal growths on the shoulders and forearms. Clean silhouette: every species feature stays small, smooth and close to the body: short compact horns, small flat fins, short sleek feathers lying flat, no large crests, frills, manes, spikes or flaring decorations.
+Male, about 230 cm tall, very tall and massive, broad shoulders, small crystals.
 Appearance variant: balanced. Athletic, well-proportioned build typical of the race; oval face with balanced features, medium straight nose, almond-shaped eyes. These differences override the build described above; the height and features of the race stay.
 About 22 years old for their kind, youthful face with smooth skin, a fresh adventurer, natural relaxed upright posture.
 Small amber crystal growths on the shoulders and forearms.
@@ -46,5 +46,5 @@ Exact 90 degree side profile for a 3D modeling reference: the character has turn
 ## Negativ-Prompt
 
 ```text
-hair on the head, beard, old, elderly, aged, older face, mature face, aged face, crow's feet, hard weathered face, wrinkles, gray hair, gray fur, sagging skin, bare breasts, nipples, genitals, pubic hair, lingerie, lace, swimsuit, cloth, fabric, cotton, loose clothing, shirt, pants, skirt, folds in the fabric, clothing, leather, underwear, briefs, bra, loincloth, erotic, sexual, suggestive pose, belts, straps, pouches, shoes, jewelry, weapons, armor, cropped feet, cropped head, cropped tail, dramatic shadows, rim light, fisheye, perspective distortion, open mouth, colored background, blue background, stock photo, fashion photo, glamour, body paint, war paint, face paint, runes on the face, runes on the chest, ornaments on the chest, ornaments on the belly, neck tattoo, collar, necklace, lace pattern, henna, mehndi, white tattoo, three-quarter view, white background, plastic skin, waxy skin, clay, doll, toy, mannequin, cartoon, stylized, airbrushed, stickers, decals, text, watermark, multiple characters, collage, character sheet, turnaround sheet, multiple views, several poses, split image, side by side, grid, panels, border, frame, human skin, lava, fire, woman, female, feminine body, breasts
+huge horns, long horns, large fins, flowing fins, tall crest, big crest, large frill, big spikes, flaring feathers, large wings, hair on the head, beard, old, elderly, aged, older face, mature face, aged face, crow's feet, hard weathered face, wrinkles, gray hair, gray fur, sagging skin, bare breasts, nipples, genitals, pubic hair, lingerie, lace, swimsuit, cloth, fabric, cotton, loose clothing, shirt, pants, skirt, folds in the fabric, clothing, leather, underwear, briefs, bra, loincloth, erotic, sexual, suggestive pose, belts, straps, pouches, shoes, jewelry, weapons, armor, cropped feet, cropped head, cropped tail, dramatic shadows, rim light, fisheye, perspective distortion, open mouth, colored background, blue background, stock photo, fashion photo, glamour, body paint, war paint, face paint, runes on the face, runes on the chest, ornaments on the chest, ornaments on the belly, neck tattoo, collar, necklace, lace pattern, henna, mehndi, white tattoo, three-quarter view, white background, plastic skin, waxy skin, clay, doll, toy, mannequin, cartoon, stylized, airbrushed, stickers, decals, text, watermark, multiple characters, collage, character sheet, turnaround sheet, multiple views, several poses, split image, side by side, grid, panels, border, frame, human skin, lava, fire, woman, female, feminine body, breasts
 ```
