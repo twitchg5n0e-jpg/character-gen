@@ -333,7 +333,12 @@ def main() -> None:
                         break
                     print("    hinten attempt %d: face visible, not a back view" % attempt)
             else:
-                image = make()
+                for attempt in range(1, SIDE_TRIES + 1):
+                    image = make()
+                    # the edit model sometimes turns a stage 2-4 front into a back view
+                    if view != "front" or not reference or face_visible(image) or POSE is False:
+                        break
+                    print("    front attempt %d: no face visible, not a front view" % attempt)
             save(image, target)
             print("[%d/%d] %s/%s.png in %.0f s%s" % (number, len(todo), name, view, time.time() - started, note))
     print("done")
