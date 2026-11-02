@@ -50,7 +50,7 @@ SCRIPTS = ROOT / "scripts"
 OUTPUT = ROOT / "output"
 PROMPTS = SCRIPTS / "prompts"
 WORKFLOWS = SCRIPTS / "comfyui"
-SETS = SCRIPTS / "sets.txt"
+SETS = SCRIPTS / "sets.txt"   # nur Body1 (Basismodell); alle 4 Varianten: sets_alle.txt
 # file name in output -> view name in the prompt files
 VIEWS = {"front": "01_Front", "hinten": "02_Ruecken", "links": "03_Links"}
 SIZE = (1056, 1584)   # Qwen-Image native 2:3 resolution
