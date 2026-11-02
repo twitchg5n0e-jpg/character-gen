@@ -3,10 +3,9 @@
 
     python scripts/copy_to_elyndra.py /path/to/Elyndra
 
-output/<Race>_<Gender>_<Body>_<Stage>/{front,hinten,links}.png becomes
-Assets/Characters/Races/<Race>/<Gender>/<Body>/<Stage>/References/{01_Front,02_Ruecken,03_Links}.jpg
-as 1024x1536 JPEGs (what Elyndra's Tools/Characters scripts expect). rechts.png is not copied: Elyndra makes
-04_Rechts.jpg itself by mirroring 03_Links (Tools/Characters/make_right_views.py). Existing images are replaced.
+output/<Race>_<Gender>_<Body>_<Stage>/{front,hinten,links,rechts}.png becomes
+Assets/Characters/Races/<Race>/<Gender>/<Body>/<Stage>/References/{01_Front,02_Ruecken,03_Links,04_Rechts}.jpg
+as 1024x1536 JPEGs (what Elyndra's Tools/Characters scripts expect). Existing images are replaced.
 """
 import sys
 from pathlib import Path
@@ -14,7 +13,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-VIEWS = {"front": "01_Front", "hinten": "02_Ruecken", "links": "03_Links"}
+VIEWS = {"front": "01_Front", "hinten": "02_Ruecken", "links": "03_Links", "rechts": "04_Rechts"}
 SIZE = (1024, 1536)
 
 
