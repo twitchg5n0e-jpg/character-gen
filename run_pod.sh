@@ -51,6 +51,16 @@ fi
 git branch --set-upstream-to="origin/$(git rev-parse --abbrev-ref HEAD)" >/dev/null 2>&1 || true
 
 pip install -q -r requirements.txt
+
+# Erst pruefen, ob PyTorch die GPU wirklich ansprechen kann, bevor 50 GB Modelle geladen werden. Manche gemieteten
+# Rechner zeigen die GPU in nvidia-smi, aber CUDA laesst sich im Container nicht starten ("CUDA unknown error").
+python - <<'PY'
+import torch
+torch.cuda.init()
+x = torch.ones(1024, 1024, device="cuda")
+print("GPU ok:", torch.cuda.get_device_name(0), "PyTorch", torch.__version__, "CUDA", torch.version.cuda, float((x @ x).sum()))
+PY
+
 bash scripts/setup_comfyui.sh
 
 push() {
