@@ -23,6 +23,7 @@ scripts/prompts/            Prompts pro Set (die einzige Quelle)
 scripts/sets.txt            Reihenfolge der Sets, die erzeugt werden (Body1)
 scripts/sets_alle.txt       alle 352 Sets
 scripts/copy_to_elyndra.py  fertige Sets als JPEG ins Elyndra-Repository kopieren
+scripts/make_models.py      3D-Modelle aus den Ansichten (Hunyuan3D-2mv), make_models.sh auf der GPU
 scripts/check_images.py     fertige Sets prüfen (Format, Hintergrund, abgeschnitten, Fey-/Merfolk-Farben)
 docs/Voelker_und_Regeln.md  Völker, Stufen, Aufbau der Prompts
 output/<Volk>_<Geschlecht>_<BodyX>_<StageX>/  front.png, links.png, hinten.png, rechts.png
@@ -68,6 +69,18 @@ python scripts/check_images.py --sheets /tmp/s  # dazu ein Übersichtsbild pro S
 Meldet pro Set OK, WARNUNG (Hintergrund oben und unten verschieden, also Boden oder Verlauf) oder FEHLER
 (fehlende oder falsche Datei, rechts kein Spiegelbild, Figur abgeschnitten oder zu klein, Fey einfarbig pink/lila,
 Merfolk-Gesicht in Hautfarbe). Ein Set ohne Meldung sollte trotzdem jemand ansehen.
+
+## 3D-Modelle
+
+```bash
+BRANCH=claude/gifted-pasteur-7ee42l bash scripts/make_models.sh   # auf der GPU, alle fertigen Sets ohne Modell
+```
+
+`scripts/make_models.py` macht aus den vier Ansichten jedes fertigen Sets mit Hunyuan3D-2mv eine Form, entfernt
+Schwebeteile, reduziert auf 150 000 Dreiecke und bemalt sie mit den Farben der Vorlagebilder (Vertexfarben, ohne
+KI-Textur). Ergebnis: `models/<Set>/model.glb` und `models/<Set>/vorschau.png` (vorn, links, hinten, rechts).
+Etwa 3–4 Minuten pro Modell auf einer RTX 4090. Die Modelle sind roh: für das Spiel brauchen sie noch Retopologie
+und ein Skelett.
 
 ## In Elyndra übernehmen
 
