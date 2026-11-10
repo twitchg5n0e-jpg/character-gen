@@ -23,6 +23,7 @@ scripts/prompts/            Prompts pro Set (die einzige Quelle)
 scripts/sets.txt            Reihenfolge der Sets, die erzeugt werden (Body1)
 scripts/sets_alle.txt       alle 352 Sets
 scripts/copy_to_elyndra.py  fertige Sets als JPEG ins Elyndra-Repository kopieren
+scripts/check_images.py     fertige Sets prüfen (Format, Hintergrund, abgeschnitten, Fey-/Merfolk-Farben)
 docs/Voelker_und_Regeln.md  Völker, Stufen, Aufbau der Prompts
 output/<Volk>_<Geschlecht>_<BodyX>_<StageX>/  front.png, links.png, hinten.png, rechts.png
 run_pod.sh                  alles auf der GPU in einem Befehl
@@ -56,6 +57,17 @@ Der Token braucht nur Zugriff auf **dieses** Repo ("Contents: Read and write").
 
 Mit einer GPU ab 24 GB: `bash scripts/setup_comfyui.sh` (installiert und startet ComfyUI, Ordner über `COMFY_DIR`),
 dann `pip install -r requirements.txt` und `python scripts/generate.py` (Optionen wie oben: `--limit`, `--set`).
+
+## Bilder prüfen
+
+```bash
+python scripts/check_images.py                  # alle fertigen Sets
+python scripts/check_images.py --sheets /tmp/s  # dazu ein Übersichtsbild pro Set
+```
+
+Meldet pro Set OK, WARNUNG (Hintergrund oben und unten verschieden, also Boden oder Verlauf) oder FEHLER
+(fehlende oder falsche Datei, rechts kein Spiegelbild, Figur abgeschnitten oder zu klein, Fey einfarbig pink/lila,
+Merfolk-Gesicht in Hautfarbe). Ein Set ohne Meldung sollte trotzdem jemand ansehen.
 
 ## In Elyndra übernehmen
 
