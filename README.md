@@ -27,6 +27,7 @@ cd character-gen
 bash run_pod.sh                                  # alle offenen Sets
 LIMIT=1 bash run_pod.sh                          # nur das nächste Set (Test)
 SET=Human/Female/Body1/Stage1 bash run_pod.sh    # genau dieses Set
+BRANCH=claude/gifted-pasteur-7ee42l bash run_pod.sh   # auf diesem Branch arbeiten statt auf main
 ```
 
 - Preis-Leistung: fp8-Modelle (kaum sichtbarer Unterschied zu bf16, halber Speicher), dafür 50 Schritte und
