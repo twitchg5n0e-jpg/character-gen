@@ -10,8 +10,23 @@ AUTO_STOP="${AUTO_STOP:-1}"   # 1 = GPU am Ende automatisch stoppen (RunPod), 0 
 BRANCH="${BRANCH:-}"   # z. B. BRANCH=claude/gifted-pasteur-7ee42l; leer = der ausgecheckte Branch
 # ====================
 
-# GPU auch bei einem Fehler stoppen, damit sie nicht weiter Geld kostet.
+# Alles mitschreiben: RunPod loescht die Logs eines gestoppten Pods, darum werden sie bei einem Fehler gepusht.
+LOG="$(cd "$(dirname "$0")" && pwd)/run_pod.log"
+exec > >(tee -a "$LOG") 2>&1
+
+# Bei einem Fehler das Log (und comfyui.log) nach logs/ pushen, dann die GPU stoppen, damit sie kein Geld kostet.
 stop_pod() {
+  code=$?
+  set +e +o pipefail   # beim Aufraeumen nicht an einem einzelnen Fehler abbrechen
+  if [ "$code" != "0" ] && [ -n "${GITHUB_TOKEN:-}" ]; then
+    cd "$(dirname "$LOG")"
+    mkdir -p logs
+    name="logs/fehler_$(date +%F_%H-%M)_${RUNPOD_POD_ID:-lokal}.txt"
+    { echo "Exit-Code $code"; nvidia-smi 2>&1 | head -15; echo "===== run_pod.log"; tail -n 150 "$LOG";
+      echo "===== comfyui.log"; tail -n 150 comfyui.log 2>/dev/null; } > "$name"
+    git add -f "$name" && git commit -q -m "Fehler-Log $(basename "$name")" && \
+      { git pull -q --rebase -X theirs; git push -q; } || echo "Fehler-Log konnte nicht gepusht werden"
+  fi
   if [ "$AUTO_STOP" = "1" ] && [ -n "${RUNPOD_POD_ID:-}" ]; then
     runpodctl stop pod "$RUNPOD_POD_ID" || runpodctl pod stop "$RUNPOD_POD_ID"   # alte und neue runpodctl-Syntax
   fi
