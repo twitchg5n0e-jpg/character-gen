@@ -14,9 +14,16 @@ if curl -sf "http://127.0.0.1:${COMFY_PORT}/system_stats" >/dev/null; then
 fi
 
 if [ ! -d "$COMFY_DIR" ]; then
-  git clone -q https://github.com/comfyanonymous/ComfyUI "$COMFY_DIR"
-  # Fester Stand vom 1. November 2026, mit dem die bisherigen Sets entstanden sind; COMFY_REF=master fuer den neuesten
-  git -C "$COMFY_DIR" checkout -q "${COMFY_REF:-bb878b9ee35274e67931634ba9e8c338f8c06035}"
+  # Nur einen festen Stand holen (kein ganzes Repository): 1. November 2026, mit dem die bisherigen Sets entstanden
+  # sind. COMFY_REF=master fuer den neuesten.
+  ref="${COMFY_REF:-bb878b9ee35274e67931634ba9e8c338f8c06035}"
+  git init -q "$COMFY_DIR"
+  git -C "$COMFY_DIR" remote add origin https://github.com/comfyanonymous/ComfyUI
+  for i in 1 2 3 4 5; do
+    GIT_TERMINAL_PROMPT=0 git -C "$COMFY_DIR" fetch -q --depth 1 origin "$ref" && break
+    echo "ComfyUI-Download fehlgeschlagen, neuer Versuch"; sleep $((2 ** i))
+  done
+  git -C "$COMFY_DIR" checkout -q FETCH_HEAD
 fi
 pip install -q -r "$COMFY_DIR/requirements.txt"
 
