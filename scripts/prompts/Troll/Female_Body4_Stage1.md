@@ -1,8 +1,8 @@
 # Troll / Female / Body4 / Stage1 (Stufe 1)
 
-Ziel: `Assets/Characters/Races/Troll/Female/Body4/Stage1/References/`
+Ergebnis: `output/Troll_Female_Body4_Stage1/` (`front.png`, `hinten.png`, `links.png`, 1056×1584; `rechts.png` spiegelt GitHub Actions). In Elyndra landet es mit `scripts/copy_to_elyndra.py` unter `Assets/Characters/Races/Troll/Female/Body4/Stage1/References/`.
 
-Jede Ansicht als eigenes Bild erzeugen, als JPEG 1024×1536. Der Prompt für `03_Links` ergibt ein Profil mit der Nase nach rechts; das Bild wird horizontal gespiegelt gespeichert. `04_Rechts` wird nicht gespeichert, sondern bei Bedarf aus `03_Links` gespiegelt (`Tools/Characters/make_right_views.py`).
+`scripts/generate.py` liest nur die drei Prompts und den Negativ-Prompt unten. Der Prompt für `03_Links` ergibt ein Profil, dessen Richtung die Pose-Prüfung kontrolliert und bei Bedarf spiegelt.
 
 ## 01_Front.jpg
 

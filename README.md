@@ -1,20 +1,29 @@
 # character-gen
 
-Generiert symmetrische Game-Characters auf einer gemieteten GPU (z. B. RunPod).
+Erzeugt die Vorlagebilder der Elyndra-Charaktere auf einer gemieteten GPU (z. B. RunPod). Prompts, Erzeugung und
+Regeln liegen nur hier; das Elyndra-Repository bekommt die fertigen Bilder mit `scripts/copy_to_elyndra.py`.
 
-- `scripts/generate.py` erzeugt mit ComfyUI + Qwen-Image pro Character 3 Ansichten: `front.png`, `links.png`, `hinten.png` (1056 × 1584, native Auflösung von Qwen-Image)
+- `scripts/generate.py` erzeugt mit ComfyUI + Qwen-Image pro Set 3 Ansichten: `front.png`, `links.png`, `hinten.png`
+  (1056 × 1584, native Auflösung von Qwen-Image)
 - GitHub Actions erzeugt danach automatisch `rechts.png` (gespiegelte linke Ansicht)
-- Es sind die 352 Elyndra-Sets (20 Völker × 2 Geschlechter × 4 Erscheinungen, Wachstums-Völker in 4 Stufen),
-  Reihenfolge in `scripts/sets.txt`, Prompts in `scripts/prompts/`
+- Erzeugt werden die 88 Basismodelle (Body1) aus `scripts/sets.txt`: 20 Völker × 2 Geschlechter, die 8
+  Wachstums-Völker in 4 Stufen. Alle 352 Sets (Body1 bis Body4) stehen in `scripts/sets_alle.txt`.
+- Die Prompts stehen in `scripts/prompts/<Volk>/<Geschlecht>_<Body>_<Stufe>.md` und werden direkt dort geändert.
+  Hintergrund zu Völkern und Regeln: [docs/Voelker_und_Regeln.md](docs/Voelker_und_Regeln.md).
+- Hintergrund der Bilder: einfarbig hellgrau, ohne Boden, Horizont und Schatten, damit die Figur sauber freigestellt
+  werden kann.
 
 ## Ordnerstruktur
 
 ```
 scripts/generate.py         Bilder erzeugen (braucht laufendes ComfyUI)
 scripts/setup_comfyui.sh    ComfyUI + Modelle installieren (~50 GB) und starten
-scripts/comfyui/*.json      ComfyUI-Workflows (Text→Bild, Bild-Edit)
-scripts/prompts/            Prompts pro Set
-scripts/sets.txt            Reihenfolge der Sets
+scripts/comfyui/*.json      ComfyUI-Workflows (Text→Bild, Bild-Edit, Seiten- und Rückansicht)
+scripts/prompts/            Prompts pro Set (die einzige Quelle)
+scripts/sets.txt            Reihenfolge der Sets, die erzeugt werden (Body1)
+scripts/sets_alle.txt       alle 352 Sets
+scripts/copy_to_elyndra.py  fertige Sets als JPEG ins Elyndra-Repository kopieren
+docs/Voelker_und_Regeln.md  Völker, Stufen, Aufbau der Prompts
 output/<Volk>_<Geschlecht>_<BodyX>_<StageX>/  front.png, links.png, hinten.png, rechts.png
 run_pod.sh                  alles auf der GPU in einem Befehl
 ```
@@ -42,3 +51,18 @@ BRANCH=claude/gifted-pasteur-7ee42l bash run_pod.sh   # auf diesem Branch arbeit
 
 `GITHUB_TOKEN` muss als Umgebungsvariable gesetzt sein (in RunPod als Secret).
 Der Token braucht nur Zugriff auf **dieses** Repo ("Contents: Read and write").
+
+## Lokal oder auf einem eigenen Rechner
+
+Mit einer GPU ab 24 GB: `bash scripts/setup_comfyui.sh` (installiert und startet ComfyUI, Ordner über `COMFY_DIR`),
+dann `pip install -r requirements.txt` und `python scripts/generate.py` (Optionen wie oben: `--limit`, `--set`).
+
+## In Elyndra übernehmen
+
+```bash
+python scripts/copy_to_elyndra.py /pfad/zu/Elyndra
+```
+
+Kopiert jedes vollständige Set als JPEG 1024 × 1536 nach
+`Assets/Characters/Races/<Volk>/<Geschlecht>/<Body>/<Stufe>/References/`; Elyndras Workflow hakt sie dann in
+`REFERENCE_PROGRESS.md` ab.
