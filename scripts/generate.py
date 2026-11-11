@@ -58,6 +58,14 @@ ACTIVE = None   # the ComfyUI connection, so Ctrl+C can cancel its running image
 SIDE_TRIES = int(os.environ.get("SIDE_TRIES", "4"))   # attempts for an exact side profile
 MAX_TWIST = float(os.environ.get("MAX_TWIST", "0.06"))   # shoulder distance / figure height still counted as profile
 POSE = None   # the YOLO pose model, loaded on first use; False when ultralytics is missing
+# Races whose stage 1 front comes out with the head turned to the side when made from text (long animal snouts):
+# their stage 1 front is made by editing the finished Human front of the same gender and body, which keeps its
+# straight front pose.
+POSE_FROM_HUMAN = set(os.environ.get("POSE_FROM_HUMAN", "Lizardfolk").split(",")) - {""}
+FROM_HUMAN = ("Edit this image: turn the person into the character described below. Keep exactly the same straight "
+              "front-facing A-pose, the same camera, framing, size in the picture and the plain light gray background; "
+              "the new head faces the camera straight on like the human head did, not turned to the side. Remove the "
+              "clothing; the body covering described below replaces it. ")
 
 
 class ComfyUI:
@@ -287,14 +295,20 @@ def main() -> None:
             target = folder / (view + ".png")
             if target.is_file():
                 continue
-            if view == "front":
+            prompt = prompts[view]
+            human_front = OUTPUT / ("Human_%s_%s_Stage1" % (parts[1], parts[2])) / "front.png"
+            from_human = (view == "front" and parts[3] == "Stage1" and parts[0] in POSE_FROM_HUMAN
+                          and human_front.is_file())
+            if from_human:
+                reference, prompt = human_front, FROM_HUMAN + prompt
+            elif view == "front":
                 reference = stage1_front if parts[3] != "Stage1" and stage1_front.is_file() else None
             else:
                 reference = folder / "front.png"
             started = time.time()
 
             def make(edit: dict = edit_image) -> Image.Image:
-                values = {"%PROMPT%": prompts[view], "%NEGATIVE%": negative, "%SEED%": random.randrange(1 << 31)}
+                values = {"%PROMPT%": prompt, "%NEGATIVE%": negative, "%SEED%": random.randrange(1 << 31)}
                 while True:
                     try:
                         if reference:
@@ -338,7 +352,7 @@ def main() -> None:
             else:
                 # the check only means something when the detector sees the face of the stage 1 front at all
                 # (animal heads such as dragons are not recognised, then every try would fail)
-                check_face = view == "front" and reference and POSE is not False and face_visible(Image.open(reference).convert("RGB"))
+                check_face = view == "front" and reference and not from_human and POSE is not False and face_visible(Image.open(reference).convert("RGB"))
                 for attempt in range(1, SIDE_TRIES + 1):
                     image = make()
                     # the edit model sometimes turns a stage 2-4 front into a back view
