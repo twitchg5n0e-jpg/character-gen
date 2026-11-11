@@ -92,6 +92,9 @@ FROM_HUMAN = ("Edit this image: turn the person into the character described bel
               "front-facing A-pose, the same camera, framing, size in the picture and the plain light gray background; "
               "the new head faces the camera straight on like the human head did, not turned to the side. Remove the "
               "clothing; the body covering described below replaces it. ")
+KEEP_FRONT = ("Edit this image: keep exactly the same front view, pose, camera, framing and plain light gray background; the "
+              "character still faces the camera with its face and chest, it is not turned around and not seen from behind. "
+              "Change only what the description below says about this stage. ")
 
 
 class ComfyUI:
@@ -331,6 +334,8 @@ def main() -> None:
                           and human_front.is_file())
             if from_human:
                 reference, prompt = human_front, FROM_HUMAN + prompt
+            elif view == "front" and parts[0] in POSE_FROM_HUMAN and parts[3] != "Stage1" and stage1_front.is_file():
+                reference, prompt = stage1_front, KEEP_FRONT + prompt   # the edit model tends to turn them around
             elif view in ("front", "icon"):
                 reference = stage1_front if parts[3] != "Stage1" and stage1_front.is_file() else None
             else:
