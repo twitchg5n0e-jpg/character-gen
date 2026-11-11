@@ -316,6 +316,9 @@ def main() -> None:
                         best = (candidate, direction, twist)
                     if POSE is False or (twist <= MAX_TWIST and direction):
                         break
+                    # animal heads (dragon, lizard, bird) never get a clear nose: two tries are enough there
+                    if direction is None and twist <= MAX_TWIST and attempt >= 2:
+                        break
                 image, direction, twist = best
                 if direction != "left":
                     # unclear (e.g. animal heads the detector does not know): the Multiple-angles LoRA mostly
@@ -333,10 +336,13 @@ def main() -> None:
                         break
                     print("    hinten attempt %d: face visible, not a back view" % attempt)
             else:
+                # the check only means something when the detector sees the face of the stage 1 front at all
+                # (animal heads such as dragons are not recognised, then every try would fail)
+                check_face = view == "front" and reference and POSE is not False and face_visible(Image.open(reference).convert("RGB"))
                 for attempt in range(1, SIDE_TRIES + 1):
                     image = make()
                     # the edit model sometimes turns a stage 2-4 front into a back view
-                    if view != "front" or not reference or face_visible(image) or POSE is False:
+                    if not check_face or face_visible(image):
                         break
                     print("    front attempt %d: no face visible, not a front view" % attempt)
             save(image, target)
