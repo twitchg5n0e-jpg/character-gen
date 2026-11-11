@@ -5,6 +5,14 @@
 #   LIMIT=1 ... nur ein Modell (Test)
 set -uo pipefail
 
+# Nutzerentscheidung 11.11.2026: keine 3D-Modelle aus der öffentlichen KI (Qualität reicht nicht).
+# Nur mit MAKE_MODELS=1 laufen die Modelle; sonst endet das Skript sofort, und der Pod-Startbefehl stoppt den Pod.
+if [ "${MAKE_MODELS:-0}" != "1" ]; then
+  echo "3D-Modelle abgeschaltet (MAKE_MODELS=1 schaltet sie ein)"
+  echo "MODELLE_FERTIG"
+  exit 0
+fi
+
 REPO="twitchg5n0e-jpg/character-gen"
 BRANCH="${BRANCH:-main}"
 LIMIT="${LIMIT:-0}"
