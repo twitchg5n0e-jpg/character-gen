@@ -9,6 +9,9 @@ Run from the repository root while ComfyUI is running (run_pod.sh starts it):
 Every set <Race>/<Gender>/<Body>/<Stage> becomes output/<Race>_<Gender>_<Body>_<Stage>/ with
 front.png, hinten.png and links.png (1056x1584). rechts.png is mirrored from links.png by GitHub Actions.
 A set is open while one of its three images is missing; the order comes from scripts/sets.txt.
+After the races come the loot items (scripts/sets_items.txt: Items/Loot/<Id>/Icon -> one square icon.png, made from
+text) and the mobs (scripts/sets_mobs.txt: Mobs/<Family>/<id>/Stage1 -> front, hinten, links as square images, made
+like a race's stage 1); scripts/make_mob_item_prompts.py writes both lists and their prompts.
 The prompts come from scripts/prompts/<Race>/<Gender>_<Body>_<Stage>.md.
 
 front of stage 1 is made from text (comfyui/text_to_image.json). Every other view is made with the edit model
@@ -54,6 +57,29 @@ SETS = SCRIPTS / "sets.txt"   # nur Body1 (Basismodell); alle 4 Varianten: sets_
 # file name in output -> view name in the prompt files
 VIEWS = {"front": "01_Front", "hinten": "02_Ruecken", "links": "03_Links"}
 SIZE = (1056, 1584)   # Qwen-Image native 2:3 resolution
+# After the races (sets.txt) come the loot items (one square icon each) and the mobs (front, hinten, links in a
+# square, so long animals fit in the side view); see scripts/make_mob_item_prompts.py.
+EXTRA_SETS = ("sets_items.txt", "sets_mobs.txt")
+ITEM_VIEWS = {"icon": "01_Icon"}
+ITEM_SIZE = (1024, 1024)
+MOB_SIZE = (1328, 1328)   # Qwen-Image native 1:1 resolution
+
+
+def views_of(parts: tuple[str, ...]) -> dict:
+    return ITEM_VIEWS if parts[0] == "Items" else VIEWS
+
+
+def size_of(parts: tuple[str, ...]) -> tuple[int, int]:
+    return {"Items": ITEM_SIZE, "Mobs": MOB_SIZE}.get(parts[0], SIZE)
+
+
+def sized(graph: dict, size: tuple[int, int]) -> dict:
+    """The workflow with its empty latent image set to this size."""
+    graph = json.loads(json.dumps(graph))
+    for node in graph.values():
+        if node.get("class_type") == "EmptySD3LatentImage":
+            node["inputs"]["width"], node["inputs"]["height"] = size
+    return graph
 ACTIVE = None   # the ComfyUI connection, so Ctrl+C can cancel its running image
 SIDE_TRIES = int(os.environ.get("SIDE_TRIES", "4"))   # attempts for an exact side profile
 MAX_TWIST = float(os.environ.get("MAX_TWIST", "0.06"))   # shoulder distance / figure height still counted as profile
@@ -149,50 +175,53 @@ def prompt_file(race: str, gender: str, body: str, stage: str) -> Path:
 def read_prompts(parts: tuple[str, ...]) -> tuple[dict, str]:
     text = prompt_file(*parts).read_text(encoding="utf-8")
     blocks = dict(re.findall(r"## (\S+?)(?:\.jpg)?\n\n```text\n(.*?)\n```", text, re.S))
-    return {name: blocks[view] for name, view in VIEWS.items()}, blocks["Negativ-Prompt"]
+    return {name: blocks[view] for name, view in views_of(parts).items()}, blocks["Negativ-Prompt"]
 
 
 def folder_of(parts: tuple[str, ...]) -> Path:
     return OUTPUT / "_".join(parts)
 
 
-def is_valid(path: Path) -> bool:
+def is_valid(path: Path, size: tuple[int, int] = SIZE) -> bool:
     """A finished image: a complete PNG of the right size."""
     if not path.is_file():
         return False
     try:
         with Image.open(path) as image:
             image.load()
-            return image.format == "PNG" and image.size == SIZE
+            return image.format == "PNG" and image.size == size
     except OSError:
         return False
 
 
-def clean_folder(folder: Path) -> None:
+def clean_folder(folder: Path, parts: tuple[str, ...]) -> None:
     """Delete leftovers of a stopped run: temporary files and broken images."""
     if not folder.is_dir():
         return
     for leftover in folder.glob("*.part"):
         leftover.unlink()
-    for name in VIEWS:
+    for name in views_of(parts):
         path = folder / (name + ".png")
-        if path.exists() and not is_valid(path):
+        if path.exists() and not is_valid(path, size_of(parts)):
             print("deleting broken image %s" % path.relative_to(ROOT))
             path.unlink()
 
 
 def all_sets() -> list[tuple[str, ...]]:
-    return [tuple(line.strip().split("/")) for line in SETS.read_text(encoding="utf-8").splitlines() if line.strip()]
+    files = [SETS] + [SCRIPTS / name for name in EXTRA_SETS if (SCRIPTS / name).is_file()]
+    return [tuple(line.strip().split("/")) for path in files
+            for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def is_open(parts: tuple[str, ...]) -> bool:
     folder = folder_of(parts)
-    clean_folder(folder)
-    return any(not (folder / (name + ".png")).is_file() for name in VIEWS)
+    clean_folder(folder, parts)
+    return any(not (folder / (name + ".png")).is_file() for name in views_of(parts))
 
 
-def fit(image: Image.Image) -> Image.Image:
-    """Scale and crop to exactly SIZE without distorting the figure."""
+def fit(image: Image.Image, size: tuple[int, int] = SIZE) -> Image.Image:
+    """Scale and crop to exactly this size without distorting the figure."""
+    SIZE = size
     if image.size == SIZE:
         return image
     scale = max(SIZE[0] / image.width, SIZE[1] / image.height)
@@ -246,10 +275,10 @@ def side_view(image: Image.Image) -> tuple[str | None, float]:
     return direction, twist
 
 
-def save(image: Image.Image, target: Path) -> None:
+def save(image: Image.Image, target: Path, size: tuple[int, int] = SIZE) -> None:
     """Write next to the target and rename, so a stop never leaves half an image."""
     part = target.with_name(target.name + ".part")
-    fit(image).save(part, format="PNG", optimize=True)
+    fit(image, size).save(part, format="PNG", optimize=True)
     os.replace(part, target)
 
 
@@ -291,7 +320,8 @@ def main() -> None:
         folder.mkdir(parents=True, exist_ok=True)
         prompts, negative = read_prompts(parts)
         stage1_front = folder_of(parts[:3] + ("Stage1",)) / "front.png"
-        for view in VIEWS:
+        size = size_of(parts)
+        for view in views_of(parts):
             target = folder / (view + ".png")
             if target.is_file():
                 continue
@@ -301,7 +331,7 @@ def main() -> None:
                           and human_front.is_file())
             if from_human:
                 reference, prompt = human_front, FROM_HUMAN + prompt
-            elif view == "front":
+            elif view in ("front", "icon"):
                 reference = stage1_front if parts[3] != "Stage1" and stage1_front.is_file() else None
             else:
                 reference = folder / "front.png"
@@ -313,8 +343,8 @@ def main() -> None:
                     try:
                         if reference:
                             values["%IMAGE%"] = comfy.upload(reference)
-                            return comfy.run(fill(edit, values))
-                        return comfy.run(fill(text_to_image, values))
+                            return comfy.run(fill(sized(edit, size), values))
+                        return comfy.run(fill(sized(text_to_image, size), values))
                     except requests.RequestException:
                         comfy.wait()   # ComfyUI was restarted: wait for it and make this image again
 
@@ -359,7 +389,7 @@ def main() -> None:
                     if not check_face or face_visible(image):
                         break
                     print("    front attempt %d: no face visible, not a front view" % attempt)
-            save(image, target)
+            save(image, target, size)
             print("[%d/%d] %s/%s.png in %.0f s%s" % (number, len(todo), name, view, time.time() - started, note))
     print("done")
 
