@@ -330,8 +330,8 @@ def main() -> None:
                 continue
             prompt = prompts[view]
             human_front = OUTPUT / ("Human_%s_%s_Stage1" % (parts[1], parts[2])) / "front.png"
-            from_human = (view == "front" and parts[3] == "Stage1" and parts[0] in POSE_FROM_HUMAN
-                          and human_front.is_file())
+            # all stages: editing the lizard's own stage 1 front for stages 2-4 kept turning it into a back view
+            from_human = view == "front" and parts[0] in POSE_FROM_HUMAN and human_front.is_file()
             if from_human:
                 reference, prompt = human_front, FROM_HUMAN + prompt
             elif view == "front" and parts[0] in POSE_FROM_HUMAN and parts[3] != "Stage1" and stage1_front.is_file():
