@@ -6,7 +6,7 @@ Elyndra (`Assets/Characters/References/REFERENCE_PROMPTS.md`) und ist dort entfe
 **Die gültigen Prompts stehen in [`scripts/prompts/`](../scripts/prompts/)** und werden direkt dort geändert;
 `scripts/generate.py` liest nur diese Dateien. Die Prompt-Texte weiter unten sind der ursprüngliche Entwurf und weichen
 inzwischen ab (z. B. keine Kleidung bei Völkern mit Fell, Federn, Schuppen, Stein oder Rinde, freistellbarer
-Hintergrund, Merfolk mit Fischgesicht, Fey mit gemustertem Flaum). Pfade wie `Assets/...` und `Tools/...` beziehen
+Hintergrund, Merfolk mit Fischgesicht, Fey als edle Waldfee mit Blätter-und-Blüten-Mieder ohne Maske und Fell). Pfade wie `Assets/...` und `Tools/...` beziehen
 sich auf das Elyndra-Repository.
 
 ## Überblick
@@ -604,6 +604,8 @@ long thin tail ending in a spade tip, held away from the legs.
 **Negativ zusätzlich:** `fire, flames, smoke, wings`
 
 ### Fey
+
+> **Stand November 2026:** Fey sind edle Waldfeen (Wunsch des Nutzers, Vorbild: schöne Fee mit schillernden Flügeln): klares elfisches Gesicht mit glatter Haut, keine Maske, kein Fell oder Flaum, keine Fühler; eng anliegendes Mieder aus Blättern und Blütenblättern (Moosgrün, Creme, Gold, Zartrosa); große durchscheinende Flügel halb geöffnet nach hinten. Maßgeblich sind die Prompts in `scripts/prompts/Fey/`; der Text unten ist der alte Entwurf.
 
 ```text
 Fey, small and delicate, very slender petite build, pale lilac-tinted skin with a soft shimmer, large violet
