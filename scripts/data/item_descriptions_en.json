@@ -237,17 +237,23 @@
   "Blutrubin": "a single deep red ruby gemstone",
   "Ghulklaue": "a single gray rotten ghoul claw",
   "Säuredrüse": "a single gland dripping bright green acid",
-  "Kupferpanzer": "a single copper colored beetle shell plate",
+  "Kupferpanzer": [
+    "a single curved copper-colored metallic shell plate, an empty wing case fragment lying alone",
+    "beetle, insect, legs, head, antennae, whole bug"
+  ],
   "Löwenfell": "a folded golden lion fur pelt",
   "Löwenmähne": "a thick tuft of lion mane hair",
   "Geierschnabel": [
-    "a single hooked yellowish vulture beak, just the beak",
-    "bird, head, feathers, eyes, neck"
+    "a single detached hooked yellowish beak, only the hard horn beak with a clean broken base, lying alone",
+    "bird, head, skull, feathers, eyes, neck, face"
   ],
   "Fledermausflügel": "a single leathery bat wing",
   "Klangdrüse": "a single resonant pinkish gland",
   "Kaktusfleisch": "a single cut piece of green cactus flesh",
-  "Stachel": "a single long sharp quill spine",
+  "Stachel": [
+    "a single long sharp porcupine quill, a stiff straight needle spike striped black and white",
+    "feather, vane, barbs, plume"
+  ],
   "Wüstenblüte": "a single bright desert cactus flower",
   "Glassand": "a small pile of glittering glass sand",
   "Dschinnrauch": "a small stoppered bottle of swirling blue smoke",
