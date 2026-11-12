@@ -151,6 +151,11 @@ def main() -> None:
                 negative += ", coiled, coils, loops, ring, circle, knotted, curled up, body overlapping itself, spiral, raised head, cobra pose, rearing up, S-curve"
             if anatomy in ("snake", "crawler"):
                 front = FRONT_SNAKE
+            side = SIDE
+            if anatomy in ("snake", "crawler", "serpent_water"):
+                side = SIDE + (" It has exactly one head, at the right end of the body; the left end is the thin, pointed tail tip "
+                               "without any head.")
+                negative += ", two heads, head at both ends, double-headed"
             if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
                 negative = negative.replace("missing limbs, ", "")
             if " heads" in info["desc"]:
@@ -159,10 +164,10 @@ def main() -> None:
             kind, pose = BODY.get(mob.get("body", ""), ("a fantasy creature", "in a calm neutral stance"))
             describe = ("%s called „%s“ (kin: %s, role: %s). Description in German: %s The creature is %s. %s"
                         % (kind[0].upper() + kind[1:], mob["name"], mob.get("kin", mob["name"]), mob.get("role", "-"), mob.get("behaviour", ""), pose, STYLE))
-            front, negative = FRONT_UP, NEG_MOB
+            front, negative, side = FRONT_UP, NEG_MOB, SIDE
         text = ("# Mob %s (%s, %s)\n\n" % (mob["name"], mob.get("body", "-"), mob.get("spawn", "common"))
                 + block("01_Front", describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK)
-                + block("03_Links", describe + "\n" + SIDE) + block("Negativ-Prompt", negative))
+                + block("03_Links", describe + "\n" + side) + block("Negativ-Prompt", negative))
         (PROMPTS / "Mobs" / ("%s_%s_Stage1.md" % (family, mob["id"]))).write_text(text, encoding="utf-8")
         mob_sets.append("Mobs/%s/%s/Stage1" % (family, mob["id"]))
     (ROOT / "scripts" / "sets_items.txt").write_text("\n".join(item_sets) + "\n", encoding="utf-8")
