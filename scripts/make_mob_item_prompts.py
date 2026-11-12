@@ -52,9 +52,9 @@ POSE = {
              "looking straight ahead.",
     "bird": "It stands upright on both feet, wings folded neatly against the body, head held level and looking straight ahead.",
     "flyer": "It hovers motionless in mid-air in the middle of the image, body level, wings spread symmetrically and fully visible.",
-    "snake": "It lies fully stretched out along the ground in one long, almost straight line with only a very slight gentle curve, "
-             "no coils, no loops, the body never crosses or touches itself, so every part of it is clearly separate; the head is "
-             "raised just a little and looks straight ahead, the tail tip lies straight behind.",
+    "snake": "It lies flat on its belly, fully stretched out in one straight line like a rope laid out straight, the head resting "
+             "low just above the ground at the front end and the tail tip straight behind; no coils, no loops, no rings, the body "
+             "never crosses or touches itself and is not raised, so every part of it is clearly separate.",
     "insect": "It stands still on all six legs, body level, the legs spread evenly and fully visible, wings folded on the back if it has any.",
     "spider": "It stands still on all eight legs, body level, the legs spread evenly and symmetrically and fully visible.",
     "crawler": "It lies fully stretched out flat in one long, almost straight line, body level, no coils or loops, the body never "
@@ -79,6 +79,9 @@ FRONT_LONG = ("Strict head-on front view, like an orthographic front elevation f
               "creature's spine from directly in front, the face looks straight into the camera with both eyes equally visible, "
               "the left and right front legs stand side by side and equally visible, the rest of the body is hidden straight behind "
               "the chest, perfectly mirror-symmetrical left and right; not a three-quarter view, the flank of the body is not visible.")
+FRONT_SNAKE = ("Front view seen from slightly above: the snake points straight at the camera, its head at the front nearest to the "
+               "viewer and looking straight into the camera, and its straight body extends straight away from the viewer behind the "
+               "head so its whole length is visible, perfectly mirror-symmetrical left and right; not turned to the side.")
 BACK = ("Strict back view, like an orthographic rear elevation for 3D modeling: the camera is directly behind the creature at mid "
         "height and looks straight along its spine, the creature faces away from the viewer, its head points away from the camera "
         "and its face is not visible, perfectly mirror-symmetrical left and right; not a three-quarter view. Same creature, same pose, "
@@ -145,7 +148,9 @@ def main() -> None:
             front = FRONT_UP if anatomy in UPRIGHT else FRONT_LONG
             negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
             if anatomy in ("snake", "serpent_water", "crawler"):
-                negative += ", coiled, coils, loops, knotted, curled up, body overlapping itself, spiral"
+                negative += ", coiled, coils, loops, ring, circle, knotted, curled up, body overlapping itself, spiral, raised head, cobra pose, rearing up, S-curve"
+            if anatomy in ("snake", "crawler"):
+                front = FRONT_SNAKE
             if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
                 negative = negative.replace("missing limbs, ", "")
             if " heads" in info["desc"]:
