@@ -64,6 +64,9 @@ NEG_ITEM = ("text, letters, label, watermark, logo, frame, border, app icon, rou
             "blurry, low detail, cropped, cut off")
 NEG_STICKS = ", bundle of sticks, twigs, firewood, tied bundle, rope, twine"
 WOODY = ("wood", "log", "bark", "root", "stalk", "straw", "reed", "plank", "bamboo", "twine", "cord", "fiber", "vine")
+PART = (" eye", "eyeball", " wing", " tail", " beak", " ear", "claw", "talon", "stinger", "tentacle", "pincer", " mane", " toe", " paw")
+PART_TEXT = ", only this single severed body part lying alone with no animal attached"
+NEG_PART = ", whole animal body, head, legs, wings attached to a body"
 DESC = json.loads((ROOT / "scripts" / "data" / "item_descriptions_en.json").read_text(encoding="utf-8"))
 
 
@@ -86,6 +89,8 @@ def main() -> None:
         if isinstance(desc, list):  # [description, extra negative words]
             desc, extra = desc[0], ", " + desc[1]
         neg = (NEG_ITEM if any(w in desc for w in WOODY) else NEG_ITEM + NEG_STICKS) + extra
+        if any(w in " " + desc for w in PART) and "charm" not in desc:
+            desc, neg = desc + PART_TEXT, neg + NEG_PART
         text = "# Item %s\n\n" % item["name"] + block("01_Icon", ITEM.format(name=item["name"], desc=desc)) + block("Negativ-Prompt", neg)
         (PROMPTS / "Items" / ("Loot_%s_Icon.md" % ident)).write_text(text, encoding="utf-8")
         item_sets.append("Items/Loot/%s/Icon" % ident)
