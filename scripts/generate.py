@@ -403,7 +403,7 @@ def main() -> None:
             elif parts[0] == "Mobs" and view in ("front", "hinten"):
                 # animals tend to come out as a three-quarter view; a true front/back view is mirror-symmetric
                 best = None
-                tries = 3   # a back view takes ~5.5 min, a front ~3 min; most stop after the first or second try
+                tries = 2 if view == "front" else 3   # a front that stays oblique is turned straight below (~5.5 min per turn)
                 for attempt in range(1, tries + 1):
                     candidate = make(back_image) if view == "hinten" else make()
                     score = symmetry(candidate)
@@ -436,6 +436,8 @@ def main() -> None:
                         print("    front turn %s: symmetry %.2f" % (turn[:8], score))
                         if score > best[1]:
                             best = (candidate, score)
+                        if best[1] >= 0.8:
+                            break   # straight enough, no need to try the other direction
                     rescue.unlink(missing_ok=True)
                 image = best[0]
                 note = " (symmetry %.2f)" % best[1]
