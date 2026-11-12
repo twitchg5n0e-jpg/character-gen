@@ -240,7 +240,10 @@
   "Kupferpanzer": "a single copper colored beetle shell plate",
   "Löwenfell": "a folded golden lion fur pelt",
   "Löwenmähne": "a thick tuft of lion mane hair",
-  "Geierschnabel": "a single hooked vulture beak",
+  "Geierschnabel": [
+    "a single hooked yellowish vulture beak, just the beak",
+    "bird, head, feathers, eyes, neck"
+  ],
   "Fledermausflügel": "a single leathery bat wing",
   "Klangdrüse": "a single resonant pinkish gland",
   "Kaktusfleisch": "a single cut piece of green cactus flesh",
@@ -250,9 +253,15 @@
   "Dschinnrauch": "a small stoppered bottle of swirling blue smoke",
   "Dschinnperle": "a single glowing blue pearl",
   "Sphinxfeder": "a single golden sphinx feather",
-  "Sphinxauge": "a single golden cat-like sphinx eye",
+  "Sphinxauge": [
+    "a single loose round golden eyeball with a black vertical cat-like slit pupil, just the eyeball",
+    "cat, lion, sphinx, head, face, fur, statue"
+  ],
   "Pharaonensiegel": "a single gold and lapis pharaoh seal",
-  "Skorpionstachel": "a single scorpion tail stinger",
+  "Skorpionstachel": [
+    "a single curved amber-brown segmented scorpion tail tip ending in a sharp venom stinger, organic chitin",
+    "weapon, blade, dagger, handle, whole scorpion, legs, pincers"
+  ],
   "Skorpionherz": "a single dark scorpion heart",
   "Fuchsfell": "a folded red fox fur pelt",
   "Fuchsschwanz": "a single bushy red fox tail",
@@ -307,7 +316,10 @@
   "Zeitperle": "a single golden pearl with clock-like rings",
   "Chimärenherz": "a single large heart with glowing veins",
   "Spiegelsplitter": "a single jagged mirror shard",
-  "Auge der Leere": "a single black orb eye with purple glow",
+  "Auge der Leere": [
+    "a single black orb eye with purple glow",
+    "head, face, creature, tentacles"
+  ],
   "Meteoriterz": "a single chunk of dark pitted meteorite ore",
   "Verfluchter Splitter": "a single dark crystal shard with red cracks",
   "Dämonenherz": "a single dark red demonic heart with glowing cracks",
