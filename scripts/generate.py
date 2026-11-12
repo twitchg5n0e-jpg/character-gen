@@ -452,6 +452,8 @@ def main() -> None:
                         best = (candidate, score)
                     if score >= MIN_SYMMETRY:
                         break
+                    if view == "hinten" and score < 0.45:
+                        break   # clearly a side view: fix_mob_back() turns the profile into the back view later
                 if view == "front" and best[1] < MIN_SYMMETRY:
                     # still a three-quarter view: let the Multiple-angles LoRA turn the camera by 30 degrees either way
                     # and keep whichever result is the most symmetric (the back view is made from this front)
