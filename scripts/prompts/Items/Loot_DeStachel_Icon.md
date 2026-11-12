@@ -3,12 +3,12 @@
 ## 01_Icon
 
 ```text
-Game inventory icon for a fantasy RPG showing exactly one object: a single long sharp porcupine quill, a stiff straight needle spike striped black and white (item „Stachel“). The object itself, realistic and finely detailed, true to its real material and shape, with a clear readable silhouette, centered and filling about two thirds of the square image, seen slightly from above at a three-quarter angle. Isolated on a plain, seamless, uniform light gray background: no shadow, no table, no hands, no frame, no text, no label. Soft even studio lighting.
+Game inventory icon for a fantasy RPG showing exactly one object: a single long thin straight rigid spike, smooth and hard like a hedgehog spine or a thorn, needle-pointed at one end, banded black and white (item „Stachel“). The object itself, realistic and finely detailed, true to its real material and shape, with a clear readable silhouette, centered and filling about two thirds of the square image, seen slightly from above at a three-quarter angle. Isolated on a plain, seamless, uniform light gray background: no shadow, no table, no hands, no frame, no text, no label. Soft even studio lighting.
 ```
 
 ## Negativ-Prompt
 
 ```text
-text, letters, label, watermark, logo, frame, border, app icon, rounded square, tile, badge, dark background, black background, hands, person, creature, whole animal, living animal, table, surface, scene, landscape, multiple different objects, collage, grid, cast shadow, vignette, gradient background, colored background, cartoon, flat vector, anime, blurry, low detail, cropped, cut off, bundle of sticks, twigs, firewood, tied bundle, rope, twine, feather, vane, barbs, plume
+text, letters, label, watermark, logo, frame, border, app icon, rounded square, tile, badge, dark background, black background, hands, person, creature, whole animal, living animal, table, surface, scene, landscape, multiple different objects, collage, grid, cast shadow, vignette, gradient background, colored background, cartoon, flat vector, anime, blurry, low detail, cropped, cut off, bundle of sticks, twigs, firewood, tied bundle, rope, twine, feather, quill pen, vane, barbs, plume, fluffy, soft
 ```
 
