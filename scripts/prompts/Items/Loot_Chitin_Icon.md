@@ -3,7 +3,7 @@
 ## 01_Icon
 
 ```text
-Game inventory icon for a fantasy RPG showing exactly one object: a single glossy dark insect chitin shell plate (item „Chitinplatte“). The object itself, realistic and finely detailed, true to its real material and shape, with a clear readable silhouette, centered and filling about two thirds of the square image, seen slightly from above at a three-quarter angle. Isolated on a plain, seamless, uniform light gray background: no shadow, no table, no hands, no frame, no text, no label. Soft even studio lighting.
+Game inventory icon for a fantasy RPG showing exactly one object: a single detached curved plate of glossy dark brown insect shell armor, an empty shell fragment with no legs, no head and no body (item „Chitinplatte“). The object itself, realistic and finely detailed, true to its real material and shape, with a clear readable silhouette, centered and filling about two thirds of the square image, seen slightly from above at a three-quarter angle. Isolated on a plain, seamless, uniform light gray background: no shadow, no table, no hands, no frame, no text, no label. Soft even studio lighting.
 ```
 
 ## Negativ-Prompt
