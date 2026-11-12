@@ -72,7 +72,10 @@
   "PrismShell": "a single rainbow iridescent seashell",
   "ReefShell": "a single colorful spiral reef seashell",
   "SwampSlime": "a small glass jar of green swamp slime",
-  "InkSac": "a single dark squid ink sac",
+  "InkSac": [
+    "a single small glossy dark blue-black teardrop-shaped pouch filled with ink, a soft organ sac lying alone",
+    "squid, octopus, tentacles, eyes, fish"
+  ],
   "IcePelt": "a folded pale blue frost-covered fur pelt",
   "MoonPelt": "a folded silvery white fur pelt shining like moonlight",
   "FloatPelt": "a folded light pale fur pelt with tiny floating motes",
