@@ -24,7 +24,10 @@
   "CopperHorn": "a single curved horn with a copper metallic sheen",
   "NightPollen": "a small pile of dark blue shimmering pollen",
   "RuneShard": "a single stone shard carved with glowing runes",
-  "CrabShell": "an empty red crab carapace, only the hollow top shell lying alone, without legs, without claws, without body",
+  "CrabShell": [
+    "a single empty hollow red-orange oval shell carapace lying upside down, a bowl-shaped shell piece only",
+    "crab, legs, claws, pincers, eyes"
+  ],
   "OtterPelt": "a folded sleek brown otter fur pelt",
   "SaltCrystal": "a single cluster of white salt crystals",
   "CoralPlate": "a single flat plate of pink coral",
@@ -44,7 +47,10 @@
   "Blubber": "a slab of white whale blubber",
   "IceTusk": "a single large tusk made of clear blue ice",
   "GlacierHorn": "a single pale blue icy horn",
-  "AshScale": "a single dark gray ash-covered scale",
+  "AshScale": [
+    "a single small rounded flat dark gray reptile scale dusted with gray ash",
+    "weapon, blade, spearhead, arrowhead, metal"
+  ],
   "EmberGland": "a single glowing orange fiery gland",
   "Sulphur": "a single chunk of yellow sulphur crystal",
   "ObsidianShard": "a single sharp black obsidian shard",

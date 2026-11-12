@@ -82,7 +82,10 @@ def main() -> None:
     item_sets = []
     for ident, item in data["items"].items():
         desc = DESC[item["name"] if ident.startswith("De") else ident]
-        neg = NEG_ITEM if any(w in desc for w in WOODY) else NEG_ITEM + NEG_STICKS
+        extra = ""
+        if isinstance(desc, list):  # [description, extra negative words]
+            desc, extra = desc[0], ", " + desc[1]
+        neg = (NEG_ITEM if any(w in desc for w in WOODY) else NEG_ITEM + NEG_STICKS) + extra
         text = "# Item %s\n\n" % item["name"] + block("01_Icon", ITEM.format(name=item["name"], desc=desc)) + block("Negativ-Prompt", neg)
         (PROMPTS / "Items" / ("Loot_%s_Icon.md" % ident)).write_text(text, encoding="utf-8")
         item_sets.append("Items/Loot/%s/Icon" % ident)
