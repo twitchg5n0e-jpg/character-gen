@@ -412,6 +412,31 @@ def main() -> None:
                         best = (candidate, score)
                     if score >= MIN_SYMMETRY:
                         break
+                if view == "front" and best[1] < MIN_SYMMETRY:
+                    # still a three-quarter view: let the Multiple-angles LoRA turn the camera by 30 degrees either way
+                    # and keep whichever result is the most symmetric (the back view is made from this front)
+                    rescue = folder / "front_kandidat.png"
+                    save(best[0], rescue, size)
+                    for turn in ("将镜头向左旋转30度 (rotate the camera 30 degrees to the left)",
+                                 "将镜头向右旋转30度 (rotate the camera 30 degrees to the right)"):
+                        graph = json.loads(json.dumps(side_image))
+                        for node in graph.values():
+                            if node.get("class_type") == "TextEncodeQwenImageEditPlus" and "%PROMPT%" in str(node["inputs"].get("prompt")):
+                                node["inputs"]["prompt"] = (turn + ". The same creature as in the image, now seen exactly head-on from "
+                                                            "the front, perfectly mirror-symmetrical left and right. Same body, same "
+                                                            "colors, same plain light gray studio background. %PROMPT%")
+                        try:
+                            values = {"%PROMPT%": prompt, "%NEGATIVE%": negative, "%SEED%": random.randrange(1 << 31),
+                                      "%IMAGE%": comfy.upload(rescue)}
+                            candidate = comfy.run(fill(sized(graph, size), values))
+                        except (requests.RequestException, RuntimeError) as error:
+                            print("    front turn failed: %s" % error)
+                            continue
+                        score = symmetry(candidate)
+                        print("    front turn %s: symmetry %.2f" % (turn[:8], score))
+                        if score > best[1]:
+                            best = (candidate, score)
+                    rescue.unlink(missing_ok=True)
                 image = best[0]
                 note = " (symmetry %.2f)" % best[1]
             elif view == "hinten":
