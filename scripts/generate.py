@@ -46,7 +46,7 @@ import time
 from pathlib import Path
 
 import requests
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
@@ -278,6 +278,28 @@ def side_view(image: Image.Image) -> tuple[str | None, float]:
     return direction, twist
 
 
+MIN_SYMMETRY = float(os.environ.get("MIN_SYMMETRY", "0.6"))   # mob front/back: a true head-on view is mirror-symmetric
+
+
+def symmetry(image: Image.Image) -> float:
+    """How mirror-symmetric the figure's outline is (1 = perfectly, ~0.3 = three-quarter view).
+
+    The background is a plain light gray, so the figure is everything that differs from the corner color; its outline
+    is compared with its own mirror image (intersection over union), centred on its bounding box.
+    """
+    small = image.convert("RGB").resize((256, 256))
+    background = Image.new("RGB", small.size, small.getpixel((2, 2)))
+    mask = ImageChops.difference(small, background).convert("L").point(lambda v: 255 if v > 28 else 0)
+    mask = mask.filter(ImageFilter.MedianFilter(5))
+    box = mask.getbbox()
+    if not box:
+        return 0.0
+    mask = mask.crop((box[0], 0, box[2], small.height))
+    both = ImageChops.multiply(mask, ImageOps.mirror(mask)).histogram()[255]
+    either = ImageChops.lighter(mask, ImageOps.mirror(mask)).histogram()[255]
+    return both / either if either else 0.0
+
+
 def save(image: Image.Image, target: Path, size: tuple[int, int] = SIZE) -> None:
     """Write next to the target and rename, so a stop never leaves half an image."""
     part = target.with_name(target.name + ".part")
@@ -378,6 +400,19 @@ def main() -> None:
                         "Blickrichtung von links.png wurde nicht erkannt; bitte ansehen (Nase muss nach links zeigen).\n",
                         encoding="utf-8")
                 note = " (nose was %s, turn %.3f)" % (direction or "unclear", twist)
+            elif parts[0] == "Mobs" and view in ("front", "hinten"):
+                # animals tend to come out as a three-quarter view; a true front/back view is mirror-symmetric
+                best = None
+                for attempt in range(1, SIDE_TRIES + 1):
+                    candidate = make(back_image) if view == "hinten" else make()
+                    score = symmetry(candidate)
+                    print("    %s attempt %d: symmetry %.2f" % (view, attempt, score))
+                    if best is None or score > best[1]:
+                        best = (candidate, score)
+                    if score >= MIN_SYMMETRY:
+                        break
+                image = best[0]
+                note = " (symmetry %.2f)" % best[1]
             elif view == "hinten":
                 for attempt in range(1, SIDE_TRIES + 1):
                     image = make(back_image)   # the Multiple-angles LoRA turns the camera by 180 degrees

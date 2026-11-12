@@ -69,12 +69,17 @@ POSE = {
     "other": "It rests in a calm neutral pose, the whole body clearly readable.",
 }
 UPRIGHT = {"biped", "ghost", "plant", "elemental", "octopus", "slime"}
-FRONT_UP = ("Front view: the creature faces the camera directly, face and chest straight towards the viewer, perfectly symmetrical "
-            "left and right, not turned to the side.")
-FRONT_LONG = ("Front view, seen head-on: the head and the front of the body point straight at the camera and the rest of the body "
-              "extends straight away from the viewer behind it, perfectly symmetrical left and right, not turned to the side.")
-BACK = ("Back view for a 3D modeling reference: the camera is directly behind the creature at mid height, the creature faces away "
-        "from the viewer, its head points away from the camera and its face is not visible. Same creature, same pose, same colors.")
+FRONT_UP = ("Strict front view, like an orthographic front elevation for 3D modeling: the creature faces the camera squarely, "
+            "face, chest and both shoulders straight towards the viewer, perfectly mirror-symmetrical left and right, both arms "
+            "and both legs equally visible; not a three-quarter view, not turned to the side.")
+FRONT_LONG = ("Strict head-on front view, like an orthographic front elevation for 3D modeling: the camera looks straight along the "
+              "creature's spine from directly in front, the face looks straight into the camera with both eyes equally visible, "
+              "the left and right front legs stand side by side and equally visible, the rest of the body is hidden straight behind "
+              "the chest, perfectly mirror-symmetrical left and right; not a three-quarter view, the flank of the body is not visible.")
+BACK = ("Strict back view, like an orthographic rear elevation for 3D modeling: the camera is directly behind the creature at mid "
+        "height and looks straight along its spine, the creature faces away from the viewer, its head points away from the camera "
+        "and its face is not visible, perfectly mirror-symmetrical left and right; not a three-quarter view. Same creature, same pose, "
+        "same colors.")
 SIDE = ("Exact 90 degree side profile for a 3D modeling reference: the creature has turned to its own left, so its head points "
         "to the right edge of the image and its tail or back end to the left edge. The whole body is seen exactly from the side, "
         "the full length from head to tail fully in frame, neither the front nor the back faces the camera. Same creature, same pose, same colors.")
@@ -82,7 +87,7 @@ NEG_MOB = ("multiple creatures, extra heads, extra limbs, missing limbs, fused l
            "logo, frame, border, collage, character sheet, turnaround sheet, multiple views, split image, grid, cropped, cut off, "
            "partially out of frame, visible floor, ground, horizon line, floor shadow, cast shadow, vignette, gradient background, "
            "colored background, scenery, landscape, forest, water surface, trees, props, dramatic lighting, rim light, motion blur, "
-           "action pose, attacking, running, jumping, open jaws roaring, fisheye, perspective distortion, cartoon, anime, stylized, "
+           "action pose, attacking, running, jumping, open jaws roaring, three-quarter view, angled view, diagonal view, fisheye, perspective distortion, cartoon, anime, stylized, "
            "toy, plastic, clay, low detail, blurry")
 MOBDESC_FILE = ROOT / "scripts" / "data" / "mob_descriptions_en.json"
 MOBDESC = json.loads(MOBDESC_FILE.read_text(encoding="utf-8")) if MOBDESC_FILE.is_file() else {}
