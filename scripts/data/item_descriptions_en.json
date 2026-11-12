@@ -158,9 +158,15 @@
   "Elementarkern": "a single glowing orb with swirling elemental energy",
   "Windfeder": "a single pale blue feather with swirling wind",
   "Basiliskenschuppe": "a single green basilisk scale",
-  "Basiliskenauge": "a single yellow slit-pupil basilisk eye",
+  "Basiliskenauge": [
+    "a single loose round eyeball with a yellow iris and a black vertical slit pupil, just the eyeball",
+    "lizard, snake, head, snout, scales, face"
+  ],
   "Wyvernschuppe": "a single dark green wyvern scale",
-  "Wyvernstachel": "a single wyvern tail stinger",
+  "Wyvernstachel": [
+    "a single curved organic bony stinger from a tail tip, a tapered dark horn-like barb",
+    "weapon, spear, blade, handle, shaft, metal"
+  ],
   "Zwergenkrone": "a heavy gold dwarven crown with gems",
   "Donnerfeder": "a single feather crackling with lightning",
   "Sturmkern": "a single orb containing a tiny storm cloud with lightning",
