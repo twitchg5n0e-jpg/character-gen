@@ -53,14 +53,18 @@ NEG_MOB = ("multiple creatures, two heads unless described, rider, saddle, armor
            "visible floor, horizon line, floor shadow, cast shadow, vignette, gradient background, colored background, scenery, "
            "landscape, forest, trees, props, dramatic lighting, rim light, motion blur, action pose, attacking, jumping, flying high, "
            "fisheye, perspective distortion, cartoon, anime, stylized, toy, plastic, clay, low detail, blurry")
-ITEM = ("Game inventory icon for a fantasy RPG: one single loot item, „{name}“{hint}. A crafting material or trophy taken "
-        "from a defeated creature or found in the wild, shown as a single object (or a small neat bundle of the same material). "
-        "Realistic, finely detailed, clear readable silhouette, centered and filling about two thirds of the square image, seen "
-        "slightly from above at a three-quarter angle. Isolated on a plain, seamless, uniform light gray background: no shadow, "
-        "no table, no hands, no frame, no text, no label. Soft even studio lighting.")
-NEG_ITEM = ("text, letters, label, watermark, logo, frame, border, hands, person, creature, table, surface, scene, landscape, "
-            "multiple different objects, collage, grid, cast shadow, vignette, gradient background, colored background, "
-            "cartoon, flat vector, anime, blurry, low detail, cropped, cut off")
+ITEM = ("Game inventory icon for a fantasy RPG showing exactly one object: {desc} (item „{name}“). The object itself, "
+        "realistic and finely detailed, true to its real material and shape, with a clear readable silhouette, centered and "
+        "filling about two thirds of the square image, seen slightly from above at a three-quarter angle. Isolated on a plain, "
+        "seamless, uniform light gray background: no shadow, no table, no hands, no frame, no text, no label. Soft even "
+        "studio lighting.")
+NEG_ITEM = ("text, letters, label, watermark, logo, frame, border, app icon, rounded square, tile, badge, dark background, "
+            "black background, hands, person, creature, table, surface, scene, landscape, multiple different objects, "
+            "collage, grid, cast shadow, vignette, gradient background, colored background, cartoon, flat vector, anime, "
+            "blurry, low detail, cropped, cut off")
+NEG_STICKS = ", bundle of sticks, twigs, firewood, tied bundle, rope, twine"
+WOODY = ("wood", "log", "bark", "root", "stalk", "straw", "reed", "plank", "bamboo", "twine", "cord", "fiber", "vine")
+DESC = json.loads((ROOT / "scripts" / "data" / "item_descriptions_en.json").read_text(encoding="utf-8"))
 
 
 def block(title: str, text: str) -> str:
@@ -77,8 +81,9 @@ def main() -> None:
     (PROMPTS / "Mobs").mkdir(parents=True, exist_ok=True)
     item_sets = []
     for ident, item in data["items"].items():
-        hint = "" if ident.startswith("De") else " (%s)" % words(ident)
-        text = "# Item %s\n\n" % item["name"] + block("01_Icon", ITEM.format(name=item["name"], hint=hint)) + block("Negativ-Prompt", NEG_ITEM)
+        desc = DESC[item["name"] if ident.startswith("De") else ident]
+        neg = NEG_ITEM if any(w in desc for w in WOODY) else NEG_ITEM + NEG_STICKS
+        text = "# Item %s\n\n" % item["name"] + block("01_Icon", ITEM.format(name=item["name"], desc=desc)) + block("Negativ-Prompt", neg)
         (PROMPTS / "Items" / ("Loot_%s_Icon.md" % ident)).write_text(text, encoding="utf-8")
         item_sets.append("Items/Loot/%s/Icon" % ident)
     mob_sets = []
