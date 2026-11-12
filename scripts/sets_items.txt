@@ -1,4 +1,3 @@
-Mobs/F01/bambusotter/Stage1
 Items/Loot/RawMeat/Icon
 Items/Loot/Fang/Icon
 Items/Loot/Stone/Icon

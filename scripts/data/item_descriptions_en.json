@@ -372,7 +372,10 @@
   "Küstensalz": "a small pile of coarse white sea salt",
   "Sumpfton": "a single lump of gray-brown clay",
   "Schilf": "a few green reed stalks",
-  "Schildkrötenpanzer": "a single turtle shell",
+  "Schildkrötenpanzer": [
+    "a single empty hollow turtle shell lying alone, only the domed brown patterned carapace with nothing inside",
+    "turtle, tortoise, head, legs, feet, tail, living animal"
+  ],
   "Schildkrötenei": "a single round white turtle egg",
   "Silberschuppe": "a single shiny silver fish scale",
   "Rattenschwanz": "a single long pink rat tail",
