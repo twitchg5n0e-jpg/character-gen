@@ -210,7 +210,10 @@
     "a single hard glossy black hooked beak like a giant parrot beak, made of two curved pointed jaw halves, the beak of a squid",
     "tentacle, suckers, ring, hook"
   ],
-  "Krakenauge": "a single huge kraken eye",
+  "Krakenauge": [
+    "a single huge loose round eyeball with a dark horizontal pupil and wet glossy surface, just the eyeball",
+    "octopus, squid, tentacles, suckers, body, head"
+  ],
   "Muschelkalk": "a single chunk of shell limestone",
   "Titanenperle": "a single huge glowing white pearl",
   "Insektenflügel": "a single translucent veined insect wing",
@@ -225,7 +228,10 @@
   "Knochensplitter": "a single sharp bone splinter",
   "Stammesamulett": "a single tribal bone and bead amulet",
   "Hydraschuppe": "a single teal hydra scale",
-  "Hydrazahn": "a single long hydra tooth",
+  "Hydrazahn": [
+    "a single long curved pointed ivory-white reptile tooth with a rough root end, just the tooth",
+    "head, skull, jaw, face, snake, dragon"
+  ],
   "Hydraherz": "a single large hydra heart",
   "Vampirzahn": "a single long white vampire fang",
   "Blutrubin": "a single deep red ruby gemstone",
