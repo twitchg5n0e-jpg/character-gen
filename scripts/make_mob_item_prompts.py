@@ -52,13 +52,16 @@ POSE = {
              "looking straight ahead.",
     "bird": "It stands upright on both feet, wings folded neatly against the body, head held level and looking straight ahead.",
     "flyer": "It hovers motionless in mid-air in the middle of the image, body level, wings spread symmetrically and fully visible.",
-    "snake": "It lies in a few loose, even S-shaped curves with the front part of the body raised a little and the head held level, "
-             "looking straight ahead.",
+    "snake": "It lies fully stretched out along the ground in one long, almost straight line with only a very slight gentle curve, "
+             "no coils, no loops, the body never crosses or touches itself, so every part of it is clearly separate; the head is "
+             "raised just a little and looks straight ahead, the tail tip lies straight behind.",
     "insect": "It stands still on all six legs, body level, the legs spread evenly and fully visible, wings folded on the back if it has any.",
     "spider": "It stands still on all eight legs, body level, the legs spread evenly and symmetrically and fully visible.",
-    "crawler": "It lies stretched out flat in one gentle curve, body level, all its legs (if it has any) spread evenly and visible.",
+    "crawler": "It lies fully stretched out flat in one long, almost straight line, body level, no coils or loops, the body never "
+               "crosses or touches itself, all its legs (if it has any) spread evenly and visible.",
     "fish": "It floats horizontally in a calm neutral pose, body straight and level, all fins relaxed and spread.",
-    "serpent_water": "It floats horizontally in a few gentle S-curves, body level, head raised slightly and looking straight ahead.",
+    "serpent_water": "It floats horizontally, fully stretched out in one long, almost straight line with only a very slight gentle "
+                     "curve, no coils or loops, the body never crosses itself, head raised slightly and looking straight ahead.",
     "octopus": "It floats upright, the mantle or bell at the top, the tentacles hanging down loosely and evenly spread.",
     "slime": "It rests calmly as one single compact blob.",
     "ghost": "It floats upright in a calm neutral pose, arms slightly away from the body, the lower body fading out.",
@@ -141,6 +144,8 @@ def main() -> None:
             describe = "%s. %s %s" % (info["desc"].rstrip(". ")[0].upper() + info["desc"].rstrip(". ")[1:], POSE[anatomy], STYLE)
             front = FRONT_UP if anatomy in UPRIGHT else FRONT_LONG
             negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
+            if anatomy in ("snake", "serpent_water", "crawler"):
+                negative += ", coiled, coils, loops, knotted, curled up, body overlapping itself, spiral"
             if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
                 negative = negative.replace("missing limbs, ", "")
             if " heads" in info["desc"]:
