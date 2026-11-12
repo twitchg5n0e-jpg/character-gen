@@ -300,6 +300,46 @@ def symmetry(image: Image.Image) -> float:
     return both / either if either else 0.0
 
 
+def fix_mob_back(comfy, back_image: dict, folder: Path, prompt: str, negative: str, size: tuple[int, int]) -> None:
+    """A strict head-on front often turns into a side view instead of a back view. If hinten.png is not symmetric,
+    turn the finished side profile by 90 degrees both ways and keep the symmetric result that looks least like the
+    front (the back, not the front again)."""
+    back, front, side = folder / "hinten.png", folder / "front.png", folder / "links.png"
+    if not (back.is_file() and front.is_file() and side.is_file()):
+        return
+    old_score = symmetry(Image.open(back))
+    if old_score >= 0.45:
+        return
+    def look(image: Image.Image) -> list:
+        return list(image.convert("L").resize((48, 48)).getdata())
+    front_look = look(Image.open(front))
+    best = None
+    for turn in ("将镜头向左旋转90度 (rotate the camera 90 degrees to the left)",
+                 "将镜头向右旋转90度 (rotate the camera 90 degrees to the right)"):
+        graph = json.loads(json.dumps(back_image))
+        for node in graph.values():
+            if node.get("class_type") == "TextEncodeQwenImageEditPlus" and "%PROMPT%" in str(node["inputs"].get("prompt")):
+                node["inputs"]["prompt"] = (turn + ". The same creature as in the image, now seen exactly from behind: its rump "
+                                            "and tail face the camera, its head points away and its face is not visible, "
+                                            "perfectly mirror-symmetrical left and right. Same body, same colors, same plain "
+                                            "light gray studio background. %PROMPT%")
+        try:
+            values = {"%PROMPT%": prompt, "%NEGATIVE%": negative, "%SEED%": random.randrange(1 << 31),
+                      "%IMAGE%": comfy.upload(side)}
+            candidate = comfy.run(fill(sized(graph, size), values))
+        except (requests.RequestException, RuntimeError) as error:
+            print("    back turn failed: %s" % error)
+            continue
+        score = symmetry(candidate)
+        difference = sum(abs(a - b) for a, b in zip(look(candidate), front_look)) / len(front_look)
+        print("    back turn %s: symmetry %.2f, difference to front %.1f" % (turn[:8], score, difference))
+        if score >= 0.5 and (best is None or difference > best[1]):
+            best = (candidate, difference)
+    if best is not None:
+        save(best[0], back, size)
+        print("    hinten.png replaced by a turned side view")
+
+
 def save(image: Image.Image, target: Path, size: tuple[int, int] = SIZE) -> None:
     """Write next to the target and rename, so a stop never leaves half an image."""
     part = target.with_name(target.name + ".part")
@@ -459,6 +499,8 @@ def main() -> None:
                     print("    front attempt %d: no face visible, not a front view" % attempt)
             save(image, target, size)
             print("[%d/%d] %s/%s.png in %.0f s%s" % (number, len(todo), name, view, time.time() - started, note))
+            if parts[0] == "Mobs" and view == "links":
+                fix_mob_back(comfy, back_image, folder, prompt, negative, size)
     print("done")
 
 
