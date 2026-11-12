@@ -100,11 +100,17 @@
   "Drachenklaue": "a single huge dark dragon claw",
   "Drachenauge": "a single large golden reptilian dragon eye",
   "Trollblut": "a small glass vial of dark green troll blood",
-  "Zauberbuchseite": "a single old parchment page with magic symbols",
+  "Zauberbuchseite": [
+    "a single loose torn-out sheet of old yellowed parchment with handwritten magic runes and a circle diagram, slightly curled, one page only",
+    "book, cover, binding, closed book"
+  ],
   "Lichkrone": "a dark iron crown with green glowing gems",
   "Hexenkraut": "a small sprig of dark purple witch herb",
   "Geisterfaden": "a small coil of pale glowing ghostly thread",
-  "Riesenzeh": "a single huge giant's toe",
+  "Riesenzeh": [
+    "a single huge severed toe, one big dirty toe with a thick yellowed toenail, lying alone",
+    "foot, sole, heel, leg, several toes"
+  ],
   "Schleimkugel": "a single round ball of green translucent slime",
   "Harzklumpen": "a single lump of golden tree resin",
   "Schleimkern": "a single glowing core inside a slime blob",
@@ -113,9 +119,15 @@
   "Bärenklaue": "a single large bear claw",
   "Bärengalle": "a single dark green bear gall bladder",
   "Pilzhut": "a single large mushroom cap",
-  "Sporenbeutel": "a single puffy mushroom spore pouch",
+  "Sporenbeutel": [
+    "a single round puffball fungus pouch, a beige sac with a small opening at the top puffing out a cloud of greenish spores",
+    "mushroom cap, stem, toadstool"
+  ],
   "Spinnenseide": "a small skein of white spider silk",
-  "Spinnenauge": "a single shiny black spider eye",
+  "Spinnenauge": [
+    "a single round glossy black eyeball the size of a marble, one loose eye only",
+    "spider, legs, insect, body"
+  ],
   "Bambusrohr": "a single green bamboo stalk",
   "Koboldohr": "a single pointed green goblin ear",
   "Diebesgut": "a small leather pouch spilling coins and rings",
