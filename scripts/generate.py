@@ -278,7 +278,7 @@ def side_view(image: Image.Image) -> tuple[str | None, float]:
     return direction, twist
 
 
-MIN_SYMMETRY = float(os.environ.get("MIN_SYMMETRY", "0.6"))   # mob front/back: a true head-on view is mirror-symmetric
+MIN_SYMMETRY = float(os.environ.get("MIN_SYMMETRY", "0.55"))   # mob front/back: a true head-on view is mirror-symmetric
 
 
 def symmetry(image: Image.Image) -> float:
@@ -388,7 +388,7 @@ def main() -> None:
                     if POSE is False or (twist <= MAX_TWIST and direction):
                         break
                     # animal heads (dragon, lizard, bird) never get a clear nose: two tries are enough there
-                    if direction is None and twist <= MAX_TWIST and attempt >= 2:
+                    if direction is None and twist <= MAX_TWIST and (attempt >= 2 or parts[0] == "Mobs"):
                         break
                 image, direction, twist = best
                 if direction != "left":
@@ -403,7 +403,8 @@ def main() -> None:
             elif parts[0] == "Mobs" and view in ("front", "hinten"):
                 # animals tend to come out as a three-quarter view; a true front/back view is mirror-symmetric
                 best = None
-                for attempt in range(1, SIDE_TRIES + 1):
+                tries = 2 if view == "hinten" else 3   # a back view takes ~5.5 min, a front ~3 min
+                for attempt in range(1, tries + 1):
                     candidate = make(back_image) if view == "hinten" else make()
                     score = symmetry(candidate)
                     print("    %s attempt %d: symmetry %.2f" % (view, attempt, score))
