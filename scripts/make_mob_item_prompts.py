@@ -136,6 +136,8 @@ def main() -> None:
             describe = "%s. %s %s" % (info["desc"].rstrip(". ")[0].upper() + info["desc"].rstrip(". ")[1:], POSE[anatomy], STYLE)
             front = FRONT_UP if anatomy in UPRIGHT else FRONT_LONG
             negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
+            if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
+                negative = negative.replace("missing limbs, ", "")
             if " heads" in info["desc"]:
                 negative = negative.replace("extra heads, ", "")
         else:   # fallback without an English description

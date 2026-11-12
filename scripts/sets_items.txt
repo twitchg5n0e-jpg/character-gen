@@ -1,3 +1,8 @@
+Mobs/F09/auenspringer/Stage1
+Mobs/F01/bambusotter/Stage1
+Mobs/F01/netzweberin/Stage1
+Mobs/F02/felsdrache/Stage1
+Mobs/F02/bergkobold/Stage1
 Items/Loot/RawMeat/Icon
 Items/Loot/Fang/Icon
 Items/Loot/Stone/Icon
