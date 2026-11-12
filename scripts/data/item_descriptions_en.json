@@ -206,7 +206,10 @@
   "Träne der See": "a single teardrop-shaped blue gemstone",
   "Schatzkarte": "a single rolled-open old treasure map parchment",
   "Krakenarm": "a single large purple kraken tentacle",
-  "Krakenschnabel": "a single black hooked kraken beak",
+  "Krakenschnabel": [
+    "a single hard glossy black hooked beak like a giant parrot beak, made of two curved pointed jaw halves, the beak of a squid",
+    "tentacle, suckers, ring, hook"
+  ],
   "Krakenauge": "a single huge kraken eye",
   "Muschelkalk": "a single chunk of shell limestone",
   "Titanenperle": "a single huge glowing white pearl",
