@@ -44,15 +44,48 @@ STYLE = ("High-quality realistic creature render for a fantasy RPG, in the style
          "no cast shadow and no props, so the creature can be cut out cleanly. Soft even diffuse studio lighting, no rim light. "
          "Camera at the creature's mid height with a long lens, almost no perspective distortion. Square format. "
          "One single image from one single camera angle; not a character sheet, not a turnaround, not a collage.")
-FRONT = "Front view: the creature faces the camera directly, head and body straight towards the viewer, not turned to the side."
-BACK = "Back view for a 3D modeling reference, seen directly from behind at mid height, same neutral pose, back of the head visible."
+# pose per body plan (anatomy comes from scripts/data/mob_descriptions_en.json, written per mob)
+POSE = {
+    "quadruped": "It stands still on all four legs in a calm neutral stance: all four legs straight, evenly spaced and fully visible, "
+                 "head held level and looking straight ahead, tail hanging calmly.",
+    "biped": "It stands upright in a relaxed A-pose: arms slightly away from the body, legs straight, feet slightly apart, "
+             "looking straight ahead.",
+    "bird": "It stands upright on both feet, wings folded neatly against the body, head held level and looking straight ahead.",
+    "flyer": "It hovers motionless in mid-air in the middle of the image, body level, wings spread symmetrically and fully visible.",
+    "snake": "It lies in a few loose, even S-shaped curves with the front part of the body raised a little and the head held level, "
+             "looking straight ahead.",
+    "insect": "It stands still on all six legs, body level, the legs spread evenly and fully visible, wings folded on the back if it has any.",
+    "spider": "It stands still on all eight legs, body level, the legs spread evenly and symmetrically and fully visible.",
+    "crawler": "It lies stretched out flat in one gentle curve, body level, all its legs (if it has any) spread evenly and visible.",
+    "fish": "It floats horizontally in a calm neutral pose, body straight and level, all fins relaxed and spread.",
+    "serpent_water": "It floats horizontally in a few gentle S-curves, body level, head raised slightly and looking straight ahead.",
+    "octopus": "It floats upright, the mantle or bell at the top, the tentacles hanging down loosely and evenly spread.",
+    "slime": "It rests calmly as one single compact blob.",
+    "ghost": "It floats upright in a calm neutral pose, arms slightly away from the body, the lower body fading out.",
+    "plant": "It stands upright in a calm neutral stance, limbs slightly away from the body.",
+    "elemental": "It stands upright in a calm neutral stance, arms slightly away from the body.",
+    "dragon": "It stands still on all its legs in a calm neutral stance, wings folded against the body, tail lying calmly behind it, "
+              "head held level and looking straight ahead.",
+    "other": "It rests in a calm neutral pose, the whole body clearly readable.",
+}
+UPRIGHT = {"biped", "ghost", "plant", "elemental", "octopus", "slime"}
+FRONT_UP = ("Front view: the creature faces the camera directly, face and chest straight towards the viewer, perfectly symmetrical "
+            "left and right, not turned to the side.")
+FRONT_LONG = ("Front view, seen head-on: the head and the front of the body point straight at the camera and the rest of the body "
+              "extends straight away from the viewer behind it, perfectly symmetrical left and right, not turned to the side.")
+BACK = ("Back view for a 3D modeling reference: the camera is directly behind the creature at mid height, the creature faces away "
+        "from the viewer, its head points away from the camera and its face is not visible. Same creature, same pose, same colors.")
 SIDE = ("Exact 90 degree side profile for a 3D modeling reference: the creature has turned to its own left, so its head points "
-        "to the right edge of the image. The whole body is seen exactly from the side, neither the chest nor the back faces the camera. Same pose.")
-NEG_MOB = ("multiple creatures, two heads unless described, rider, saddle, armor on animals, text, watermark, logo, frame, border, "
-           "collage, character sheet, turnaround sheet, multiple views, split image, grid, cropped, cut off, partially out of frame, "
-           "visible floor, horizon line, floor shadow, cast shadow, vignette, gradient background, colored background, scenery, "
-           "landscape, forest, trees, props, dramatic lighting, rim light, motion blur, action pose, attacking, jumping, flying high, "
-           "fisheye, perspective distortion, cartoon, anime, stylized, toy, plastic, clay, low detail, blurry")
+        "to the right edge of the image and its tail or back end to the left edge. The whole body is seen exactly from the side, "
+        "the full length from head to tail fully in frame, neither the front nor the back faces the camera. Same creature, same pose, same colors.")
+NEG_MOB = ("multiple creatures, extra heads, extra limbs, missing limbs, fused legs, deformed anatomy, rider, saddle, text, watermark, "
+           "logo, frame, border, collage, character sheet, turnaround sheet, multiple views, split image, grid, cropped, cut off, "
+           "partially out of frame, visible floor, ground, horizon line, floor shadow, cast shadow, vignette, gradient background, "
+           "colored background, scenery, landscape, forest, water surface, trees, props, dramatic lighting, rim light, motion blur, "
+           "action pose, attacking, running, jumping, open jaws roaring, fisheye, perspective distortion, cartoon, anime, stylized, "
+           "toy, plastic, clay, low detail, blurry")
+MOBDESC_FILE = ROOT / "scripts" / "data" / "mob_descriptions_en.json"
+MOBDESC = json.loads(MOBDESC_FILE.read_text(encoding="utf-8")) if MOBDESC_FILE.is_file() else {}
 ITEM = ("Game inventory icon for a fantasy RPG showing exactly one object: {desc} (item „{name}“). The object itself, "
         "realistic and finely detailed, true to its real material and shape, with a clear readable silhouette, centered and "
         "filling about two thirds of the square image, seen slightly from above at a three-quarter angle. Isolated on a plain, "
@@ -96,13 +129,23 @@ def main() -> None:
         item_sets.append("Items/Loot/%s/Icon" % ident)
     mob_sets = []
     for mob in data["mobs"]:
-        kind, pose = BODY.get(mob.get("body", ""), ("a fantasy creature", "in a calm neutral stance"))
         family = "F%02d" % int(mob["family"])
-        describe = ("%s called „%s“ (kin: %s, role: %s). Description in German: %s The creature is %s. %s"
-                    % (kind[0].upper() + kind[1:], mob["name"], mob.get("kin", mob["name"]), mob.get("role", "-"), mob.get("behaviour", ""), pose, STYLE))
+        info = MOBDESC.get(mob["id"])
+        if info:
+            anatomy = info["anatomy"] if info["anatomy"] in POSE else "other"
+            describe = "%s. %s %s" % (info["desc"].rstrip(". ")[0].upper() + info["desc"].rstrip(". ")[1:], POSE[anatomy], STYLE)
+            front = FRONT_UP if anatomy in UPRIGHT else FRONT_LONG
+            negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
+            if " heads" in info["desc"]:
+                negative = negative.replace("extra heads, ", "")
+        else:   # fallback without an English description
+            kind, pose = BODY.get(mob.get("body", ""), ("a fantasy creature", "in a calm neutral stance"))
+            describe = ("%s called „%s“ (kin: %s, role: %s). Description in German: %s The creature is %s. %s"
+                        % (kind[0].upper() + kind[1:], mob["name"], mob.get("kin", mob["name"]), mob.get("role", "-"), mob.get("behaviour", ""), pose, STYLE))
+            front, negative = FRONT_UP, NEG_MOB
         text = ("# Mob %s (%s, %s)\n\n" % (mob["name"], mob.get("body", "-"), mob.get("spawn", "common"))
-                + block("01_Front", describe + "\n" + FRONT) + block("02_Ruecken", describe + "\n" + BACK)
-                + block("03_Links", describe + "\n" + SIDE) + block("Negativ-Prompt", NEG_MOB))
+                + block("01_Front", describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK)
+                + block("03_Links", describe + "\n" + SIDE) + block("Negativ-Prompt", negative))
         (PROMPTS / "Mobs" / ("%s_%s_Stage1.md" % (family, mob["id"]))).write_text(text, encoding="utf-8")
         mob_sets.append("Mobs/%s/%s/Stage1" % (family, mob["id"]))
     (ROOT / "scripts" / "sets_items.txt").write_text("\n".join(item_sets) + "\n", encoding="utf-8")

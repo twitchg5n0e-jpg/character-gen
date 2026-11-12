@@ -4,26 +4,26 @@
 
 ```text
 A fantasy bird called „Aschgeier“ (kin: Vulkangeier, role: Schwarm). Description in German: Grau. Kreist in der heissen Luft. The creature is standing on its feet, wings folded against the body. High-quality realistic creature render for a fantasy RPG, in the style of a modern AAA game made in Unreal Engine 5: lifelike materials, fine surface detail, sharp focus, high detail; not plastic, not clay, not a toy, not a cartoon. One single creature, the whole body fully in frame from the highest point to the feet or lowest point, centered, with a little space on every side. No rider, no saddle, no harness, no chains, no text. Isolated on a plain, seamless, uniform light gray background: no floor, no horizon line, no gradient, no vignette, no cast shadow and no props, so the creature can be cut out cleanly. Soft even diffuse studio lighting, no rim light. Camera at the creature's mid height with a long lens, almost no perspective distortion. Square format. One single image from one single camera angle; not a character sheet, not a turnaround, not a collage.
-Front view: the creature faces the camera directly, head and body straight towards the viewer, not turned to the side.
+Front view: the creature faces the camera directly, face and chest straight towards the viewer, perfectly symmetrical left and right, not turned to the side.
 ```
 
 ## 02_Ruecken
 
 ```text
 A fantasy bird called „Aschgeier“ (kin: Vulkangeier, role: Schwarm). Description in German: Grau. Kreist in der heissen Luft. The creature is standing on its feet, wings folded against the body. High-quality realistic creature render for a fantasy RPG, in the style of a modern AAA game made in Unreal Engine 5: lifelike materials, fine surface detail, sharp focus, high detail; not plastic, not clay, not a toy, not a cartoon. One single creature, the whole body fully in frame from the highest point to the feet or lowest point, centered, with a little space on every side. No rider, no saddle, no harness, no chains, no text. Isolated on a plain, seamless, uniform light gray background: no floor, no horizon line, no gradient, no vignette, no cast shadow and no props, so the creature can be cut out cleanly. Soft even diffuse studio lighting, no rim light. Camera at the creature's mid height with a long lens, almost no perspective distortion. Square format. One single image from one single camera angle; not a character sheet, not a turnaround, not a collage.
-Back view for a 3D modeling reference, seen directly from behind at mid height, same neutral pose, back of the head visible.
+Back view for a 3D modeling reference: the camera is directly behind the creature at mid height, the creature faces away from the viewer, its head points away from the camera and its face is not visible. Same creature, same pose, same colors.
 ```
 
 ## 03_Links
 
 ```text
 A fantasy bird called „Aschgeier“ (kin: Vulkangeier, role: Schwarm). Description in German: Grau. Kreist in der heissen Luft. The creature is standing on its feet, wings folded against the body. High-quality realistic creature render for a fantasy RPG, in the style of a modern AAA game made in Unreal Engine 5: lifelike materials, fine surface detail, sharp focus, high detail; not plastic, not clay, not a toy, not a cartoon. One single creature, the whole body fully in frame from the highest point to the feet or lowest point, centered, with a little space on every side. No rider, no saddle, no harness, no chains, no text. Isolated on a plain, seamless, uniform light gray background: no floor, no horizon line, no gradient, no vignette, no cast shadow and no props, so the creature can be cut out cleanly. Soft even diffuse studio lighting, no rim light. Camera at the creature's mid height with a long lens, almost no perspective distortion. Square format. One single image from one single camera angle; not a character sheet, not a turnaround, not a collage.
-Exact 90 degree side profile for a 3D modeling reference: the creature has turned to its own left, so its head points to the right edge of the image. The whole body is seen exactly from the side, neither the chest nor the back faces the camera. Same pose.
+Exact 90 degree side profile for a 3D modeling reference: the creature has turned to its own left, so its head points to the right edge of the image and its tail or back end to the left edge. The whole body is seen exactly from the side, the full length from head to tail fully in frame, neither the front nor the back faces the camera. Same creature, same pose, same colors.
 ```
 
 ## Negativ-Prompt
 
 ```text
-multiple creatures, two heads unless described, rider, saddle, armor on animals, text, watermark, logo, frame, border, collage, character sheet, turnaround sheet, multiple views, split image, grid, cropped, cut off, partially out of frame, visible floor, horizon line, floor shadow, cast shadow, vignette, gradient background, colored background, scenery, landscape, forest, trees, props, dramatic lighting, rim light, motion blur, action pose, attacking, jumping, flying high, fisheye, perspective distortion, cartoon, anime, stylized, toy, plastic, clay, low detail, blurry
+multiple creatures, extra heads, extra limbs, missing limbs, fused legs, deformed anatomy, rider, saddle, text, watermark, logo, frame, border, collage, character sheet, turnaround sheet, multiple views, split image, grid, cropped, cut off, partially out of frame, visible floor, ground, horizon line, floor shadow, cast shadow, vignette, gradient background, colored background, scenery, landscape, forest, water surface, trees, props, dramatic lighting, rim light, motion blur, action pose, attacking, running, jumping, open jaws roaring, fisheye, perspective distortion, cartoon, anime, stylized, toy, plastic, clay, low detail, blurry
 ```
 
