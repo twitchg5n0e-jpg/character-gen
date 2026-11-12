@@ -9,6 +9,6 @@ Game inventory icon for a fantasy RPG showing exactly one object: a folded deep 
 ## Negativ-Prompt
 
 ```text
-text, letters, label, watermark, logo, frame, border, app icon, rounded square, tile, badge, dark background, black background, hands, person, creature, table, surface, scene, landscape, multiple different objects, collage, grid, cast shadow, vignette, gradient background, colored background, cartoon, flat vector, anime, blurry, low detail, cropped, cut off, bundle of sticks, twigs, firewood, tied bundle, rope, twine
+text, letters, label, watermark, logo, frame, border, app icon, rounded square, tile, badge, dark background, black background, hands, person, creature, whole animal, living animal, table, surface, scene, landscape, multiple different objects, collage, grid, cast shadow, vignette, gradient background, colored background, cartoon, flat vector, anime, blurry, low detail, cropped, cut off, bundle of sticks, twigs, firewood, tied bundle, rope, twine
 ```
 

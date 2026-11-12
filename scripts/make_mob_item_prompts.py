@@ -59,7 +59,7 @@ ITEM = ("Game inventory icon for a fantasy RPG showing exactly one object: {desc
         "seamless, uniform light gray background: no shadow, no table, no hands, no frame, no text, no label. Soft even "
         "studio lighting.")
 NEG_ITEM = ("text, letters, label, watermark, logo, frame, border, app icon, rounded square, tile, badge, dark background, "
-            "black background, hands, person, creature, table, surface, scene, landscape, multiple different objects, "
+            "black background, hands, person, creature, whole animal, living animal, table, surface, scene, landscape, multiple different objects, "
             "collage, grid, cast shadow, vignette, gradient background, colored background, cartoon, flat vector, anime, "
             "blurry, low detail, cropped, cut off")
 NEG_STICKS = ", bundle of sticks, twigs, firewood, tied bundle, rope, twine"
