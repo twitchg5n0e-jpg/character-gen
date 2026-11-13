@@ -82,6 +82,9 @@ FRONT_LONG = ("Strict head-on front view, like an orthographic front elevation f
 FRONT_SNAKE = ("Front view seen from slightly above: the snake points straight at the camera, its head at the front nearest to the "
                "viewer and looking straight into the camera, and its straight body extends straight away from the viewer behind the "
                "head so its whole length is visible, perfectly mirror-symmetrical left and right; not turned to the side.")
+# said first as well: at the end of a long prompt the model still drifts into a three-quarter view
+FRONT_LEAD = ("Exact head-on front view, the creature faces the camera squarely and is perfectly mirror-symmetrical "
+              "left and right, no flank visible. ")
 BACK = ("Strict back view, like an orthographic rear elevation for 3D modeling: the camera is directly behind the creature at mid "
         "height and looks straight along its spine, the creature faces away from the viewer, its head points away from the camera "
         "and its face is not visible, perfectly mirror-symmetrical left and right; not a three-quarter view. Same creature, same pose, "
@@ -166,7 +169,7 @@ def main() -> None:
                         % (kind[0].upper() + kind[1:], mob["name"], mob.get("kin", mob["name"]), mob.get("role", "-"), mob.get("behaviour", ""), pose, STYLE))
             front, negative, side = FRONT_UP, NEG_MOB, SIDE
         text = ("# Mob %s (%s, %s)\n\n" % (mob["name"], mob.get("body", "-"), mob.get("spawn", "common"))
-                + block("01_Front", describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK)
+                + block("01_Front", (FRONT_LEAD if front != FRONT_SNAKE else "") + describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK)
                 + block("03_Links", describe + "\n" + side) + block("Negativ-Prompt", negative))
         (PROMPTS / "Mobs" / ("%s_%s_Stage1.md" % (family, mob["id"]))).write_text(text, encoding="utf-8")
         mob_sets.append("Mobs/%s/%s/Stage1" % (family, mob["id"]))

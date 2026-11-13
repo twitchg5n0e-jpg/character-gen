@@ -479,7 +479,9 @@ def main() -> None:
                     rescue = folder / "front_kandidat.png"
                     save(best[0], rescue, size)
                     for turn in ("将镜头向左旋转30度 (rotate the camera 30 degrees to the left)",
-                                 "将镜头向右旋转30度 (rotate the camera 30 degrees to the right)"):
+                                 "将镜头向右旋转30度 (rotate the camera 30 degrees to the right)",
+                                 "将镜头向左旋转45度 (rotate the camera 45 degrees to the left)",
+                                 "将镜头向右旋转45度 (rotate the camera 45 degrees to the right)"):
                         graph = json.loads(json.dumps(side_image))
                         for node in graph.values():
                             if node.get("class_type") == "TextEncodeQwenImageEditPlus" and "%PROMPT%" in str(node["inputs"].get("prompt")):
