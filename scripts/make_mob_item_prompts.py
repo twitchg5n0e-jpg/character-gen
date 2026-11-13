@@ -152,6 +152,11 @@ def main() -> None:
                 # wisps and orbs: the ghost pose (arms, lower body) would turn them into a glowing humanoid
                 pose = ("It hovers motionless in the middle of the image as one single compact floating shape, with no "
                         "body, no arms, no legs and no human figure anywhere.")
+            if anatomy == "biped" and "held horizontally" in info["desc"]:
+                # running lizards: the upright A-pose would stand them up like a man
+                pose = ("It stands still on its two hind legs like a small raptor dinosaur or a running bird: the body held "
+                        "level and horizontal, head forward, the long tail stretched straight back for balance, the small "
+                        "forearms tucked in front of the chest.")
             describe = "%s. %s %s" % (info["desc"].rstrip(". ")[0].upper() + info["desc"].rstrip(". ")[1:], pose, STYLE)
             front = FRONT_UP if anatomy in UPRIGHT else FRONT_LONG
             negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
@@ -170,8 +175,10 @@ def main() -> None:
                 negative += ", armless, missing arms"
             if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
                 negative = negative.replace("missing limbs, ", "")
-            if pose is not POSE[anatomy]:
+            if pose is not POSE[anatomy] and anatomy != "biped":
                 negative += ", humanoid, human body, torso, arms, legs, person"
+            if pose is not POSE[anatomy] and anatomy == "biped":
+                negative += ", upright human posture, standing upright like a man, A-pose"
             if " heads" in info["desc"]:
                 negative = negative.replace("extra heads, ", "")
         else:   # fallback without an English description
