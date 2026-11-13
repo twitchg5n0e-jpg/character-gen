@@ -159,6 +159,10 @@ def main() -> None:
                 side = SIDE + (" It has exactly one head, at the right end of the body; the left end is the thin, pointed tail tip "
                                "without any head.")
                 negative += ", two heads, head at both ends, double-headed"
+            if " arms" in info["desc"]:
+                side += (" Its arms stay attached and clearly visible in the profile: the near arm hangs down along the side "
+                         "of the body in front of it, the far arm partly visible behind.")
+                negative += ", armless, missing arms"
             if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
                 negative = negative.replace("missing limbs, ", "")
             if " heads" in info["desc"]:
