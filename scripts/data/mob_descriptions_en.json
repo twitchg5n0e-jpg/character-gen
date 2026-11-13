@@ -31,18 +31,18 @@
  },
  "moosluchs": {
   "anatomy": "quadruped",
-  "desc": "a powerful lynx about knee-high at the shoulder, muscular body with long hind legs and large furry paws, short bobbed tail, thick fur in deep moss-green and olive tones with darker green rosette spots and small clumps of real moss growing on the back and shoulders, black ear tufts, white cheek ruffs and amber eyes",
-  "neg": "house cat, standing on hind legs, saddle, lion mane"
+  "desc": "a powerful lynx about knee-high at the shoulder, muscular body with long hind legs and large furry paws, very short stubby bobtail only a few centimetres long, thick fur in deep moss-green and olive tones with darker green rosette spots and small clumps of real moss growing on the back and shoulders, black ear tufts, white cheek ruffs and amber eyes",
+  "neg": "house cat, standing on hind legs, saddle, lion mane, long tail, curled tail"
  },
  "glimmluchs": {
   "anatomy": "quadruped",
-  "desc": "a powerful lynx about knee-high at the shoulder, muscular body with long hind legs and large paws, short bobbed tail, soft dark grey-brown fur covered in faintly glowing pale golden spots and streaks like embers, long glowing tips on the black ear tufts, pale cheek ruffs and bright golden glowing eyes",
-  "neg": "house cat, standing on hind legs, saddle, lion mane, fire, flames"
+  "desc": "a powerful lynx about knee-high at the shoulder, muscular body with long hind legs and large paws, very short stubby bobtail only a few centimetres long, soft dark grey-brown fur covered in faintly glowing pale golden spots and streaks like embers, long glowing tips on the black ear tufts, pale cheek ruffs and bright golden glowing eyes",
+  "neg": "house cat, standing on hind legs, saddle, lion mane, fire, flames, long tail, curled tail"
  },
  "schattenluchs": {
   "anatomy": "quadruped",
-  "desc": "a powerful lynx about knee-high at the shoulder, lean muscular body with long hind legs and large silent paws, short bobbed tail, nearly black fur with faint charcoal-grey rosettes visible only up close, long black ear tufts, dark grey cheek ruffs and piercing pale green eyes",
-  "neg": "house cat, standing on hind legs, saddle, lion mane, panther, smoke"
+  "desc": "a powerful lynx about knee-high at the shoulder, lean muscular body with long hind legs and large silent paws, very short stubby bobtail only a few centimetres long, nearly black fur with faint charcoal-grey rosettes visible only up close, long black ear tufts, dark grey cheek ruffs and piercing pale green eyes",
+  "neg": "house cat, standing on hind legs, saddle, lion mane, panther, smoke, long tail, curled tail"
  },
  "borkenwuehler": {
   "anatomy": "insect",
