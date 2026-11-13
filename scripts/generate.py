@@ -278,7 +278,7 @@ def side_view(image: Image.Image) -> tuple[str | None, float]:
     return direction, twist
 
 
-MIN_SYMMETRY = float(os.environ.get("MIN_SYMMETRY", "0.55"))   # mob front/back: a true head-on view is mirror-symmetric
+MIN_SYMMETRY = float(os.environ.get("MIN_SYMMETRY", "0.45"))   # mob front/back: minimum straightness() of a head-on view
 
 
 def symmetry(image: Image.Image) -> float:
@@ -300,6 +300,24 @@ def symmetry(image: Image.Image) -> float:
     return both / either if either else 0.0
 
 
+def straightness(image: Image.Image) -> float:
+    """How straight-on a front or back view is: 0.4 x outline symmetry + 0.6 x content symmetry.
+
+    The outline alone is fooled by bulky animals seen at an angle; comparing the picture itself with its mirror
+    image (inside the figure's bounding box) catches a face or body that sits off-centre."""
+    small = image.convert("RGB").resize((256, 256))
+    background = Image.new("RGB", small.size, small.getpixel((2, 2)))
+    mask = ImageChops.difference(small, background).convert("L").point(lambda v: 255 if v > 28 else 0)
+    box = mask.filter(ImageFilter.MedianFilter(5)).getbbox()
+    if not box:
+        return 0.0
+    gray = small.convert("L").crop(box)
+    difference = ImageChops.difference(gray, ImageOps.mirror(gray)).histogram()
+    mean = sum(value * count for value, count in enumerate(difference)) / max(1, sum(difference))
+    content = max(0.0, 1 - mean / 255 * 4)
+    return 0.4 * symmetry(image) + 0.6 * content
+
+
 def fix_mob_back(comfy, back_image: dict, folder: Path, prompt: str, negative: str, size: tuple[int, int]) -> None:
     """A strict head-on front often turns into a side view instead of a back view. If hinten.png is not symmetric,
     turn the finished side profile by 90 degrees both ways and keep the symmetric result that looks least like the
@@ -307,8 +325,8 @@ def fix_mob_back(comfy, back_image: dict, folder: Path, prompt: str, negative: s
     back, front, side = folder / "hinten.png", folder / "front.png", folder / "links.png"
     if not (back.is_file() and front.is_file() and side.is_file()):
         return
-    old_score = symmetry(Image.open(back))
-    if old_score >= 0.45:
+    old = Image.open(back)
+    if symmetry(old) >= 0.45 and straightness(old) >= MIN_SYMMETRY:
         return
     def look(image: Image.Image) -> list:
         return list(image.convert("L").resize((48, 48)).getdata())
@@ -330,10 +348,10 @@ def fix_mob_back(comfy, back_image: dict, folder: Path, prompt: str, negative: s
         except (requests.RequestException, RuntimeError) as error:
             print("    back turn failed: %s" % error)
             continue
-        score = symmetry(candidate)
+        score = straightness(candidate)
         difference = sum(abs(a - b) for a, b in zip(look(candidate), front_look)) / len(front_look)
-        print("    back turn %s: symmetry %.2f, difference to front %.1f" % (turn[:8], score, difference))
-        if score >= 0.5 and (best is None or difference > best[1]):
+        print("    back turn %s: straightness %.2f, difference to front %.1f" % (turn[:8], score, difference))
+        if score >= MIN_SYMMETRY and (best is None or difference > best[1]):
             best = (candidate, difference)
     if best is not None:
         save(best[0], back, size)
@@ -446,13 +464,13 @@ def main() -> None:
                 tries = 2 if view == "front" else 3   # a front that stays oblique is turned straight below (~5.5 min per turn)
                 for attempt in range(1, tries + 1):
                     candidate = make(back_image) if view == "hinten" else make()
-                    score = symmetry(candidate)
-                    print("    %s attempt %d: symmetry %.2f" % (view, attempt, score))
+                    score = straightness(candidate)
+                    print("    %s attempt %d: straightness %.2f (outline %.2f)" % (view, attempt, score, symmetry(candidate)))
                     if best is None or score > best[1]:
                         best = (candidate, score)
                     if score >= MIN_SYMMETRY:
                         break
-                    if view == "hinten" and score < 0.45:
+                    if view == "hinten" and symmetry(candidate) < 0.45:
                         break   # clearly a side view: fix_mob_back() turns the profile into the back view later
                 if view == "front" and best[1] < MIN_SYMMETRY:
                     # still a three-quarter view: let the Multiple-angles LoRA turn the camera by 30 degrees either way
@@ -474,15 +492,15 @@ def main() -> None:
                         except (requests.RequestException, RuntimeError) as error:
                             print("    front turn failed: %s" % error)
                             continue
-                        score = symmetry(candidate)
-                        print("    front turn %s: symmetry %.2f" % (turn[:8], score))
+                        score = straightness(candidate)
+                        print("    front turn %s: straightness %.2f" % (turn[:8], score))
                         if score > best[1]:
                             best = (candidate, score)
-                        if best[1] >= 0.8:
+                        if best[1] >= 0.65:
                             break   # straight enough, no need to try the other direction
                     rescue.unlink(missing_ok=True)
                 image = best[0]
-                note = " (symmetry %.2f)" % best[1]
+                note = " (straightness %.2f)" % best[1]
             elif view == "hinten":
                 for attempt in range(1, SIDE_TRIES + 1):
                     image = make(back_image)   # the Multiple-angles LoRA turns the camera by 180 degrees
