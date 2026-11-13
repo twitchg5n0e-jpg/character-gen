@@ -147,7 +147,12 @@ def main() -> None:
         info = MOBDESC.get(mob["id"])
         if info:
             anatomy = info["anatomy"] if info["anatomy"] in POSE else "other"
-            describe = "%s. %s %s" % (info["desc"].rstrip(". ")[0].upper() + info["desc"].rstrip(". ")[1:], POSE[anatomy], STYLE)
+            pose = POSE[anatomy]
+            if anatomy in ("ghost", "elemental", "other") and ("no body" in info["desc"] or "no limbs" in info["desc"]):
+                # wisps and orbs: the ghost pose (arms, lower body) would turn them into a glowing humanoid
+                pose = ("It hovers motionless in the middle of the image as one single compact floating shape, with no "
+                        "body, no arms, no legs and no human figure anywhere.")
+            describe = "%s. %s %s" % (info["desc"].rstrip(". ")[0].upper() + info["desc"].rstrip(". ")[1:], pose, STYLE)
             front = FRONT_UP if anatomy in UPRIGHT else FRONT_LONG
             negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
             if anatomy in ("snake", "serpent_water", "crawler"):
@@ -165,6 +170,8 @@ def main() -> None:
                 negative += ", armless, missing arms"
             if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
                 negative = negative.replace("missing limbs, ", "")
+            if pose is not POSE[anatomy]:
+                negative += ", humanoid, human body, torso, arms, legs, person"
             if " heads" in info["desc"]:
                 negative = negative.replace("extra heads, ", "")
         else:   # fallback without an English description
