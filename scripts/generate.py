@@ -278,7 +278,8 @@ def side_view(image: Image.Image) -> tuple[str | None, float]:
     return direction, twist
 
 
-MIN_SYMMETRY = float(os.environ.get("MIN_SYMMETRY", "0.45"))   # mob front/back: minimum straightness() of a head-on view
+MIN_SYMMETRY = float(os.environ.get("MIN_SYMMETRY", "0.45"))   # mob back: minimum straightness() of a view from behind
+MIN_FRONT = float(os.environ.get("MIN_FRONT", "0.6"))   # mob front: stricter, bulky animals at an angle still reach ~0.5
 
 
 def symmetry(image: Image.Image) -> float:
@@ -468,11 +469,11 @@ def main() -> None:
                     print("    %s attempt %d: straightness %.2f (outline %.2f)" % (view, attempt, score, symmetry(candidate)))
                     if best is None or score > best[1]:
                         best = (candidate, score)
-                    if score >= MIN_SYMMETRY:
+                    if score >= (MIN_FRONT if view == "front" else MIN_SYMMETRY):
                         break
                     if view == "hinten" and symmetry(candidate) < 0.45:
                         break   # clearly a side view: fix_mob_back() turns the profile into the back view later
-                if view == "front" and best[1] < MIN_SYMMETRY:
+                if view == "front" and best[1] < MIN_FRONT:
                     # still a three-quarter view: let the Multiple-angles LoRA turn the camera by 30 degrees either way
                     # and keep whichever result is the most symmetric (the back view is made from this front)
                     rescue = folder / "front_kandidat.png"
