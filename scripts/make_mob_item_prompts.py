@@ -166,6 +166,10 @@ def main() -> None:
             if anatomy in ("snake", "crawler"):
                 front = FRONT_SNAKE
             side = SIDE
+            if anatomy in UPRIGHT:
+                # robed casters kept coming out seen from behind at an angle
+                side += (" The face is seen in clear side profile with the nose pointing to the right edge; the back is not "
+                         "turned toward the camera and the figure is not seen from behind.")
             if anatomy in ("snake", "crawler", "serpent_water"):
                 side = SIDE + (" It has exactly one head, at the right end of the body; the left end is the thin, pointed tail tip "
                                "without any head.")
