@@ -266,8 +266,8 @@
  },
  "obsidianhueter": {
   "anatomy": "elemental",
-  "desc": "a tall humanoid guardian about twice the height of a man, body made entirely of jagged black volcanic glass, sharp-edged shards forming chest, shoulders and long arms, glossy reflective surfaces, faint deep-red glow in the cracks, a featureless angular head with two narrow glowing red eye slits",
-  "neg": "human skin, clothing, armor, sword"
+  "desc": "a tall humanoid guardian about twice the height of a man, body made entirely of jagged black volcanic glass, sharp-edged shards forming chest, shoulders and long arms, glossy reflective surfaces, faint deep-red glow in the cracks, a featureless angular head with two narrow glowing red eye slits, shown as a full-length figure from the top of the head down to both feet, the whole figure small enough to fit in the frame with empty space above the head and below the feet",
+  "neg": "human skin, clothing, armor, sword, cropped legs, cut off at the waist, upper body only, portrait, bust, close-up"
  },
  "schimmerreh": {
   "anatomy": "quadruped",
