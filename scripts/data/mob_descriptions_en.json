@@ -536,8 +536,8 @@
  },
  "schneeleopard": {
   "anatomy": "quadruped",
-  "desc": "a lean snow leopard about the size of a large dog, smoky white-gray thick fur covered in dark gray rosettes and spots, very long thick fluffy tail as long as its body, broad padded paws, short rounded ears, pale green eyes, powerful hindquarters and slender athletic build",
-  "neg": "tiger stripes, orange fur, standing upright, short tail"
+  "desc": "a lean snow leopard about the size of a large dog, smoky white-gray thick fur covered in dark gray rosettes and spots, exactly one single very long thick fluffy tail as long as its body, broad padded paws, short rounded ears, pale green eyes, powerful hindquarters and slender athletic build",
+  "neg": "tiger stripes, orange fur, standing upright, short tail, two tails, double tail, forked tail, extra tail"
  },
  "bergkobold": {
   "anatomy": "biped",
