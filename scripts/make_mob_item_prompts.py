@@ -68,7 +68,8 @@ POSE = {
     "plant": "It stands upright in a calm neutral stance, limbs slightly away from the body.",
     "elemental": "It stands upright in a calm neutral stance, arms slightly away from the body.",
     "dragon": "It stands still on all its legs in a calm neutral stance, wings folded against the body, tail lying calmly behind it, "
-              "head held level and looking straight ahead.",
+              "head held level and looking straight ahead. The wings are folded tightly against its back, not spread, "
+              "and the whole dragon including the wing tips and the tail tip fits well inside the frame with empty space on every side.",
     "other": "It rests in a calm neutral pose, the whole body clearly readable.",
 }
 UPRIGHT = {"biped", "ghost", "plant", "elemental", "octopus", "slime"}
@@ -175,6 +176,8 @@ def main() -> None:
                 negative += ", armless, missing arms"
             if anatomy in ("snake", "fish", "serpent_water", "slime", "ghost", "crawler", "octopus", "other"):
                 negative = negative.replace("missing limbs, ", "")
+            if anatomy == "dragon":
+                negative += ", spread wings, open wings, wings cut off, cropped wings, wing tips outside the image"
             if pose is not POSE[anatomy] and anatomy != "biped":
                 negative += ", humanoid, human body, torso, arms, legs, person"
             if pose is not POSE[anatomy] and anatomy == "biped":
