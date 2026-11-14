@@ -14,7 +14,16 @@ if curl -sf "http://127.0.0.1:${COMFY_PORT}/system_stats" >/dev/null; then
 fi
 
 if [ ! -d "$COMFY_DIR" ]; then
-  git clone --depth 1 https://github.com/comfyanonymous/ComfyUI "$COMFY_DIR"
+  # Nur einen festen Stand holen (kein ganzes Repository): 1. November 2026, mit dem die bisherigen Sets entstanden
+  # sind. COMFY_REF=master fuer den neuesten.
+  ref="${COMFY_REF:-bb878b9ee35274e67931634ba9e8c338f8c06035}"
+  git init -q "$COMFY_DIR"
+  git -C "$COMFY_DIR" remote add origin https://github.com/comfyanonymous/ComfyUI
+  for i in 1 2 3 4 5; do
+    GIT_TERMINAL_PROMPT=0 git -C "$COMFY_DIR" fetch -q --depth 1 origin "$ref" && break
+    echo "ComfyUI-Download fehlgeschlagen, neuer Versuch"; sleep $((2 ** i))
+  done
+  git -C "$COMFY_DIR" checkout -q FETCH_HEAD
 fi
 pip install -q -r "$COMFY_DIR/requirements.txt"
 
@@ -36,4 +45,24 @@ download loras "https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/res
 download vae              "$HF/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors"
 
 nohup python "$COMFY_DIR/main.py" --listen 127.0.0.1 --port "$COMFY_PORT" > comfyui.log 2>&1 &
+COMFY_PID=$!
 echo "ComfyUI startet (Log: comfyui.log)"
+
+# Warten, bis ComfyUI antwortet. Stirbt es vorher (z. B. PyTorch passt nicht), das Log zeigen und abbrechen,
+# statt dass generate.py eine halbe Stunde ins Leere wartet und die GPU Geld kostet.
+for i in $(seq 1 300); do
+  if curl -sf "http://127.0.0.1:${COMFY_PORT}/system_stats" >/dev/null; then
+    echo "ComfyUI laeuft"
+    python -c "import torch; print('PyTorch', torch.__version__, 'CUDA', torch.version.cuda, torch.cuda.get_device_name(0))" || true
+    exit 0
+  fi
+  if ! kill -0 "$COMFY_PID" 2>/dev/null; then
+    echo "ComfyUI ist beim Start abgestuerzt:"
+    tail -n 60 comfyui.log
+    exit 1
+  fi
+  sleep 2
+done
+echo "ComfyUI antwortet nach 10 Minuten nicht:"
+tail -n 60 comfyui.log
+exit 1
