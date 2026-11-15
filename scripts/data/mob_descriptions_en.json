@@ -626,8 +626,8 @@
  },
  "kopfloser_reiter": {
   "anatomy": "biped",
-  "desc": "a tall headless undead knight, no head on the shoulders and only a ragged collar with drifting dark smoke at the neck, dark rusted plate armor over a black tattered cloak, a carved pumpkin-like glowing lantern hanging from the belt, a long notched sword in one hand, heavy riding boots",
-  "neg": "horse, head, rider, saddle, face"
+  "desc": "a tall headless undead knight, completely headless with absolutely no head, no skull and no helmet on the shoulders and only a ragged collar with drifting dark smoke at the neck, dark rusted plate armor over a black tattered cloak, a carved pumpkin-like glowing lantern hanging from the belt, a long notched sword in one hand, heavy riding boots",
+  "neg": "horse, head, rider, saddle, face, head, skull, face, helmet, hood with a face, eyes"
  },
  "zentaur": {
   "anatomy": "quadruped",
