@@ -630,9 +630,9 @@
   "neg": "horse, head, rider, saddle, face, head, skull, face, helmet, hood with a face, eyes"
  },
  "zentaur": {
-  "anatomy": "quadruped",
-  "desc": "a centaur about one and a half times the height of a man, upper body of a muscular human with tanned skin, long brown braided hair and stern face, lower body of a chestnut horse with four legs and hooves, leather chest strap with a quiver of arrows, a longbow in hand, long dark horse tail",
-  "neg": "saddle, two legs, rider on horse"
+  "anatomy": "other",
+  "desc": "a centaur, a creature whose human torso, arms and human head rise from where the neck of a horse would be, with no horse head at all about one and a half times the height of a man, upper body of a muscular human with tanned skin, long brown braided hair and stern face, lower body of a chestnut horse with four legs and hooves, leather chest strap with a quiver of arrows, a longbow in hand, long dark horse tail",
+  "neg": "saddle, two legs, rider on horse, plain horse, horse head, horse neck, ordinary horse, rider on a horse, saddle"
  },
  "heidedrache": {
   "anatomy": "dragon",
