@@ -670,9 +670,9 @@
   "neg": "legs, eyes, face, fish"
  },
  "riffaal": {
-  "anatomy": "serpent_water",
-  "desc": "a long moray-like reef eel about the length of two men, muscular snake-like body with a continuous fin along the back, mottled yellow and teal skin with dark spots, wide gaping jaws with needle-like teeth, small cold eyes, no pectoral fins, tapering tail",
-  "neg": "legs, arms, snake scales, two heads, short body, fat body, round body, blob"
+  "anatomy": "snake",
+  "desc": "a very long, very thin and slender moray-like reef eel about the length of two men, muscular snake-like body with a continuous fin along the back, mottled yellow and teal skin with dark spots, wide gaping jaws with needle-like teeth, small cold eyes, no pectoral fins, tapering tail",
+  "neg": "legs, arms, snake scales, two heads, short body, fat body, round body, blob, thick body, bulging body, swollen"
  },
  "nebelsirene": {
   "anatomy": "biped",
@@ -740,9 +740,9 @@
   "neg": "armor, sword, slim, wings"
  },
  "tintenaal": {
-  "anatomy": "serpent_water",
-  "desc": "a long black eel about the length of a man, smooth glossy ink-black skin with faint purple sheen, continuous dark fin along the back and belly, blunt head with small pale violet eyes, wisps of black ink leaking from small gill openings, tapering tail",
-  "neg": "legs, arms, snake, two heads, short body, fat body, round body, blob"
+  "anatomy": "snake",
+  "desc": "a very long, very thin and slender black eel about the length of a man, smooth glossy ink-black skin with faint purple sheen, continuous dark fin along the back and belly, blunt head with small pale violet eyes, wisps of black ink leaking from small gill openings, tapering tail",
+  "neg": "legs, arms, snake, two heads, short body, fat body, round body, blob, thick body, bulging body, swollen"
  },
  "silberreiher_geist": {
   "anatomy": "ghost",
