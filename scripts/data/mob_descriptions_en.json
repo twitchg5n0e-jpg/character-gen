@@ -776,8 +776,8 @@
  },
  "wuestenspringmaus": {
   "anatomy": "quadruped",
-  "desc": "a tiny jerboa about the size of a hand, round sandy-beige body with white belly, huge round ears, big dark eyes, tiny forelegs, very long hind legs for hopping, extremely long thin tail ending in a black-and-white tuft, soft whiskers, a pale pink nose and fine sandy fur with a faint darker stripe across the hips",
-  "neg": "rabbit, rat, clothing, short tail"
+  "desc": "a tiny jerboa about the size of a hand, round sandy-beige body with white belly, huge round ears, big dark eyes, tiny forelegs, very long hind legs for hopping, extremely long thin tail ending in a black-and-white tuft, soft whiskers, a pale pink nose and fine sandy fur with a faint darker stripe across the hips, with exactly one single long thin tail that comes out of the middle of its rump and lies straight back along the ground directly behind it, so in the front view the tail is hidden behind the body",
+  "neg": "rabbit, rat, clothing, short tail, two tails, double tail, forked tail, tail on both sides"
  },
  "kupferskarabaeus": {
   "anatomy": "insect",
