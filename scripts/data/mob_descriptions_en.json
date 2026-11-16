@@ -801,8 +801,8 @@
  },
  "sandorgel_fledermaus": {
   "anatomy": "flyer",
-  "desc": "a large bat with a wingspan as wide as a man is tall, sandy-tan fur, leathery pale brown wings with organ-pipe-like ridges along the bones, oversized ribbed ears like tubes, small black eyes, pug nose, tiny fangs, clawed thumbs, a pale cream chest, darker brown wing edges and small hooked claws on the feet",
-  "neg": "bird feathers, human body, four arms"
+  "desc": "a large bat with a wingspan as wide as a man is tall, sandy-tan fur, leathery pale brown wings with organ-pipe-like ridges along the bones, oversized ribbed ears like tubes, small black eyes, pug nose, tiny fangs, clawed thumbs, a pale cream chest, darker brown wing edges and small hooked claws on the feet; its wings are only half spread and held slightly down, so the whole bat including both wing tips fits well inside the frame with empty space on every side",
+  "neg": "bird feathers, human body, four arms, wings cut off, cropped wings, wing tips outside the image, fully spread wings"
  },
  "kaktuslaeufer": {
   "anatomy": "plant",
