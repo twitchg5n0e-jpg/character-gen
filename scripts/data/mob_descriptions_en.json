@@ -876,8 +876,8 @@
  },
  "aschschnee_wiesel": {
   "anatomy": "quadruped",
-  "desc": "a slender weasel about the length of a forearm, long lithe body, ash-gray fur with sooty dark speckles and white throat, short legs, small rounded ears, beady black eyes, sharp tiny teeth, long thin tail with a dark tip, a slightly paler gray belly and a faint darker mask around the eyes",
-  "neg": "standing upright, rat, fat"
+  "desc": "a slender weasel about the length of a forearm, long lithe body, ash-gray fur with sooty dark speckles and white throat, short legs, small rounded ears, beady black eyes, sharp tiny teeth, long thin tail with a dark tip, a slightly paler gray belly and a faint darker mask around the eyes; it stands on all four short legs with its long body held low and level like a running weasel, not sitting and not standing up, with exactly one tail straight behind it",
+  "neg": "standing upright, rat, fat, sitting, sitting upright, standing on hind legs, upright posture, two tails"
  },
  "yeti": {
   "anatomy": "biped",
