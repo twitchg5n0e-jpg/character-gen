@@ -826,8 +826,8 @@
  },
  "sphinx": {
   "anatomy": "quadruped",
-  "desc": "a large sphinx the size of an elephant, body of a golden-tan lion with four legs and long tufted tail, two great feathered eagle wings folded on its back, an ageless human face with dark kohl-lined eyes, a striped blue-and-gold royal headdress, golden collar on the chest",
-  "neg": "human body, two heads, statue, pyramid"
+  "desc": "a large sphinx the size of an elephant, body of a golden-tan lion with four legs and long tufted tail, two great feathered eagle wings folded on its back, an ageless human face with dark kohl-lined eyes, a striped blue-and-gold royal headdress, golden collar on the chest; important: the head is a human head with a calm human face (human nose, human lips, no muzzle, no lion face, no mane), and the two eagle wings are folded flat along its back",
+  "neg": "human body, two heads, statue, pyramid, lion face, lion head, muzzle, mane, spread wings"
  },
  "pharao_der_knochen": {
   "anatomy": "biped",
