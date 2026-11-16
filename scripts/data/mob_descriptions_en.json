@@ -841,8 +841,8 @@
  },
  "frostfuchs": {
   "anatomy": "quadruped",
-  "desc": "a white fox slightly larger than a normal fox, thick fluffy snow-white fur with icy pale blue tips, frost crystals clinging to the very bushy tail, small rounded ears, pale blue eyes, dark nose, small black-tipped paws, a thick ruff of fur around the neck, slim legs dusted with pale blue frost and a narrow pointed muzzle",
-  "neg": "orange fur, standing upright, two tails"
+  "desc": "a white fox slightly larger than a normal fox, thick fluffy snow-white fur with icy pale blue tips, frost crystals clinging to the very bushy tail, small rounded ears, pale blue eyes, dark nose, small black-tipped paws, a thick ruff of fur around the neck, slim legs dusted with pale blue frost and a narrow pointed muzzle, with exactly one single bushy tail that comes out of the middle of its rump and hangs straight down behind the hind legs, so in the front view the tail is hidden behind the body",
+  "neg": "orange fur, standing upright, two tails, two tails, double tail, forked tail, tail on both sides"
  },
  "reifkraehe": {
   "anatomy": "bird",
