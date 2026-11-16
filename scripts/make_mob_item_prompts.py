@@ -51,7 +51,8 @@ POSE = {
     "biped": "It stands upright in a relaxed A-pose: arms slightly away from the body, legs straight, feet slightly apart, "
              "looking straight ahead.",
     "bird": "It stands upright on both feet, wings folded neatly against the body, head held level and looking straight ahead.",
-    "flyer": "It hovers motionless in mid-air in the middle of the image, body level, wings spread symmetrically and fully visible.",
+    "flyer": ("It hovers motionless in mid-air in the middle of the image, body level, wings spread symmetrically and fully visible. "
+              "The creature is shown small enough that both wing tips stay well inside the frame with empty space on every side."),
     "snake": "It lies flat on its belly, fully stretched out in one straight line like a rope laid out straight, the head resting "
              "low just above the ground at the front end and the tail tip straight behind; no coils, no loops, no rings, the body "
              "never crosses or touches itself and is not raised, so every part of it is clearly separate.",
@@ -182,6 +183,8 @@ def main() -> None:
                 negative = negative.replace("missing limbs, ", "")
             if anatomy == "dragon":
                 negative += ", spread wings, open wings, wings cut off, cropped wings, wing tips outside the image"
+            if anatomy == "flyer":
+                negative += ", wings cut off, cropped wings, wing tips outside the image"
             if pose is not POSE[anatomy] and anatomy != "biped":
                 negative += ", humanoid, human body, torso, arms, legs, person"
             if pose is not POSE[anatomy] and anatomy == "biped":
