@@ -906,8 +906,8 @@
  },
  "russfledermaus": {
   "anatomy": "flyer",
-  "desc": "a soot bat with a wingspan as wide as a human arm span, sooty black fur with smudged gray tips, black leathery wings with tiny glowing ember specks, big pointed ears, small red eyes, wrinkled snout, small fangs, a small furry body with a pale ash-gray chest patch and tiny hooked feet",
-  "neg": "bird feathers, human body, four arms"
+  "desc": "a soot bat with a wingspan as wide as a human arm span, sooty black fur with smudged gray tips, black leathery wings with tiny glowing ember specks, big pointed ears, small red eyes, wrinkled snout, small fangs, a small furry body with a pale ash-gray chest patch and tiny hooked feet; its wings are only half spread and held slightly down, so the whole bat including both wing tips fits well inside the frame with empty space on every side",
+  "neg": "bird feathers, human body, four arms, wings cut off, cropped wings, wing tips outside the image, fully spread wings"
  },
  "lavaschnecke": {
   "anatomy": "crawler",
