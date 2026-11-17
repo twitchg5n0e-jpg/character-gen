@@ -1061,8 +1061,8 @@
  },
  "arkanwisp": {
   "anatomy": "ghost",
-  "desc": "a tiny floating wisp about the size of a fist, a bright core of pure magic glowing intense magenta and electric blue, surrounded by small orbiting sparks and thin ribbons of light, a short flickering comet-like tail, no limbs, no face apart from two tiny white points of light",
-  "neg": "humanoid, body, wings, legs, fairy, face"
+  "desc": "a tiny floating wisp about the size of a fist, a bright core of pure magic glowing intense magenta and electric blue, surrounded by small orbiting sparks and thin ribbons of light, a short flickering comet-like tail, no limbs, no face apart from two tiny white points of light, a pure floating ball of light with no body, no limbs, no head, no tail and no face",
+  "neg": "humanoid, body, wings, legs, fairy, face, creature, animal, monster, body, limbs, arms, legs, tail, face, humanoid"
  },
  "sternsplitter_golem": {
   "anatomy": "elemental",
