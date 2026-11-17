@@ -161,6 +161,9 @@ def main() -> None:
                         "forearms tucked in front of the chest.")
             describe = "%s. %s %s" % (info["desc"].rstrip(". ")[0].upper() + info["desc"].rstrip(". ")[1:], pose, STYLE)
             front = FRONT_UP if anatomy in UPRIGHT else FRONT_LONG
+            if anatomy == "slime":
+                # FRONT_UP asks for both arms and legs, which turned a slime blob into a golem
+                front = front.replace("both arms \n", "").replace(", both arms and both legs equally visible", "")
             negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
             if anatomy in ("snake", "serpent_water", "crawler"):
                 negative += ", coiled, coils, loops, ring, circle, knotted, curled up, body overlapping itself, spiral, raised head, cobra pose, rearing up, S-curve"
