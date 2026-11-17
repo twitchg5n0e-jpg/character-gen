@@ -1131,8 +1131,8 @@
  },
  "kraterschleim": {
   "anatomy": "slime",
-  "desc": "a blob of thick slime about knee-high, glossy pitch-black tar-like goo with an oily rainbow sheen, small embedded glowing orange ember-like pebbles and bits of ash inside, a lumpy dome shape with drooping edges, two small glowing orange eyes near the top",
-  "neg": "face with mouth, limbs, green slime, transparent"
+  "desc": "a blob of thick slime about knee-high, glossy pitch-black tar-like goo with an oily rainbow sheen, small embedded glowing orange ember-like pebbles and bits of ash inside, a lumpy dome shape with drooping edges, two small glowing orange eyes near the top; it is one single shapeless dome-shaped blob of goo resting on the ground, with no arms, no legs, no head, no face and no human or animal shape at all",
+  "neg": "face with mouth, limbs, green slime, transparent, humanoid, arms, legs, head, face, golem, creature with limbs, standing figure"
  },
  "schwarzblut_golem": {
   "anatomy": "elemental",
