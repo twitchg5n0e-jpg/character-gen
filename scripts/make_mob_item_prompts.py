@@ -6,7 +6,11 @@
 Reads scripts/data/elyndra_mobs_v0.1.json (copy of Elyndra/Data/Source/Mobs/elyndra_mobs_v0.1.json) and writes
     scripts/prompts/Items/Loot_<Id>_Icon.md     + scripts/sets_items.txt   (Items/Loot/<Id>/Icon)
     scripts/prompts/Mobs/<Family>_<id>_Stage1.md + scripts/sets_mobs.txt   (Mobs/<Family>/<id>/Stage1)
+    scripts/prompts/Mobs/<Family>_<id>_Flug.md   (winged mobs only, listed after all Stage1 sets: Mobs/<Family>/<id>/Flug)
 scripts/generate.py works through scripts/sets.txt first, then sets_items.txt, then sets_mobs.txt.
+The Flug set shows the same creature with its wings spread wide (made by editing its Stage1 front): a mesh built from
+folded wings has them fused to the body, so the 3D model of a winged mob is made from the Flug set and the wings are
+folded by the animation rig instead.
 """
 from __future__ import annotations
 
@@ -100,6 +104,31 @@ NEG_MOB = ("multiple creatures, extra heads, extra limbs, missing limbs, fused l
            "colored background, scenery, landscape, forest, water surface, trees, props, dramatic lighting, rim light, motion blur, "
            "action pose, attacking, running, jumping, open jaws roaring, three-quarter view, angled view, diagonal view, fisheye, perspective distortion, cartoon, anime, stylized, "
            "toy, plastic, clay, low detail, blurry")
+# winged mobs that get a Flug set: birds and dragons, plus these (flyers are already drawn with spread wings)
+WINGED_EXTRA = {"windharpyie", "sphinx", "greif"}
+FLY_POSE = ("It hovers in mid-air in a symmetrical flight pose for a 3D animation rig: both wings are spread fully open and wide "
+            "to the left and right, held flat and level like a T-pose, the whole wing surface clearly visible and not overlapping "
+            "the body; the legs hang relaxed below the body, the tail stretched straight back, the head level and looking straight "
+            "ahead. The creature is shown small enough that both wing tips stay well inside the frame with empty space on every side.")
+FLY_EDIT = ("Edit this image: the same creature with the same head, body, colors and markings now spreads its wings fully open "
+            "and hovers in mid-air; keep the plain light gray background. ")
+FRONT_FLY = ("Strict head-on front view, like an orthographic front elevation for 3D modeling: the creature faces the camera squarely "
+             "with both eyes equally visible, its two wings spread out to the left and right side of the image as exact mirror "
+             "images of each other, perfectly mirror-symmetrical left and right; not a three-quarter view.")
+BACK_FLY = " Both wings stay spread wide to the left and right, seen from behind."
+SIDE_FLY = " The wings stay spread exactly as in the front view: the near wing reaches towards the camera, the far wing away from it."
+NEG_FLY = (", folded wings, closed wings, wings against the body, tucked wings, standing on the ground, perched, sitting, "
+           "wings cut off, cropped wings, wing tips outside the image, asymmetric wings, one wing")
+
+
+def spread(desc: str) -> str:
+    """The description with its folded wings turned into spread ones."""
+    desc = re.sub(r"\b(?:folded|tucked) wings", "spread wings", desc)
+    desc = re.sub(r"\b(?:are )?(?:folded|tucked)(?: neatly| flat| tightly)?(?: (?:at|against|along|on|to) (?:its|the) "
+                  r"(?:sides|side|back|body))?", "spread wide", desc)
+    return desc
+
+
 MOBDESC_FILE = ROOT / "scripts" / "data" / "mob_descriptions_en.json"
 MOBDESC = json.loads(MOBDESC_FILE.read_text(encoding="utf-8")) if MOBDESC_FILE.is_file() else {}
 ITEM = ("Game inventory icon for a fantasy RPG showing exactly one object: {desc} (item „{name}“). The object itself, "
@@ -143,7 +172,7 @@ def main() -> None:
         text = "# Item %s\n\n" % item["name"] + block("01_Icon", ITEM.format(name=item["name"], desc=desc)) + block("Negativ-Prompt", neg)
         (PROMPTS / "Items" / ("Loot_%s_Icon.md" % ident)).write_text(text, encoding="utf-8")
         item_sets.append("Items/Loot/%s/Icon" % ident)
-    mob_sets = []
+    mob_sets, fly_sets = [], []
     for mob in data["mobs"]:
         family = "F%02d" % int(mob["family"])
         info = MOBDESC.get(mob["id"])
@@ -204,9 +233,18 @@ def main() -> None:
                 + block("03_Links", describe + "\n" + side) + block("Negativ-Prompt", negative))
         (PROMPTS / "Mobs" / ("%s_%s_Stage1.md" % (family, mob["id"]))).write_text(text, encoding="utf-8")
         mob_sets.append("Mobs/%s/%s/Stage1" % (family, mob["id"]))
+        if info and (info["anatomy"] in ("bird", "dragon") or mob["id"] in WINGED_EXTRA):
+            fly = "%s. %s %s" % (spread(info["desc"]).rstrip(". ")[0].upper() + spread(info["desc"]).rstrip(". ")[1:], FLY_POSE, STYLE)
+            fly_neg = (negative.replace(", spread wings, open wings", "") + NEG_FLY)
+            text = ("# Mob %s im Flug (%s)\n\n" % (mob["name"], mob.get("body", "-"))
+                    + block("01_Front", FLY_EDIT + FRONT_LEAD + fly + "\n" + FRONT_FLY)
+                    + block("02_Ruecken", fly + "\n" + BACK + BACK_FLY)
+                    + block("03_Links", fly + "\n" + side + SIDE_FLY) + block("Negativ-Prompt", fly_neg))
+            (PROMPTS / "Mobs" / ("%s_%s_Flug.md" % (family, mob["id"]))).write_text(text, encoding="utf-8")
+            fly_sets.append("Mobs/%s/%s/Flug" % (family, mob["id"]))
     (ROOT / "scripts" / "sets_items.txt").write_text("\n".join(item_sets) + "\n", encoding="utf-8")
-    (ROOT / "scripts" / "sets_mobs.txt").write_text("\n".join(mob_sets) + "\n", encoding="utf-8")
-    print("%d items, %d mobs" % (len(item_sets), len(mob_sets)))
+    (ROOT / "scripts" / "sets_mobs.txt").write_text("\n".join(mob_sets + fly_sets) + "\n", encoding="utf-8")
+    print("%d items, %d mobs, %d winged mobs in flight" % (len(item_sets), len(mob_sets), len(fly_sets)))
 
 
 if __name__ == "__main__":
