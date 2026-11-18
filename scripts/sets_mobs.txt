@@ -1,3 +1,4 @@
+Mobs/F02/sturmgeier/Flug
 Mobs/F09/auenspringer/Stage1
 Mobs/F09/distelspringer/Stage1
 Mobs/F09/mondspringer/Stage1
@@ -538,7 +539,6 @@ Mobs/F09/taldrache/Flug
 Mobs/F11/spiegeldrache/Flug
 Mobs/F12/aaskraehe/Flug
 Mobs/F02/gratgeier/Flug
-Mobs/F02/sturmgeier/Flug
 Mobs/F02/knochengeier/Flug
 Mobs/F03/heidehuhn/Flug
 Mobs/F03/moorhuhn/Flug
