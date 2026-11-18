@@ -116,7 +116,8 @@ FRONT_FLY = ("Strict head-on front view, like an orthographic front elevation fo
              "with both eyes equally visible, its two wings spread out to the left and right side of the image as exact mirror "
              "images of each other, perfectly mirror-symmetrical left and right; not a three-quarter view.")
 BACK_FLY = " Both wings stay spread wide to the left and right, seen from behind."
-SIDE_FLY = " The wings stay spread exactly as in the front view: the near wing reaches towards the camera, the far wing away from it."
+SIDE_FLY = (" The wings stay spread flat and level exactly as in the front view, so from the side they are seen edge-on, "
+            "pointing straight towards and away from the camera; they are not raised upwards, not lowered and not folded.")
 NEG_FLY = (", folded wings, closed wings, wings against the body, tucked wings, standing on the ground, perched, sitting, "
            "wings cut off, cropped wings, wing tips outside the image, asymmetric wings, one wing")
 
