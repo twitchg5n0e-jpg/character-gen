@@ -154,3 +154,5 @@ eisdrache: Schwanz unten abgeschnitten; bachhuhn, leerenkraehe, taldrache: Hinte
 aschekriecher: Front/Rücken weiterhin schräg von oben (Nachbesserung 23.11. akzeptiert)
 schneeleopard: Profil Kopf/Schwanz am Bildrand auch nach Nachbesserung 23.11. (akzeptiert)
 basilisk: weiterhin 4 statt 8 Beine, Front leicht von oben (Nachbesserung 23.11. akzeptiert)
+heidehase: Front bräunlich, Rücken/Profil lila – Farbe uneinheitlich (Nachbesserung 23.11. akzeptiert)
+windharfen_geist: weiterhin Beine statt Luftwirbel (Nachbesserung 23.11. akzeptiert)
