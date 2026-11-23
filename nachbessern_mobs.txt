@@ -157,3 +157,4 @@ basilisk: weiterhin 4 statt 8 Beine, Front leicht von oben (Nachbesserung 23.11.
 heidehase: Front bräunlich, Rücken/Profil lila – Farbe uneinheitlich (Nachbesserung 23.11. akzeptiert)
 windharfen_geist: weiterhin Beine statt Luftwirbel (Nachbesserung 23.11. akzeptiert)
 zentaur: Profil weiterhin mit Sattel/Taschen (Nachbesserung 23.11. akzeptiert)
+dschinn: weiterhin Beine unter dem Rauch (Nachbesserung 23.11. akzeptiert)
