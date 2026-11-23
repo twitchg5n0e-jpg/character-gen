@@ -151,3 +151,4 @@ tundrarobbe, sternfisch: Rücken ist Seitenprofil
 felsdrache, heidedrache, schwarzwasser_drache, taldrache, spiegeldrache, sternendrache, knochendrache: keine Flugpose (sitzen/stehen)
 riffkormoran, schneeeule, kleehuhn, sphinx: Flügel in Profilen angelegt
 eisdrache: Schwanz unten abgeschnitten; bachhuhn, leerenkraehe, taldrache: Hintergrund (fast) weiß
+aschekriecher: Front/Rücken weiterhin schräg von oben (Nachbesserung 23.11. akzeptiert)
