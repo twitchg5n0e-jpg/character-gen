@@ -153,3 +153,4 @@ riffkormoran, schneeeule, kleehuhn, sphinx: Flügel in Profilen angelegt
 eisdrache: Schwanz unten abgeschnitten; bachhuhn, leerenkraehe, taldrache: Hintergrund (fast) weiß
 aschekriecher: Front/Rücken weiterhin schräg von oben (Nachbesserung 23.11. akzeptiert)
 schneeleopard: Profil Kopf/Schwanz am Bildrand auch nach Nachbesserung 23.11. (akzeptiert)
+basilisk: weiterhin 4 statt 8 Beine, Front leicht von oben (Nachbesserung 23.11. akzeptiert)
