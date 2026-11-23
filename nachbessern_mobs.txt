@@ -132,3 +132,22 @@ kleehuhn_Flug: Rücken ist Profil (2. Versuch akzeptiert)
 bachhuhn_Flug: Hintergrund fast weiß statt hellgrau (akzeptiert)
 blutkraehe_Flug: Rücken wirkt wie Vorderseite (akzeptiert)
 leerenkraehe_Flug: Rücken hellgrau statt schwarz, Hintergrund weiß (akzeptiert)
+
+# Gesamtprüfung aller 560 Sets (23.11.2026) – zusätzliche Funde
+## Profile: Schwanz/Körper am Bildrand abgeschnitten oder Schlange zu dünn
+bambusotter, glimmnatter, wurzelnatter, wacholderviper, erznatter, faeulnisnatter, salznatter: Schlange füllt ganze Breite / zu dünn, Ende am Rand abgeschnitten
+basilisk, schieferschuppe, schneeleopard, rauchfarn_schleicher, duenenechse: Schwanz im Profil am Bildrand abgeschnitten
+## Profile: falsche Haltung
+faeulnislibelle, glimmlibelle, schilflibelle: Libelle hängt senkrecht (Kopf oben) statt Seitenprofil
+salzwurm, magnetwurm: Wurm gebogen/schräg statt gestreckt
+eiswurm: Profile sehr klein und flach
+## Front als Draufsicht statt Frontansicht
+basilisk, aschekriecher, glaskriecher (bei den Kriechern auch Rücken)
+## Rückansicht zu klein / schräg / falsch
+gruenwyrm, netzweberin, felsenhuhn, heidehase, heiderabe, sturmfalke, nebelechse, salznebel_schleicher, gletschervielfrass, flammentaenzer, bachhuhn, distelspringer, daemon_der_leere, wurmschatten_made: Rücken zu klein oder schräg
+eiswurm: Rücken als Draufsicht
+tundrarobbe, sternfisch: Rücken ist Seitenprofil
+## Flug-Sets (bestätigt)
+felsdrache, heidedrache, schwarzwasser_drache, taldrache, spiegeldrache, sternendrache, knochendrache: keine Flugpose (sitzen/stehen)
+riffkormoran, schneeeule, kleehuhn, sphinx: Flügel in Profilen angelegt
+eisdrache: Schwanz unten abgeschnitten; bachhuhn, leerenkraehe, taldrache: Hintergrund (fast) weiß
