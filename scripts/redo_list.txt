@@ -1,0 +1,91 @@
+# Nachbesserung 23.11.2026: welche Ansichten neu erzeugt werden (Löschen -> generate.py macht sie neu).
+# Format: <Ordnername ohne output/Mobs_> <Ansichten>   (all = front hinten links rechts)
+# --- ganzes Set (Front falsch oder Inhalt falsch) ---
+F02_basilisk_Stage1 all
+F08_aschekriecher_Stage1 all
+F08_glaskriecher_Stage1 all
+F07_eiswurm_Stage1 all
+F05_schilflibelle_Stage1 all
+F05_faeulnislibelle_Stage1 all
+F05_glimmlibelle_Stage1 all
+F11_jahreszeitenfalter_Stage1 all
+F11_sternfalter_Stage1 all
+F02_wyvern_Stage1 all
+F07_frostfuchs_Stage1 all
+F09_wiesenfuchs_Stage1 all
+F11_jahreszeiten_fuchs_Stage1 all
+F06_kieselfuchs_Stage1 all
+F08_hoellenhund_Stage1 all
+F03_kopfloser_reiter_Stage1 all
+F03_zentaur_Stage1 all
+F03_windharfen_geist_Stage1 all
+F06_dschinn_Stage1 all
+F11_erinnerungsschemen_Stage1 all
+F07_aschschnee_wiesel_Stage1 all
+F09_bachotter_Stage1 all
+F07_gletscherhase_Stage1 all
+F08_glutwurm_Stage1 all
+F08_schwefelwurm_Stage1 all
+F11_chimaere_Stage1 all
+F11_mondfisch_Stage1 all
+F04_strandwolf_Stage1 all
+F02_passoger_Stage1 all
+F03_hirtenriese_Stage1 all
+F03_heidehase_Stage1 all
+F12_wurmschatten_made_Stage1 all
+# --- nur Profil (links+rechts) ---
+F01_bambusotter_Stage1 links rechts
+F01_glimmnatter_Stage1 links rechts
+F01_wurzelnatter_Stage1 links rechts
+F03_wacholderviper_Stage1 links rechts
+F12_erznatter_Stage1 links rechts
+F12_faeulnisnatter_Stage1 links rechts
+F12_salznatter_Stage1 links rechts
+F06_salzwurm_Stage1 links rechts
+F08_magnetwurm_Stage1 links rechts
+F02_schieferschuppe_Stage1 links rechts
+F02_schneeleopard_Stage1 links rechts
+F03_rauchfarn_schleicher_Stage1 links rechts
+F04_duenenechse_Stage1 links rechts
+F05_moorratte_Stage1 links rechts
+F06_mondfuchs_Stage1 links rechts
+F06_salzechse_Stage1 links rechts
+F08_dampfechse_Stage1 links rechts
+F11_lichtquarz_echse_Stage1 links rechts
+F09_steppenbison_Stage1 links rechts
+F04_schwarztang_egel_Stage1 links rechts
+F04_meerjungfrau_Stage1 links rechts
+F12_todesritter_Stage1 links rechts
+F06_karawanenraeuber_Stage1 links rechts
+F12_daemon_der_leere_Stage1 links rechts hinten
+F09_wurzelwicht_Stage1 links rechts
+F12_rosenrost_ranke_Stage1 links rechts
+# --- nur Rücken ---
+F07_tundrarobbe_Stage1 hinten
+F11_sternfisch_Stage1 hinten
+F11_antilicht_schatten_Stage1 hinten
+F01_netzweberin_Stage1 hinten
+F01_gruenwyrm_Stage1 hinten
+F07_schneegeist_Stage1 hinten
+F04_tidenrobbe_Stage1 hinten
+F07_quellrobbe_Stage1 hinten
+# --- Flug-Sets ---
+F02_felsdrache_Flug all
+F03_heidedrache_Flug all
+F05_schwarzwasser_drache_Flug all
+F09_taldrache_Flug all
+F11_spiegeldrache_Flug all
+F11_sternendrache_Flug all
+F12_knochendrache_Flug all
+F07_eisdrache_Flug all
+F08_glutgeier_Flug all
+F04_riffkormoran_Flug links rechts
+F07_schneeeule_Flug links rechts hinten
+F09_kleehuhn_Flug links rechts hinten
+F06_sphinx_Flug links rechts hinten
+F05_schilfreiher_Flug hinten
+F08_phoenix_Flug hinten
+F09_distelhuhn_Flug hinten
+F12_blutkraehe_Flug hinten
+F12_leerenkraehe_Flug hinten
+F04_salznebel_schleicher_Stage1 hinten

@@ -48,6 +48,9 @@ from pathlib import Path
 import requests
 from PIL import Image, ImageChops, ImageFilter, ImageOps
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fit_back_size import fit_back   # noqa: E402  scales a too-small mob back view up to the front's size
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
 OUTPUT = ROOT / "output"
@@ -524,6 +527,8 @@ def main() -> None:
             print("[%d/%d] %s/%s.png in %.0f s%s" % (number, len(todo), name, view, time.time() - started, note))
             if parts[0] == "Mobs" and view == "links":
                 fix_mob_back(comfy, back_image, folder, prompt, negative, size)
+            if parts[0] == "Mobs" and view in ("hinten", "links") and (folder / "hinten.png").is_file() and (folder / "front.png").is_file():
+                fit_back(folder)   # the back view is often drawn much smaller than the front
     print("done")
 
 

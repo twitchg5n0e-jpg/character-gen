@@ -567,7 +567,7 @@
  "wyvern": {
   "anatomy": "dragon",
   "desc": "a small wyvern about the size of a horse, two strong hind legs and two large leathery wings acting as forelimbs, dusky olive-green scales with a pale yellow underbelly, narrow horned head with sharp teeth, long whip-like tail ending in a curved barbed venom stinger dripping green, membrane wings with darker green veins",
-  "neg": "four legs, arms, rider, saddle, two heads"
+  "neg": "four legs, arms, rider, saddle, two heads, front legs, forelegs, four-legged"
  },
  "zwergenkoenig_der_tiefe": {
   "anatomy": "biped",
@@ -617,7 +617,7 @@
  "windharfen_geist": {
   "anatomy": "ghost",
   "desc": "a floating wind spirit about human height, translucent pale silver-blue body like flowing mist with a vaguely female face and long streaming hair, no legs but a trailing swirl of air, harp-like strings of light stretching between its arms, small glowing white eyes, ribbons of vapor around it",
-  "neg": "solid flesh, legs on ground, harp instrument held"
+  "neg": "solid flesh, legs on ground, harp instrument held, legs, feet"
  },
  "banshee": {
   "anatomy": "ghost",
@@ -962,7 +962,7 @@
  "hoellenhund": {
   "anatomy": "quadruped",
   "desc": "a demonic three-headed dog about the size of a horse, exactly three dog heads on one body, black coat with dull red markings, glowing red eyes, jaws with long fangs and smoke from the mouths, spiked collars, muscular body, long thin tail with a spiked tip",
-  "neg": "one head, two heads, standing upright, wings"
+  "neg": "one head, two heads, standing upright, wings, two tails, second tail, forked tail"
  },
  "aschenlich": {
   "anatomy": "biped",
@@ -977,12 +977,12 @@
  "bachotter": {
   "anatomy": "quadruped",
   "desc": "a river otter about the size of a large dog, long sleek body with glossy brown fur and pale cream throat and belly, small rounded ears, whiskered face, webbed paws, long thick tapering tail, a broad flat head with a dark brown nose, small dark eyes, short sturdy legs and dense water-glossy fur",
-  "neg": "snake, standing upright, clothing"
+  "neg": "snake, standing upright, clothing, sitting, sitting upright, standing on hind legs"
  },
  "wiesenfuchs": {
   "anatomy": "quadruped",
   "desc": "a meadow fox the size of a normal fox, bright red-orange fur with a white chest and black legs, white tip on its very bushy tail, large pointed ears, amber eyes, slender legs, small flowers caught in the fur, a narrow pointed muzzle with a white chin and dark brown backs on the ears",
-  "neg": "white fur, standing upright, two tails"
+  "neg": "white fur, standing upright, two tails, double tail, forked tail, second tail"
  },
  "klangstein_echse": {
   "anatomy": "quadruped",
@@ -1037,7 +1037,7 @@
  "jahreszeiten_fuchs": {
   "anatomy": "quadruped",
   "desc": "a fox about the size of a large dog, slender agile build, large pointed ears, a big bushy tail, fur divided into four seasonal zones: fresh spring green at the head, warm summer gold along the back, autumn orange-red on the flanks and snowy winter white on the tail tip and legs, small leaf and blossom shapes woven into the fur, bright amber eyes",
-  "neg": "standing on hind legs, wolf, dog, two tails"
+  "neg": "standing on hind legs, wolf, dog, two tails, double tail, forked tail, second tail"
  },
  "schwebequalle": {
   "anatomy": "octopus",
@@ -1057,7 +1057,7 @@
  "erinnerungsschemen": {
   "anatomy": "ghost",
   "desc": "a floating spectral figure about the size of a man, a vague humanlike upper body fading into a trailing veil instead of legs, made of semi-transparent sepia-grey ectoplasm, the surface flickering with faded fragments of old painted images like torn memories, a blurred featureless face with two soft white glowing eyes, long frayed wispy arms",
-  "neg": "solid flesh, legs on ground, clear face, picture frame"
+  "neg": "solid flesh, legs on ground, clear face, picture frame, legs, feet"
  },
  "arkanwisp": {
   "anatomy": "ghost",
@@ -1797,7 +1797,7 @@
  "kieselfuchs": {
   "anatomy": "quadruped",
   "desc": "a small fox about knee-high, wiry slender build, grey-brown fur densely covered in dark charcoal spots like scattered pebbles, a pale grey belly, very large pointed ears with dark rims, a sharp muzzle, yellow eyes, a long bushy tail with dark rings, and small dark paws with pale furred toes",
-  "neg": "two heads, dog, standing upright, leopard"
+  "neg": "two heads, dog, standing upright, leopard, two tails, double tail, forked tail"
  },
  "mondfuchs": {
   "anatomy": "quadruped",
@@ -1932,7 +1932,7 @@
  "gletscherhase": {
   "anatomy": "quadruped",
   "desc": "a large lean hare about knee-high, very long muscular hind legs built for leaping, short dense fur in pale glacier blue-white with soft grey-blue shading on the back, long ears with icy blue tips, sharp black claws on wide snowshoe feet, bright blue eyes, and a short white tail",
-  "neg": "standing upright, two heads, cute cartoon, floppy ears"
+  "neg": "standing upright, two heads, cute cartoon, floppy ears, extra legs, six legs, long tail"
  },
  "eisrobbe": {
   "anatomy": "other",

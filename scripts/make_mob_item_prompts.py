@@ -88,6 +88,10 @@ FRONT_LONG = ("Strict head-on front view, like an orthographic front elevation f
 FRONT_SNAKE = ("Front view seen from slightly above: the snake points straight at the camera, its head at the front nearest to the "
                "viewer and looking straight into the camera, and its straight body extends straight away from the viewer behind the "
                "head so its whole length is visible, perfectly mirror-symmetrical left and right; not turned to the side.")
+FRONT_CRAWLER = ("Head-on front view with the camera low at the height of the creature's head, not from above: the creature "
+                 "points straight at the camera, its head at the front looking straight into the camera, its body extending "
+                 "straight away behind the head, perfectly mirror-symmetrical left and right; not seen from above, not a top "
+                 "view, not turned to the side.")
 # said first as well: at the end of a long prompt the model still drifts into a three-quarter view
 FRONT_LEAD = ("Exact head-on front view, the creature faces the camera squarely and is perfectly mirror-symmetrical "
               "left and right, no flank visible. ")
@@ -97,7 +101,7 @@ BACK = ("Strict back view, like an orthographic rear elevation for 3D modeling: 
         "same colors.")
 SIDE = ("Exact 90 degree side profile for a 3D modeling reference: the creature has turned to its own left, so its head points "
         "to the right edge of the image and its tail or back end to the left edge. The whole body is seen exactly from the side, "
-        "the full length from head to tail fully in frame, neither the front nor the back faces the camera. Same creature, same pose, same colors.")
+        "the full length from head to tail fully in frame with clear empty space beyond the snout and beyond the tail tip, neither the front nor the back faces the camera. Same creature, same pose, same colors.")
 NEG_MOB = ("multiple creatures, extra heads, extra limbs, missing limbs, fused legs, deformed anatomy, rider, saddle, text, watermark, "
            "logo, frame, border, collage, character sheet, turnaround sheet, multiple views, split image, grid, cropped, cut off, "
            "partially out of frame, visible floor, ground, horizon line, floor shadow, cast shadow, vignette, gradient background, "
@@ -111,7 +115,8 @@ FLY_POSE = ("It hovers in mid-air in a symmetrical flight pose for a 3D animatio
             "the body; the legs hang relaxed below the body, the tail stretched straight back, the head level and looking straight "
             "ahead. The creature is shown small enough that both wing tips stay well inside the frame with empty space on every side.")
 FLY_EDIT = ("Edit this image: the same creature with the same head, body, colors and markings now spreads its wings fully open "
-            "and hovers in mid-air; keep the plain light gray background. ")
+            "and hovers high in mid-air; it is airborne, not sitting and not standing, no foot touches anything and its legs hang "
+            "loosely below the belly; keep the plain light gray background. ")
 FRONT_FLY = ("Strict head-on front view, like an orthographic front elevation for 3D modeling: the creature faces the camera squarely "
              "with both eyes equally visible, its two wings spread out to the left and right side of the image as exact mirror "
              "images of each other, perfectly mirror-symmetrical left and right; not a three-quarter view.")
@@ -119,6 +124,7 @@ BACK_FLY = " Both wings stay spread wide to the left and right, seen from behind
 SIDE_FLY = (" The wings stay spread flat and level exactly as in the front view, so from the side they are seen edge-on, "
             "pointing straight towards and away from the camera; they are not raised upwards, not lowered and not folded.")
 NEG_FLY = (", folded wings, closed wings, wings against the body, tucked wings, standing on the ground, perched, sitting, "
+           "sitting on its haunches, crouching, standing on four legs, feet on the ground, wings raised straight up, "
            "wings cut off, cropped wings, wing tips outside the image, asymmetric wings, one wing")
 
 
@@ -197,8 +203,10 @@ def main() -> None:
             negative = NEG_MOB + (", " + info["neg"] if info.get("neg") else "")
             if anatomy in ("snake", "serpent_water", "crawler"):
                 negative += ", coiled, coils, loops, ring, circle, knotted, curled up, body overlapping itself, spiral, raised head, cobra pose, rearing up, S-curve"
-            if anatomy in ("snake", "crawler"):
+            if anatomy == "snake":
                 front = FRONT_SNAKE
+            if anatomy == "crawler":
+                front = FRONT_CRAWLER
             side = SIDE
             if anatomy in UPRIGHT:
                 # robed casters kept coming out seen from behind at an angle
@@ -206,7 +214,9 @@ def main() -> None:
                          "turned toward the camera and the figure is not seen from behind.")
             if anatomy in ("snake", "crawler", "serpent_water"):
                 side = SIDE + (" It has exactly one head, at the right end of the body; the left end is the thin, pointed tail tip "
-                               "without any head.")
+                               "without any head. The creature is shown smaller, so its whole body from head to tail tip spans "
+                               "at most three quarters of the image width with clear empty space at both ends, and the body "
+                               "stays thick enough to be clearly readable, not a thin line.")
                 negative += ", two heads, head at both ends, double-headed"
             if " arms" in info["desc"]:
                 side += (" Its arms stay attached and clearly visible in the profile: the near arm hangs down along the side "
@@ -217,7 +227,10 @@ def main() -> None:
             if anatomy == "dragon":
                 negative += ", spread wings, open wings, wings cut off, cropped wings, wing tips outside the image"
             if anatomy == "flyer":
-                negative += ", wings cut off, cropped wings, wing tips outside the image"
+                negative += ", wings cut off, cropped wings, wing tips outside the image, top view, seen from above, hanging vertically, body upright"
+                front += " The camera is level with the body, not above it: this is not a top view."
+                side += (" The body is level and horizontal like a flying insect or bird seen from the side, head at the right "
+                         "end; it does not hang vertically and is not seen from above.")
             if pose is not POSE[anatomy] and anatomy != "biped":
                 negative += ", humanoid, human body, torso, arms, legs, person"
             if pose is not POSE[anatomy] and anatomy == "biped":
@@ -230,7 +243,7 @@ def main() -> None:
                         % (kind[0].upper() + kind[1:], mob["name"], mob.get("kin", mob["name"]), mob.get("role", "-"), mob.get("behaviour", ""), pose, STYLE))
             front, negative, side = FRONT_UP, NEG_MOB, SIDE
         text = ("# Mob %s (%s, %s)\n\n" % (mob["name"], mob.get("body", "-"), mob.get("spawn", "common"))
-                + block("01_Front", (FRONT_LEAD if front != FRONT_SNAKE else "") + describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK)
+                + block("01_Front", (FRONT_LEAD if front not in (FRONT_SNAKE, FRONT_CRAWLER) else "") + describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK)
                 + block("03_Links", describe + "\n" + side) + block("Negativ-Prompt", negative))
         (PROMPTS / "Mobs" / ("%s_%s_Stage1.md" % (family, mob["id"]))).write_text(text, encoding="utf-8")
         mob_sets.append("Mobs/%s/%s/Stage1" % (family, mob["id"]))
