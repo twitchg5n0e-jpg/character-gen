@@ -159,3 +159,4 @@ windharfen_geist: weiterhin Beine statt Luftwirbel (Nachbesserung 23.11. akzepti
 zentaur: Profil weiterhin mit Sattel/Taschen (Nachbesserung 23.11. akzeptiert)
 dschinn: weiterhin Beine unter dem Rauch (Nachbesserung 23.11. akzeptiert)
 frostfuchs: Rücken weiterhin mit zweitem Schwanz (Nachbesserung 23.11. akzeptiert)
+aschschnee_wiesel: sitzt weiterhin statt auf allen vieren (Nachbesserung 23.11. akzeptiert)
