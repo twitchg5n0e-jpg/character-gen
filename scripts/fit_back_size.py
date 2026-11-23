@@ -43,6 +43,11 @@ def fit_back(folder: Path, limit: float = 0.8) -> bool:
     if ratio >= limit:
         print("%s: ratio %.2f, ok" % (folder.name, ratio))
         return False
+    # only on a plain background: a visible floor or gradient would be cut out with the figure and leave patches
+    corners = [back.getpixel(p) for p in ((2, 2), (back.width - 3, 2), (2, back.height - 3), (back.width - 3, back.height - 3))]
+    if max(sum(abs(a - b) for a, b in zip(c, corners[0])) for c in corners) > 45:
+        print("%s: ratio %.2f, background not plain, left as it is" % (folder.name, ratio))
+        return False
     pad = 12
     crop = back.crop((max(0, b[0] - pad), max(0, b[1] - pad), min(back.width, b[2] + pad), min(back.height, b[3] + pad)))
     scale = (f[3] - f[1] + 2 * pad) / crop.height
