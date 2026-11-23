@@ -158,3 +158,4 @@ heidehase: Front bräunlich, Rücken/Profil lila – Farbe uneinheitlich (Nachbe
 windharfen_geist: weiterhin Beine statt Luftwirbel (Nachbesserung 23.11. akzeptiert)
 zentaur: Profil weiterhin mit Sattel/Taschen (Nachbesserung 23.11. akzeptiert)
 dschinn: weiterhin Beine unter dem Rauch (Nachbesserung 23.11. akzeptiert)
+frostfuchs: Rücken weiterhin mit zweitem Schwanz (Nachbesserung 23.11. akzeptiert)
