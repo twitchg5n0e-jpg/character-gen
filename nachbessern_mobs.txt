@@ -152,3 +152,4 @@ felsdrache, heidedrache, schwarzwasser_drache, taldrache, spiegeldrache, sternen
 riffkormoran, schneeeule, kleehuhn, sphinx: Flügel in Profilen angelegt
 eisdrache: Schwanz unten abgeschnitten; bachhuhn, leerenkraehe, taldrache: Hintergrund (fast) weiß
 aschekriecher: Front/Rücken weiterhin schräg von oben (Nachbesserung 23.11. akzeptiert)
+schneeleopard: Profil Kopf/Schwanz am Bildrand auch nach Nachbesserung 23.11. (akzeptiert)
