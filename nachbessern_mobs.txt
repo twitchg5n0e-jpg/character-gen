@@ -200,3 +200,4 @@ sphinx_Flug: Profil weiterhin ohne gespreizte Flügel, Rücken jetzt groß genug
 schneeeule_Flug, phoenix_Flug: Profil schmal mit hochgestelltem Flügel (Nachbesserung 23.11. akzeptiert)
 riffkormoran_Flug: Profil mit angelegten Flügeln, klein (Nachbesserung 23.11. akzeptiert)
 taldrache_Flug: schwebt jetzt, Rückansicht zeigt aber Gesicht, Flügel im Profil angelegt (Nachbesserung 23.11. akzeptiert)
+spiegeldrache_Flug: schwebt jetzt, Profil etwas klein; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
