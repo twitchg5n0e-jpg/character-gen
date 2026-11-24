@@ -181,3 +181,4 @@ karawanenraeuber: Seitenansicht leicht schräg statt reines Profil (Nachbesserun
 tundrarobbe: Rückansicht leicht schräg (Nachbesserung 23.11. akzeptiert)
 dampfechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
 schwefelwurm: Profil leicht schräg nach oben gebogen statt ganz gestreckt (Nachbesserung 23.11. akzeptiert)
+glutwurm: hat Beinchen trotz beinlos, Profil reicht fast bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
