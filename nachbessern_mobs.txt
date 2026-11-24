@@ -173,3 +173,4 @@ daemon_der_leere: Profil weiterhin schräg von hinten (Nachbesserung 23.11. akze
 passoger: Front weiterhin leicht schräg (Nachbesserung 23.11. akzeptiert)
 hirtenriese: Front noch leicht schräg (Nachbesserung 23.11. akzeptiert)
 duenenechse: im Profil dünne zusätzliche Linie unter dem Körper (Nachbesserung 23.11. akzeptiert)
+schilflibelle: weiterhin senkrecht/Draufsicht trotz neuem Prompt (Nachbesserung 23.11. akzeptiert)
