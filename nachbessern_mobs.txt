@@ -189,3 +189,4 @@ lichtquarz_echse: Schwanz in Front und Rückansicht senkrecht nach oben (Nachbes
 mondfisch: Rückansicht im letzten Versuch Seitenprofil (Nachbesserung 23.11. akzeptiert)
 sternfalter: Seitenansicht sehr schmal (Flügel hochgeklappt) (Nachbesserung 23.11. akzeptiert)
 faeulnisnatter: Profil sehr dünn und fast bildbreit, Front/Rücken eingerollt (Nachbesserung 23.11. akzeptiert)
+erznatter: Profil dünn und fast bildbreit (Nachbesserung 23.11. akzeptiert)
