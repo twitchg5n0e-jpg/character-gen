@@ -201,3 +201,4 @@ schneeeule_Flug, phoenix_Flug: Profil schmal mit hochgestelltem Flügel (Nachbes
 riffkormoran_Flug: Profil mit angelegten Flügeln, klein (Nachbesserung 23.11. akzeptiert)
 taldrache_Flug: schwebt jetzt, Rückansicht zeigt aber Gesicht, Flügel im Profil angelegt (Nachbesserung 23.11. akzeptiert)
 spiegeldrache_Flug: schwebt jetzt, Profil etwas klein; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
+glutgeier_Flug: Profil klein mit hochgestelltem Flügel; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
