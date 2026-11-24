@@ -168,3 +168,5 @@ jahreszeiten_fuchs: Front/Rücken weiterhin zwei Schwänze (Nachbesserung 23.11.
 erinnerungsschemen: weiterhin Beine; Profil mit hellerem Rechteck im Hintergrund (Nachbesserung 23.11. akzeptiert)
 rosenrost_ranke: Profil weiterhin ohne Arme (Nachbesserung 23.11. akzeptiert)
 wurmschatten_made: weiterhin Beinchen, Front von oben (Nachbesserung 23.11. akzeptiert)
+wurzelnatter: Profil weiterhin von Rand zu Rand (Nachbesserung 23.11. akzeptiert)
+daemon_der_leere: Profil weiterhin schräg von hinten (Nachbesserung 23.11. akzeptiert)
