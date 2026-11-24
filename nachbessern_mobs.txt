@@ -191,3 +191,5 @@ sternfalter: Seitenansicht sehr schmal (Flügel hochgeklappt) (Nachbesserung 23.
 faeulnisnatter: Profil sehr dünn und fast bildbreit, Front/Rücken eingerollt (Nachbesserung 23.11. akzeptiert)
 erznatter: Profil dünn und fast bildbreit (Nachbesserung 23.11. akzeptiert)
 salznatter: Profil auch im letzten Versuch bildbreite Linie, Augen an beiden Enden (Nachbesserung 23.11. akzeptiert)
+sternendrache_Flug: fliegt jetzt, Körper aber eher senkrecht hängend (Nachbesserung 23.11. akzeptiert)
+knochendrache_Flug: steht auch im letzten Versuch statt zu fliegen (Nachbesserung 23.11. akzeptiert)
