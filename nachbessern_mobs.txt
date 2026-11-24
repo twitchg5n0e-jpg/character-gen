@@ -190,3 +190,4 @@ mondfisch: Rückansicht im letzten Versuch Seitenprofil (Nachbesserung 23.11. ak
 sternfalter: Seitenansicht sehr schmal (Flügel hochgeklappt) (Nachbesserung 23.11. akzeptiert)
 faeulnisnatter: Profil sehr dünn und fast bildbreit, Front/Rücken eingerollt (Nachbesserung 23.11. akzeptiert)
 erznatter: Profil dünn und fast bildbreit (Nachbesserung 23.11. akzeptiert)
+salznatter: Profil auch im letzten Versuch bildbreite Linie, Augen an beiden Enden (Nachbesserung 23.11. akzeptiert)
