@@ -162,3 +162,5 @@ frostfuchs: Rücken weiterhin mit zweitem Schwanz (Nachbesserung 23.11. akzeptie
 aschschnee_wiesel: sitzt weiterhin statt auf allen vieren (Nachbesserung 23.11. akzeptiert)
 eiswurm: Profil über beide Bildränder, Rücken klein/schräg (Nachbesserung 23.11. akzeptiert)
 bachotter: Front/Rücken schräg, sitzend (Nachbesserung 23.11. akzeptiert)
+wiesenfuchs: Rücken klein mit zweitem Schwanz (Nachbesserung 23.11. akzeptiert)
+wurzelwicht: Profil weiterhin ohne sichtbare Arme (Nachbesserung 23.11. akzeptiert)
