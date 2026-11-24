@@ -176,3 +176,4 @@ duenenechse: im Profil dünne zusätzliche Linie unter dem Körper (Nachbesserun
 schilflibelle: weiterhin senkrecht/Draufsicht trotz neuem Prompt (Nachbesserung 23.11. akzeptiert)
 glimmlibelle: weiterhin senkrecht/Draufsicht, Rücken-Flügel rechteckig abgeschnitten (Nachbesserung 23.11. akzeptiert)
 faeulnislibelle: weiterhin senkrecht/Draufsicht (Nachbesserung 23.11. akzeptiert)
+salzechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
