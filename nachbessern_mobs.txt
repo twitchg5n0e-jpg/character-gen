@@ -187,3 +187,5 @@ sternfisch: Rückansicht auch nach Nachbesserung Seitenprofil (Nachbesserung 23.
 jahreszeitenfalter: Seitenansicht sehr schmal (Flügel hochgeklappt), Kopfrichtung kaum erkennbar (Nachbesserung 23.11. akzeptiert)
 lichtquarz_echse: Schwanz in Front und Rückansicht senkrecht nach oben (Nachbesserung 23.11. akzeptiert)
 mondfisch: Rückansicht im letzten Versuch Seitenprofil (Nachbesserung 23.11. akzeptiert)
+sternfalter: Seitenansicht sehr schmal (Flügel hochgeklappt) (Nachbesserung 23.11. akzeptiert)
+faeulnisnatter: Profil sehr dünn und fast bildbreit, Front/Rücken eingerollt (Nachbesserung 23.11. akzeptiert)
