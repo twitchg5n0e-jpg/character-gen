@@ -183,3 +183,4 @@ dampfechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. a
 schwefelwurm: Profil leicht schräg nach oben gebogen statt ganz gestreckt (Nachbesserung 23.11. akzeptiert)
 glutwurm: hat Beinchen trotz beinlos, Profil reicht fast bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
 magnetwurm: Profil nach oben gebogen statt ganz gestreckt (Nachbesserung 23.11. akzeptiert)
+sternfisch: Rückansicht auch nach Nachbesserung Seitenprofil (Nachbesserung 23.11. akzeptiert)
