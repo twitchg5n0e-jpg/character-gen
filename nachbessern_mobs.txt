@@ -178,3 +178,4 @@ glimmlibelle: weiterhin senkrecht/Draufsicht, Rücken-Flügel rechteckig abgesch
 faeulnislibelle: weiterhin senkrecht/Draufsicht (Nachbesserung 23.11. akzeptiert)
 salzechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
 karawanenraeuber: Seitenansicht leicht schräg statt reines Profil (Nachbesserung 23.11. akzeptiert)
+tundrarobbe: Rückansicht leicht schräg (Nachbesserung 23.11. akzeptiert)
