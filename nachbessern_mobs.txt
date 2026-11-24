@@ -180,3 +180,4 @@ salzechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. ak
 karawanenraeuber: Seitenansicht leicht schräg statt reines Profil (Nachbesserung 23.11. akzeptiert)
 tundrarobbe: Rückansicht leicht schräg (Nachbesserung 23.11. akzeptiert)
 dampfechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
+schwefelwurm: Profil leicht schräg nach oben gebogen statt ganz gestreckt (Nachbesserung 23.11. akzeptiert)
