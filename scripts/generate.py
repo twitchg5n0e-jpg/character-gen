@@ -408,6 +408,8 @@ def main() -> None:
         prompts, negative = read_prompts(parts)
         stage1_front = folder_of(parts[:3] + ("Stage1",)) / "front.png"
         size = size_of(parts)
+        # an existing back view (e.g. when only the profile is made again) is kept as it is
+        back_is_new = not (folder / "hinten.png").is_file()
         for view in views_of(parts):
             target = folder / (view + ".png")
             if target.is_file():
@@ -525,7 +527,7 @@ def main() -> None:
                     print("    front attempt %d: no face visible, not a front view" % attempt)
             save(image, target, size)
             print("[%d/%d] %s/%s.png in %.0f s%s" % (number, len(todo), name, view, time.time() - started, note))
-            if parts[0] == "Mobs" and view == "links":
+            if parts[0] == "Mobs" and view == "links" and back_is_new:
                 fix_mob_back(comfy, back_image, folder, prompt, negative, size)
             if parts[0] == "Mobs" and view in ("hinten", "links") and (folder / "hinten.png").is_file() and (folder / "front.png").is_file():
                 fit_back(folder)   # the back view is often drawn much smaller than the front
