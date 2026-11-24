@@ -177,3 +177,4 @@ schilflibelle: weiterhin senkrecht/Draufsicht trotz neuem Prompt (Nachbesserung 
 glimmlibelle: weiterhin senkrecht/Draufsicht, Rücken-Flügel rechteckig abgeschnitten (Nachbesserung 23.11. akzeptiert)
 faeulnislibelle: weiterhin senkrecht/Draufsicht (Nachbesserung 23.11. akzeptiert)
 salzechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
+karawanenraeuber: Seitenansicht leicht schräg statt reines Profil (Nachbesserung 23.11. akzeptiert)
