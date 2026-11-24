@@ -195,3 +195,4 @@ sternendrache_Flug: fliegt jetzt, Körper aber eher senkrecht hängend (Nachbess
 knochendrache_Flug: steht auch im letzten Versuch statt zu fliegen (Nachbesserung 23.11. akzeptiert)
 schilfreiher_Flug: Seitenansicht mit angelegten Flügeln (Nachbesserung 23.11. akzeptiert)
 heidedrache_Flug: steht auch im letzten Versuch mit hängenden Flügeln statt zu fliegen (Nachbesserung 23.11. akzeptiert)
+schwarzwasser_drache_Flug: auch im letzten Versuch sitzend statt fliegend, Rückansicht zeigt Gesicht; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
