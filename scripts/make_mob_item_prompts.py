@@ -116,16 +116,26 @@ FLY_POSE = ("It hovers in mid-air in a symmetrical flight pose for a 3D animatio
             "ahead. The creature is shown small enough that both wing tips stay well inside the frame with empty space on every side.")
 FLY_EDIT = ("Edit this image: the same creature with the same head, body, colors and markings now spreads its wings fully open "
             "and hovers high in mid-air; it is airborne, not sitting and not standing, no foot touches anything and its legs hang "
-            "loosely below the belly; keep the plain light gray background. ")
+            "loosely below the belly; keep the plain light gray background. The whole body is lifted off the ground into the "
+            "air: there is empty space below the feet, the legs are pulled up under the body like a flying bird and the "
+            "wings beat wide open to both sides. ")
 FRONT_FLY = ("Strict head-on front view, like an orthographic front elevation for 3D modeling: the creature faces the camera squarely "
              "with both eyes equally visible, its two wings spread out to the left and right side of the image as exact mirror "
              "images of each other, perfectly mirror-symmetrical left and right; not a three-quarter view.")
-BACK_FLY = " Both wings stay spread wide to the left and right, seen from behind."
+BACK_FLY = (" Both wings stay spread wide to the left and right, seen from behind: the camera sees the back between the "
+            "wings, the back of the head and the tail pointing straight at the camera; the beak, snout and face point away "
+            "and are hidden. The body is not turned sideways, this is not a side view and not a profile.")
+# fish kept turning their face to the camera in the back view
+BACK_FISH = (" The tail fin is nearest to the camera and seen edge-on in the middle of the image; the head with the eyes and "
+             "the mouth is on the far side, completely hidden behind the body. This is not a side view and not a front view.")
 SIDE_FLY = (" The wings stay spread flat and level exactly as in the front view, so from the side they are seen edge-on, "
-            "pointing straight towards and away from the camera; they are not raised upwards, not lowered and not folded.")
+            "pointing straight towards and away from the camera; they are not raised upwards, not lowered and not folded. "
+            "The body is level and horizontal from beak or snout to tail like a bird gliding through the sky seen from the "
+            "side, it does not hang vertically and does not stand upright.")
 NEG_FLY = (", folded wings, closed wings, wings against the body, tucked wings, standing on the ground, perched, sitting, "
            "sitting on its haunches, crouching, standing on four legs, feet on the ground, wings raised straight up, "
-           "wings cut off, cropped wings, wing tips outside the image, asymmetric wings, one wing")
+           "wings cut off, cropped wings, wing tips outside the image, asymmetric wings, one wing, legs standing, feet planted, "
+           "drooping wings, hanging wings, wings pointing down, side view in the back view, face visible from behind")
 
 
 def spread(desc: str) -> str:
@@ -216,7 +226,9 @@ def main() -> None:
                 side = SIDE + (" It has exactly one head, at the right end of the body; the left end is the thin, pointed tail tip "
                                "without any head. The creature is shown smaller, so its whole body from head to tail tip spans "
                                "at most three quarters of the image width with clear empty space at both ends, and the body "
-                               "stays thick enough to be clearly readable, not a thin line.")
+                               "stays thick enough to be clearly readable, not a thin line: the body is about as thick as the head, the head "
+                               "is clearly larger than the tail tip with the eye and mouth visible. The body lies flat and straight along "
+                               "one horizontal line; no part of it is lifted, arched or bent upwards.")
                 negative += ", two heads, head at both ends, double-headed"
             if " arms" in info["desc"]:
                 side += (" Its arms stay attached and clearly visible in the profile: the near arm hangs down along the side "
@@ -243,7 +255,7 @@ def main() -> None:
                         % (kind[0].upper() + kind[1:], mob["name"], mob.get("kin", mob["name"]), mob.get("role", "-"), mob.get("behaviour", ""), pose, STYLE))
             front, negative, side = FRONT_UP, NEG_MOB, SIDE
         text = ("# Mob %s (%s, %s)\n\n" % (mob["name"], mob.get("body", "-"), mob.get("spawn", "common"))
-                + block("01_Front", (FRONT_LEAD if front not in (FRONT_SNAKE, FRONT_CRAWLER) else "") + describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK)
+                + block("01_Front", (FRONT_LEAD if front not in (FRONT_SNAKE, FRONT_CRAWLER) else "") + describe + "\n" + front) + block("02_Ruecken", describe + "\n" + BACK + (BACK_FISH if info and info["anatomy"] == "fish" else ""))
                 + block("03_Links", describe + "\n" + side) + block("Negativ-Prompt", negative))
         (PROMPTS / "Mobs" / ("%s_%s_Stage1.md" % (family, mob["id"]))).write_text(text, encoding="utf-8")
         mob_sets.append("Mobs/%s/%s/Stage1" % (family, mob["id"]))

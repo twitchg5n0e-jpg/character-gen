@@ -90,6 +90,8 @@ POSE = None   # the YOLO pose model, loaded on first use; False when ultralytics
 # Races whose stage 1 front comes out with the head turned to the side when made from text (long animal snouts):
 # their stage 1 front is made by editing the finished Human front of the same gender and body, which keeps its
 # straight front pose.
+# Flug sets whose front is drawn from text instead of editing the standing stage 1 front (one id per line)
+FLY_FROM_TEXT = set((SCRIPTS / "fly_from_text.txt").read_text(encoding="utf-8").split()) if (SCRIPTS / "fly_from_text.txt").is_file() else set()
 POSE_FROM_HUMAN = set(os.environ.get("POSE_FROM_HUMAN", "Lizardfolk").split(",")) - {""}
 FROM_HUMAN = ("Edit this image: turn the person into the character described below. Keep exactly the same straight "
               "front-facing A-pose, the same camera, framing, size in the picture and the plain light gray background; "
@@ -424,6 +426,10 @@ def main() -> None:
                 reference, prompt = stage1_front, KEEP_FRONT + prompt   # the edit model tends to turn them around
             elif view in ("front", "icon"):
                 reference = stage1_front if parts[3] != "Stage1" and stage1_front.is_file() else None
+                if parts[3] == "Flug" and parts[2] in FLY_FROM_TEXT:
+                    # editing the standing stage 1 front kept these standing: draw the flight pose from text instead
+                    reference = None
+                    prompt = prompt.split("keep the plain light gray background. ", 1)[-1]
             else:
                 reference = folder / "front.png"
             started = time.time()
