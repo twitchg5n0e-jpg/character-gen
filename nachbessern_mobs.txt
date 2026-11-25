@@ -203,3 +203,4 @@ taldrache_Flug: schwebt jetzt, Rückansicht zeigt aber Gesicht, Flügel im Profi
 spiegeldrache_Flug: schwebt jetzt, Profil etwas klein; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
 glutgeier_Flug: Profil klein mit hochgestelltem Flügel; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
 kleehuhn_Flug: Profil klein mit angelegten Flügeln (Nachbesserung 23.11. akzeptiert)
+distelhuhn_Flug, blutkraehe_Flug, leerenkraehe_Flug: neue Rücken waren Seitenprofile, alte Rücken wiederhergestellt (wirken wie Vorderseite; leerenkraehe Hintergrund auf Grau gesetzt, Rücken hellgrau statt schwarz) (Nachbesserung 23.11. akzeptiert)
