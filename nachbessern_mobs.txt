@@ -1,0 +1,220 @@
+schneeleopard: Profil mit zweitem Schwanz/am Rand – nachbessern
+wyvern: 4 statt 2 Beine
+basilisk: 4 statt 8 Beine
+heidehase: Haltung Front (aufrecht) vs Profil (sitzend) uneinheitlich
+rauchfarn_schleicher: Schwanzspitze im Profil am Rand
+windharfen_geist: hat Beine statt Luftwirbel
+kopfloser_reiter: trägt Helm statt kopflos (2 Versuche)
+zentaur: Sattel/Taschen auf Pferderücken
+schwarztang_egel: Profil bis an Bildrand, Bodenkante
+meerjungfrau: Schwanzflosse vorn/hinten knapp abgeschnitten
+leuchtmoos_schnecke: Front/Rücken schräg (Fuß diagonal), Ranke humanoid statt Stängel
+sandelementar: Sandwirbel unten am Bildrand
+dschinn: Beine statt Rauch-Unterkörper
+sphinx: Löwengesicht statt Menschengesicht, Flügel gespreizt (2 Versuche)
+reifkraehe: Rückansicht unten am Rand, Füße fehlen
+frostfuchs: zwei Schwänze in Front/Rücken (2 Versuche)
+aschschnee_wiesel: sitzt statt auf allen vieren (2 Versuche)
+eiswurm: hat Augen + Kiefer statt rundem augenlosem Maul
+schneegeist: Rückansicht schräg
+russfledermaus: Front Flügelspitzen abgeschnitten (2 Versuche)
+obsidianspinne: Front Beinspitzen unten knapp abgeschnitten
+hoellenhund: zweiter Stachelschwanz in Front/Rücken/Profil
+bachotter: sitzt statt auf allen vieren
+glasgras_grille: Front Fühler oben abgeschnitten
+wiesenfuchs: zwei Schwänze in Front
+steppenbison: Profil Kopf am linken Rand
+wurzelwicht: Profil ohne Arme
+taldrache: Profil sitzend statt stehend
+jahreszeiten_fuchs: zwei Schwänze Front/Rücken
+erinnerungsschemen: Beine statt Schleier
+antilicht_schatten: Rückansicht ist Seitenprofil (2 Versuche)
+chimaere: Front schräg (3 Versuche)
+wurmschatten_made: Beinchen statt Höcker, Rückansicht schräg/klein
+rosenrost_ranke: Profil ohne Arme/unklar
+todesritter: Profil ist Dreiviertelansicht (2 Versuche)
+daemon_der_leere: Front leicht schräg
+daemon_der_leere: Profil schräg von hinten (2 Versuche), Rückansicht klein
+altholz_hirschkaefer: Profil zeigt nur ein Horn statt Zangen, Panzer rötlich statt dunkelbraun
+glimmnatter: Profil reicht bis an den Bildrand
+dickichtwolf: wirkt wie normaler großer Wolf, nicht klein/kurzschnauzig mit großen Ohren
+sporenwicht: Kopf als Hutpilz statt Bovist
+moostroll: Profil leicht schräg (3/4)
+hainspuk: Profil leicht von hinten (Rucksack sichtbar)
+geroellmurmel, kristallmurmel: Profil leicht schräg (3/4), sitzend
+schiefermurmel: nicht flach, sondern rundlich-sitzend
+kristallspinne: Profil schräg (3/4)
+spaltenspinne: nicht flach, Profil schräg, Rücken wenige Beine
+tiefenspinne: Profil leicht schräg, Front-Rettung (straightness 0.60)
+passoger: Front leicht schräg (straightness 0.40)
+gipfelgeist: Rückansicht deutlich kleiner als Front
+felsenhuhn: Rückansicht deutlich kleiner als Front
+sturmgeier_Flug: Profil mit hochgeschlagenen Flügeln und klein (Test-Set vor SIDE_FLY-Schärfung)
+heiderabe: Rückansicht klein und lila statt schwarz
+nachtrabe: Rückansicht klein
+steinwicht_der_hoehen: Profil leicht schräg
+hirtenriese: Front leicht schräg (0.50), Rücken schräg
+huegelwaechter: Front leicht schräg, Speer diagonal
+moorwaechter: Front leicht schräg, Profil eher von hinten-seitlich
+passwaechter: Profil eher von hinten-seitlich
+tidenrobbe: Rückansicht schräg
+nebelechse: Rückansicht klein
+schwarzmuschel: Front/Rücken fast gleich (offene Schale)
+strandwolf: Front und Rücken schräg (2 Versuche)
+klippenwolf: Rückansicht klein
+schwarztang_schlinger: Profil kaum als Seitenansicht erkennbar
+riffpirat: Front leicht schräg (0.54)
+schnappschildkroete: Kopf eher Krokodilschnauze mit Zähnen statt Hakenschnabel (akzeptiert)
+schilflibelle: senkrecht schwebend, Front/Hinten fast gleich (Draufsicht-artig), Profil sehr schmal (akzeptiert)
+faeulnislibelle: senkrecht schwebend, Rücken kleiner im Bild (akzeptiert)
+glimmlibelle: 2. Versuch, Rücken blasser gefärbt als Front (akzeptiert)
+moorratte: Schwanz im Profil rechts abgeschnitten (akzeptiert)
+wasserlaeuferin: Spinnen-Profil schräg/uneindeutig (akzeptiert)
+bluetenspinne: wirkt eher wie Krabbe, Profil schräg/uneindeutig (akzeptiert)
+moraststampfer: Baumstamm-Keule schwebt am Rücken, nicht in der Hand (akzeptiert)
+schilfgeist: Arme im Profil kaum sichtbar (akzeptiert)
+duenenantilope: im Profil Beinpaare deckungsgleich, wirkt zweibeinig (akzeptiert)
+salzantilope: Hörner im Profil gebogen statt gerade (akzeptiert)
+sandfuchs: Front/Rücken leicht schräg (akzeptiert)
+kieselfuchs: zwei Schwänze in Front/Rücken (akzeptiert)
+mondfuchs: Schwanzspitze im Profil am Rand abgeschnitten (akzeptiert)
+salzechse: Schwanz im Profil am Rand abgeschnitten (akzeptiert)
+salzwicht: Würfelkopf im Profil, Blickrichtung kaum erkennbar (akzeptiert)
+karawanenraeuber: Front/Rücken leicht schräg (akzeptiert)
+karawanenraeuber: Profil auch im 2. Versuch fast frontal/schräg (akzeptiert, nachbessern)
+gletscherhase: 2. Versuch, Front mit zu vielen Beinen, langer Schwanz im Profil (akzeptiert, nachbessern)
+quellrobbe: Rücken leicht schräg (akzeptiert)
+tundrarobbe: Rücken leicht schräg (akzeptiert)
+reifvielfrass: wirkt eher wolfsartig (akzeptiert)
+gletschervielfrass: sitzend, Rücken klein (akzeptiert)
+gletscheroger: wirkt wie Eisbär mit Fell statt Oger mit Haut (akzeptiert, ggf. nachbessern)
+aschoger: Kopf in Rückansicht fast verdeckt (akzeptiert)
+glutziege: Rückansicht sehr klein (akzeptiert)
+russziege: Rücken mit zwei Schwanzbüscheln (akzeptiert)
+dampfechse: Schwanz im Profil am Rand abgeschnitten (akzeptiert)
+schwefelwurm: Front/Rücken gebogen statt gerade (akzeptiert)
+glutwurm: hat Beinchen (sollte beinlos sein), Rücken schräg/gebogen (akzeptiert)
+magnetwurm: Profil schräg aufgerichtet statt flach gestreckt (akzeptiert)
+flammentaenzer: Rückansicht sehr klein (akzeptiert)
+kleehuhn: Front (vorher hinten) klein im Bild (akzeptiert)
+bachhuhn: Rückansicht klein (akzeptiert)
+steinnatter: Rücken leicht geschlängelt (akzeptiert)
+mondtaubiene: Rückansicht auch im 2. Versuch mit Augen/Fühlern sichtbar (akzeptiert)
+gefallener_soldat: Front leicht schräg (akzeptiert)
+gefallener_hauptmann: Front leicht schräg, Helmform variiert (akzeptiert)
+lichtfisch: Front leicht schräg, Rücken klein (akzeptiert)
+mondfisch: Front ohne Gesicht (Unterseite), Rücken schräg, untertassenartig (akzeptiert, nachbessern)
+zeithase: Schwanz seitlich versetzt in Front/Rücken (akzeptiert)
+sternfisch: Rückansicht auch im 2. Versuch Seitenansicht (akzeptiert, nachbessern)
+lichtquarz_echse: Schwanz im Profil am Rand abgeschnitten (akzeptiert)
+jahreszeitenfalter: Front/Rücken als Draufsicht, Profil mit hochgeklappten Flügeln (akzeptiert)
+sternfalter: Front/Rücken fast identisch (Draufsicht), Profil sehr schmal (akzeptiert)
+spiegelgolem: Profile – Kopf von Schulter verdeckt (2. Versuch akzeptiert)
+rostwicht: Front leicht schräg (2. Versuch akzeptiert)
+gipfelgreif_Flug: Profile klein, Flügel schräg statt flach (akzeptiert)
+felsdrache_Flug: sitzt mit hochgestellten Flügeln statt flach schwebend (2. Versuch akzeptiert)
+eisdrache_Flug: Schwanzende unten abgeschnitten (akzeptiert)
+sternendrache_Flug: sitzt mit offenen hochgestellten Flügeln statt flach schwebend (akzeptiert)
+knochendrache_Flug: steht mit offenen Flügeln statt flach schwebend (akzeptiert)
+strandlaeufer_Flug: steht mit offenen Flügeln statt schwebend (akzeptiert)
+heidedrache_Flug: Flügel angelegt/hängend, steht (2. Versuch akzeptiert)
+schilfreiher_Flug: Rücken zeigt Vorderseite (2. Versuch akzeptiert)
+schwarzwasser_drache_Flug: sitzt mit halb geöffneten Flügeln (akzeptiert)
+sphinx_Flug: Profile ohne sichtbare Flügel, Rücken klein (2. Versuch akzeptiert)
+schneeeule_Flug: Rücken ist kleines Schrägprofil (2. Versuch akzeptiert)
+phoenix_Flug: Rücken zeigt Gesicht (2. Versuch akzeptiert)
+taldrache_Flug: steht mit halb geöffneten Flügeln (akzeptiert)
+spiegeldrache_Flug: steht mit offenen Flügeln statt flach schwebend (akzeptiert)
+riffkormoran_Flug: Flügel im Profil angelegt (akzeptiert)
+glutgeier_Flug: Flügelspitzen in Front angeschnitten (akzeptiert)
+distelhuhn_Flug: Rücken wirkt wie Vorderseite (akzeptiert)
+kleehuhn_Flug: Rücken ist Profil (2. Versuch akzeptiert)
+bachhuhn_Flug: Hintergrund fast weiß statt hellgrau (akzeptiert)
+blutkraehe_Flug: Rücken wirkt wie Vorderseite (akzeptiert)
+leerenkraehe_Flug: Rücken hellgrau statt schwarz, Hintergrund weiß (akzeptiert)
+
+# Gesamtprüfung aller 560 Sets (23.11.2026) – zusätzliche Funde
+## Profile: Schwanz/Körper am Bildrand abgeschnitten oder Schlange zu dünn
+bambusotter, glimmnatter, wurzelnatter, wacholderviper, erznatter, faeulnisnatter, salznatter: Schlange füllt ganze Breite / zu dünn, Ende am Rand abgeschnitten
+basilisk, schieferschuppe, schneeleopard, rauchfarn_schleicher, duenenechse: Schwanz im Profil am Bildrand abgeschnitten
+## Profile: falsche Haltung
+faeulnislibelle, glimmlibelle, schilflibelle: Libelle hängt senkrecht (Kopf oben) statt Seitenprofil
+salzwurm, magnetwurm: Wurm gebogen/schräg statt gestreckt
+eiswurm: Profile sehr klein und flach
+## Front als Draufsicht statt Frontansicht
+basilisk, aschekriecher, glaskriecher (bei den Kriechern auch Rücken)
+## Rückansicht zu klein / schräg / falsch
+gruenwyrm, netzweberin, felsenhuhn, heidehase, heiderabe, sturmfalke, nebelechse, salznebel_schleicher, gletschervielfrass, flammentaenzer, bachhuhn, distelspringer, daemon_der_leere, wurmschatten_made: Rücken zu klein oder schräg
+eiswurm: Rücken als Draufsicht
+tundrarobbe, sternfisch: Rücken ist Seitenprofil
+## Flug-Sets (bestätigt)
+felsdrache, heidedrache, schwarzwasser_drache, taldrache, spiegeldrache, sternendrache, knochendrache: keine Flugpose (sitzen/stehen)
+riffkormoran, schneeeule, kleehuhn, sphinx: Flügel in Profilen angelegt
+eisdrache: Schwanz unten abgeschnitten; bachhuhn, leerenkraehe, taldrache: Hintergrund (fast) weiß
+aschekriecher: Front/Rücken weiterhin schräg von oben (Nachbesserung 23.11. akzeptiert)
+schneeleopard: Profil Kopf/Schwanz am Bildrand auch nach Nachbesserung 23.11. (akzeptiert)
+basilisk: weiterhin 4 statt 8 Beine, Front leicht von oben (Nachbesserung 23.11. akzeptiert)
+heidehase: Front bräunlich, Rücken/Profil lila – Farbe uneinheitlich (Nachbesserung 23.11. akzeptiert)
+windharfen_geist: weiterhin Beine statt Luftwirbel (Nachbesserung 23.11. akzeptiert)
+zentaur: Profil weiterhin mit Sattel/Taschen (Nachbesserung 23.11. akzeptiert)
+dschinn: weiterhin Beine unter dem Rauch (Nachbesserung 23.11. akzeptiert)
+frostfuchs: Rücken weiterhin mit zweitem Schwanz (Nachbesserung 23.11. akzeptiert)
+aschschnee_wiesel: sitzt weiterhin statt auf allen vieren (Nachbesserung 23.11. akzeptiert)
+eiswurm: Profil über beide Bildränder, Rücken klein/schräg (Nachbesserung 23.11. akzeptiert)
+bachotter: Front/Rücken schräg, sitzend (Nachbesserung 23.11. akzeptiert)
+wiesenfuchs: Rücken klein mit zweitem Schwanz (Nachbesserung 23.11. akzeptiert)
+wurzelwicht: Profil weiterhin ohne sichtbare Arme (Nachbesserung 23.11. akzeptiert)
+jahreszeiten_fuchs: Front/Rücken weiterhin zwei Schwänze (Nachbesserung 23.11. akzeptiert)
+erinnerungsschemen: weiterhin Beine; Profil mit hellerem Rechteck im Hintergrund (Nachbesserung 23.11. akzeptiert)
+rosenrost_ranke: Profil weiterhin ohne Arme (Nachbesserung 23.11. akzeptiert)
+wurmschatten_made: weiterhin Beinchen, Front von oben (Nachbesserung 23.11. akzeptiert)
+wurzelnatter: Profil weiterhin von Rand zu Rand (Nachbesserung 23.11. akzeptiert)
+daemon_der_leere: Profil weiterhin schräg von hinten (Nachbesserung 23.11. akzeptiert)
+passoger: Front weiterhin leicht schräg (Nachbesserung 23.11. akzeptiert)
+hirtenriese: Front noch leicht schräg (Nachbesserung 23.11. akzeptiert)
+duenenechse: im Profil dünne zusätzliche Linie unter dem Körper (Nachbesserung 23.11. akzeptiert)
+schilflibelle: weiterhin senkrecht/Draufsicht trotz neuem Prompt (Nachbesserung 23.11. akzeptiert)
+glimmlibelle: weiterhin senkrecht/Draufsicht, Rücken-Flügel rechteckig abgeschnitten (Nachbesserung 23.11. akzeptiert)
+faeulnislibelle: weiterhin senkrecht/Draufsicht (Nachbesserung 23.11. akzeptiert)
+salzechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
+karawanenraeuber: Seitenansicht leicht schräg statt reines Profil (Nachbesserung 23.11. akzeptiert)
+tundrarobbe: Rückansicht leicht schräg (Nachbesserung 23.11. akzeptiert)
+dampfechse: Schwanz im Profil weiterhin bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
+schwefelwurm: Profil leicht schräg nach oben gebogen statt ganz gestreckt (Nachbesserung 23.11. akzeptiert)
+glutwurm: hat Beinchen trotz beinlos, Profil reicht fast bis zum Bildrand (Nachbesserung 23.11. akzeptiert)
+magnetwurm: Profil nach oben gebogen statt ganz gestreckt (Nachbesserung 23.11. akzeptiert)
+sternfisch: Rückansicht auch nach Nachbesserung Seitenprofil (Nachbesserung 23.11. akzeptiert)
+jahreszeitenfalter: Seitenansicht sehr schmal (Flügel hochgeklappt), Kopfrichtung kaum erkennbar (Nachbesserung 23.11. akzeptiert)
+lichtquarz_echse: Schwanz in Front und Rückansicht senkrecht nach oben (Nachbesserung 23.11. akzeptiert)
+mondfisch: Rückansicht im letzten Versuch Seitenprofil (Nachbesserung 23.11. akzeptiert)
+sternfalter: Seitenansicht sehr schmal (Flügel hochgeklappt) (Nachbesserung 23.11. akzeptiert)
+faeulnisnatter: Profil sehr dünn und fast bildbreit, Front/Rücken eingerollt (Nachbesserung 23.11. akzeptiert)
+erznatter: Profil dünn und fast bildbreit (Nachbesserung 23.11. akzeptiert)
+salznatter: Profil auch im letzten Versuch bildbreite Linie, Augen an beiden Enden (Nachbesserung 23.11. akzeptiert)
+sternendrache_Flug: fliegt jetzt, Körper aber eher senkrecht hängend (Nachbesserung 23.11. akzeptiert)
+knochendrache_Flug: steht auch im letzten Versuch statt zu fliegen (Nachbesserung 23.11. akzeptiert)
+schilfreiher_Flug: Seitenansicht mit angelegten Flügeln (Nachbesserung 23.11. akzeptiert)
+heidedrache_Flug: steht auch im letzten Versuch mit hängenden Flügeln statt zu fliegen (Nachbesserung 23.11. akzeptiert)
+schwarzwasser_drache_Flug: auch im letzten Versuch sitzend statt fliegend, Rückansicht zeigt Gesicht; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
+sphinx_Flug: Profil weiterhin ohne gespreizte Flügel, Rücken jetzt groß genug (Nachbesserung 23.11. akzeptiert)
+schneeeule_Flug, phoenix_Flug: Profil schmal mit hochgestelltem Flügel (Nachbesserung 23.11. akzeptiert)
+riffkormoran_Flug: Profil mit angelegten Flügeln, klein (Nachbesserung 23.11. akzeptiert)
+taldrache_Flug: schwebt jetzt, Rückansicht zeigt aber Gesicht, Flügel im Profil angelegt (Nachbesserung 23.11. akzeptiert)
+spiegeldrache_Flug: schwebt jetzt, Profil etwas klein; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
+glutgeier_Flug: Profil klein mit hochgestelltem Flügel; Seiten getauscht (Nachbesserung 23.11. akzeptiert)
+kleehuhn_Flug: Profil klein mit angelegten Flügeln (Nachbesserung 23.11. akzeptiert)
+distelhuhn_Flug, blutkraehe_Flug, leerenkraehe_Flug: neue Rücken waren Seitenprofile, alte Rücken wiederhergestellt (wirken wie Vorderseite; leerenkraehe Hintergrund auf Grau gesetzt, Rücken hellgrau statt schwarz) (Nachbesserung 23.11. akzeptiert)
+
+## Letzter Versuch 25.11. (bessere Prompts, Flug-Front aus Text für 3 Drachen)
+magnetwurm: neu besser (flacher) (letzter Versuch 25.11.)
+schwefelwurm: neu etwas flacher (letzter Versuch 25.11.)
+mondfisch, sternfisch: Rücken weiterhin Profil (letzter Versuch 25.11.)
+salznatter: neu besser (Kopf mit Auge und Zunge sichtbar, reicht aber bis zum rechten Rand) (letzter Versuch 25.11.)
+knochendrache_Flug: fliegt jetzt, Seiten getauscht (letzter Versuch 25.11.)
+heidedrache_Flug: fliegt jetzt (alle Ansichten deutlich besser), Rücken etwas dunkler (letzter Versuch 25.11.)
+schwarzwasser_drache_Flug: fliegt jetzt, echter Rücken, Seiten getauscht, Flügelspitzen berühren den Rand (letzter Versuch 25.11.)
+taldrache_Flug: neuer Rücken war Profil im Stand, alter (zeigt Gesicht) behalten (letzter Versuch 25.11.)
+glutgeier_Flug: Seite praktisch unverändert (Flügel hochgestellt) (letzter Versuch 25.11.)
+distelhuhn_Flug: Rücken jetzt größer mit gespreizten Flügeln (Spitzen am Rand), Seite unverändert schmal (letzter Versuch 25.11.)
+blutkraehe_Flug: Rücken jetzt echter Rücken (besser), Seite unverändert schräg (letzter Versuch 25.11.)
+leerenkraehe_Flug: Rücken jetzt schwarz und größer (besser), Seite unverändert schräg (letzter Versuch 25.11.)
